@@ -5,6 +5,7 @@ import { ExternalLink } from "./Logo/External-Link-Logo";
 import { DownloadLogo } from "./Logo/Book";
 import { animate, motion } from "framer-motion";
 import { RotateWord } from "./Rotate-Text";
+import { redirect } from "next/navigation";
 
 export function Body() {
   return (
@@ -49,6 +50,7 @@ export function Body() {
         </motion.div>
         <div className="flex flex-row items-center gap-14 mt-36">
           <motion.button
+            onClick={() => redirect("/documentation")}
             variants={{
               initial: { opacity: 0, y: -20 },
               animate: { opacity: 1, y: 0 },
@@ -75,7 +77,7 @@ export function Body() {
             </motion.div>
           </Link>
         </div>
-        <div className="text-neutral-400 font-sans font-semibold text-sm sm: mt-54 md:mt-40">
+        <div className="text-neutral-400 font-sans font-semibold text-sm sm: mt-54 md:mt-38">
           <RotateWord
             words={["Component-Driven", "Motion-Enabled", "Production-Ready"]}
           />
