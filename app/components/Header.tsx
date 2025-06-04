@@ -12,7 +12,7 @@ export function Header() {
         initial="initial"
         animate="animate"
         transition={{ delay: 0.5, staggerChildren: 0.1 }}
-        className="flex flex-row justify-between items-center text-center pt-10"
+        className="flex flex-row justify-between items-center text-center sm: pt-8 md:pt-10"
       >
         <motion.div
           variants={{
@@ -20,11 +20,11 @@ export function Header() {
             animate: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-2xl font-semibold font-mono ml-30 text-white "
+          className="font-semibold font-mono  text-white sm: ml-8 sm: text-xl  md:ml-30 md:text-2xl"
         >
           Drift UI
         </motion.div>
-        <div className="mr-30 flex flex-rows text-center gap-5">
+        <div className="flex flex-rows text-center sm: gap-2.5 sm: mr-6 md:gap-5 md:mr-30">
           <motion.div
             variants={{
               initial: { opacity: 0, y: -20 },
@@ -32,9 +32,12 @@ export function Header() {
             }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            <button onClick={() => {}} className="size-9">
-              <Image src={github} alt="github-logo" />
-            </button>
+            <Link
+              href={"https://github.com/suryanshXD/Drift-UI"}
+              target="_blank"
+            >
+              <Image src={github} alt="github-logo" className="size-9" />
+            </Link>
           </motion.div>
           <motion.div
             variants={{

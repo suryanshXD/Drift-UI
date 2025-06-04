@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { ChevronRight } from "./Logo/Chevron-Right";
 import { ExternalLink } from "./Logo/External-Link-Logo";
-import { Book } from "./Logo/Book";
-import { motion } from "framer-motion";
+import { DownloadLogo } from "./Logo/Book";
+import { animate, motion } from "framer-motion";
+import { RotateWord } from "./Rotate-Text";
 
 export function Body() {
   return (
@@ -11,36 +12,73 @@ export function Body() {
       <motion.div
         initial="initial"
         animate="animate"
-        className="flex flex-col justify-center items-center text-center mt-32"
+        className="flex flex-col justify-center items-center text-center sm: mt-32 md:mt-32"
       >
-        <div className="text-4xl font-semibold font-mono">
+        <motion.div
+          variants={{
+            initial: { opacity: 0, y: -20 },
+            animate: { opacity: 1, y: 0 },
+          }}
+          transition={{ delay: 1.1, duration: 1 }}
+          className="font-semibold font-mono sm: text-2xl sm: px-5 md:text-4xl"
+        >
           Build Beautiful Interfaces, Effortlessly.
-        </div>
-        <div className="text-xl text-white font-sans text-center px-40 mt-10">
+        </motion.div>
+        <motion.div
+          variants={{
+            initial: { opacity: 0, y: -20 },
+            animate: { opacity: 1, y: 0 },
+          }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className=" text-neutral-300 font-sans text-center sm: mt-10 sm: px-5 sm: text-lg md:px-40 md:mt-10 md:text-xl"
+        >
           A modern UI component library crafted for speed, elegance, and motion.
-          Designed with Framer Motion, styled with Tailwind CSS, and built to
-          fit seamlessly into your React workflow — so you can focus on
-          creating, not coding from scratch.
-        </div>
-        <div className="flex flex-row items-center gap-18 mt-36">
-          <button className="flex flex-row items-center justify-center bg-neutral-200 text-black rounded-md p-2">
+          Designed with Framer Motion, styled with Tailwind CSS, and{" "}
+          <motion.span
+            variants={{
+              initial: { opacity: 0, y: -20 },
+              animate: { opacity: 1, y: 0 },
+            }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="pt-[10px]"
+          >
+            {" "}
+            built to fit seamlessly into your React workflow — so you can focus
+            on creating, not coding from scratch.
+          </motion.span>
+        </motion.div>
+        <div className="flex flex-row items-center gap-14 mt-36">
+          <motion.button
+            variants={{
+              initial: { opacity: 0, y: -20 },
+              animate: { opacity: 1, y: 0 },
+            }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="flex flex-row items-center justify-center bg-neutral-200 text-black rounded-md p-2"
+          >
             <span className="pt-0.5 pr-2">Get Started </span>
             <ExternalLink />
-          </button>
+          </motion.button>
           <Link href={"/"}>
-            <div className="text-neutral-300 flex flex-row items-center">
+            <motion.div
+              variants={{
+                initial: { opacity: 0, y: -20 },
+                animate: { opacity: 1, y: 0 },
+              }}
+              transition={{ delay: 1.5, duration: 1 }}
+              className="text-neutral-300 flex flex-row items-center font-semibold"
+            >
               <span className="pr-1.5">
-                <Book />
+                <DownloadLogo />
               </span>
-              Documentation{" "}
-              <span>
-                <ChevronRight />
-              </span>
-            </div>
+              <span className="mt-[2px]">Installation</span>
+            </motion.div>
           </Link>
         </div>
-        <div className="text-neutral-400 text-sm mt-42">
-          Component-Driven. Motion-Enabled. Production-Ready.
+        <div className="text-neutral-400 font-sans font-semibold text-sm sm: mt-54 md:mt-40">
+          <RotateWord
+            words={["Component-Driven", "Motion-Enabled", "Production-Ready"]}
+          />
         </div>
       </motion.div>
     </>
