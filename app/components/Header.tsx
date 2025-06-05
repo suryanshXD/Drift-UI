@@ -49,13 +49,12 @@ export function Header() {
             transition={{ duration: 1, delay: 0.8 }}
             className="sm: hidden md:block"
           >
-            <button
-              onClick={() => redirect("/documentation")}
-              className="flex flex-row items-center justify-center bg-neutral-200 text-black rounded-md py-1 px-2"
-            >
-              <span className="pt-0.5 pr-2">Get Started </span>
-              <ExternalLink />
-            </button>
+            <Link href={"/docs"}>
+              <button className="flex flex-row items-center justify-center bg-neutral-200 text-black rounded-md py-1 px-2 cursor-pointer">
+                <span className="pt-0.5 pr-2">Get Started </span>
+                <ExternalLink />
+              </button>
+            </Link>
           </motion.div>
         </div>
       </motion.div>

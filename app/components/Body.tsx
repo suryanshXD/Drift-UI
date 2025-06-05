@@ -49,19 +49,20 @@ export function Body() {
           </motion.span>
         </motion.div>
         <div className="flex flex-row items-center gap-14 mt-36">
-          <motion.button
-            onClick={() => redirect("/documentation")}
-            variants={{
-              initial: { opacity: 0, y: -20 },
-              animate: { opacity: 1, y: 0 },
-            }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="flex flex-row items-center justify-center bg-neutral-200 text-black rounded-md p-2"
-          >
-            <span className="pt-0.5 pr-2">Get Started </span>
-            <ExternalLink />
-          </motion.button>
-          <Link href={"/"}>
+          <Link href={"/docs"}>
+            <motion.button
+              variants={{
+                initial: { opacity: 0, y: -20 },
+                animate: { opacity: 1, y: 0 },
+              }}
+              transition={{ delay: 1.5, duration: 1 }}
+              className="flex flex-row items-center justify-center bg-neutral-200 text-black rounded-md p-2 cursor-pointer"
+            >
+              <span className="pt-0.5 pr-2">Get Started </span>
+              <ExternalLink />
+            </motion.button>
+          </Link>
+          <Link href={"/docs/installation"}>
             <motion.div
               variants={{
                 initial: { opacity: 0, y: -20 },
