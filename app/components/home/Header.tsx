@@ -1,7 +1,7 @@
 "use client";
-import { ExternalLink } from "./Logo/External-Link-Logo";
+import { ExternalLink } from "../Logo/External-Link-Logo";
 import { motion } from "motion/react";
-import github from "../../public/github-logo.png";
+import github from "../../../public/github-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -13,7 +13,7 @@ export function Header() {
         initial="initial"
         animate="animate"
         transition={{ delay: 0.5, staggerChildren: 0.1 }}
-        className="flex flex-row justify-between items-center text-center sm: pt-8 md:pt-10"
+        className="flex flex-row justify-between items-center text-center sm: pt-8 md:pt-10 md:px-5"
       >
         <motion.div
           variants={{

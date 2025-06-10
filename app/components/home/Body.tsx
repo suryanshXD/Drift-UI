@@ -1,11 +1,10 @@
 "use client";
 import Link from "next/link";
-import { ChevronRight } from "./Logo/Chevron-Right";
-import { ExternalLink } from "./Logo/External-Link-Logo";
-import { DownloadLogo } from "./Logo/Book";
 import { animate, motion } from "framer-motion";
-import { RotateWord } from "./Rotate-Text";
 import { redirect } from "next/navigation";
+import { RotateWord } from "../Rotate-Text";
+import { DownloadLogo } from "../Logo/Book";
+import { ExternalLink } from "../Logo/External-Link-Logo";
 
 export function Body() {
   return (
@@ -31,7 +30,7 @@ export function Body() {
             animate: { opacity: 1, y: 0 },
           }}
           transition={{ delay: 1.2, duration: 1 }}
-          className=" text-neutral-300 font-sans text-center sm: mt-10 sm: px-5 sm: text-lg md:px-40 md:mt-10 md:text-xl"
+          className=" text-neutral-300 font-sans text-center sm: mt-10 sm: px-5 sm: text-md md:px-46 md:mt-10 md:text-lg"
         >
           A modern UI component library crafted for speed, elegance, and motion.
           Designed with Framer Motion, styled with Tailwind CSS, and{" "}
@@ -78,7 +77,7 @@ export function Body() {
             </motion.div>
           </Link>
         </div>
-        <div className="text-neutral-400 font-sans font-semibold text-sm sm: mt-54 md:mt-38">
+        <div className="text-neutral-400 font-sans font-semibold text-sm sm: mt-62 md:mt-38">
           <RotateWord
             words={["Component-Driven", "Motion-Enabled", "Production-Ready"]}
           />

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Background from "../public/sl_072622_51930_05.jpg";
 import { ExternalLink } from "./components/Logo/External-Link-Logo";
-import { Header } from "./components/Header";
-import { Body } from "./components/Body";
+import { Header } from "./components/home/Header";
+import { Body } from "./components/home/Body";
 
 export default function Home() {
   return (
