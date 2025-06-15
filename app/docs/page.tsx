@@ -5,9 +5,9 @@ import { ArrowRight } from "../components/Logo/Arrow-Right";
 export default function PageDocs() {
   return (
     <>
-      <div className="flex flex-col w-fit bg-gray-50 mx-10">
+      <div className="flex flex-col w-fit h-screen bg-gray-50 mx-10">
         <div className="flex flex-col ">
-          <div className="text-4xl text-stone-900  ml-16 mt-8">
+          <div className="text-4xl text-stone-900  ml-16 mt-22">
             Introduction
           </div>
           <div className="px-16">

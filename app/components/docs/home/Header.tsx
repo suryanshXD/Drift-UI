@@ -5,14 +5,14 @@ import github from "../../../../public/github-logo-dark.png";
 export function DocsHeader() {
   return (
     <>
-      <div className="fixed w-[100%] ">
+      <div className="fixed w-[100%] z-1">
         <div className="flex flex-row justify-between px-16 py-4 border-b border-gray-300 items-center backdrop-blur-2xl">
           <div className="flex flex-row items-center">
             <Link
               href={"/"}
-              className="text-2xl font-semibold text-stone-900 font-sans "
+              className="text-2xl  text-stone-900 font-sans font-bold "
             >
-              Drift/ui
+              drift/ui
             </Link>
             <Link href={"/docs"} className="ml-10 text-gray-800 text-sm mt-0.5">
               Docs

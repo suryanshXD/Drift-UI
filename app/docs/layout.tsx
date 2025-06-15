@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import Link from "next/link";
 import { DocsHeader } from "../components/docs/home/Header";
+import { useState } from "react";
 
 export default function layout({ children }: { children: React.ReactNode }) {
   const animate = {
@@ -17,12 +18,15 @@ export default function layout({ children }: { children: React.ReactNode }) {
       y: 0,
     },
   };
+
+  const [active, setActive] = useState<"viewing" | "onOther">("viewing");
+
   return (
     <>
       <div className="bg-white h-[100%] w-full text-black scroll-smooth">
         <DocsHeader />
         <div className="flex flex-row ">
-          <div className="mt-17 text-md max-w-fit h-screen pl-8 pr-18 border-r border-gray-300">
+          <div className="fixed top-16 left-0 h-[calc(100vh-4rem)] w-fit pl-8 pr-20 mt-1.5 border-r border-gray-300 bg-white">
             <p className="text-sm font-extralight text-gray-400 uppercase pt-6 ml-2">
               Get started
             </p>
@@ -123,7 +127,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
               </motion.div>
             </div>
           </div>
-          {children}
+          <div className="ml-64">{children}</div>
         </div>
       </div>
     </>

@@ -47,7 +47,7 @@ export default function HoverTiltImage({ img, width }: style) {
   return (
     <>
       <motion.img
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 0.9 }}
         style={{
           transform: "translateZ(60px)",
           transformStyle: "preserve-3d",
