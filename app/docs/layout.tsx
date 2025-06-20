@@ -36,7 +36,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
                 animate="animate"
                 whileTap="tap"
                 transition={{ staggerChildren: 0.1 }}
-                className="text-[16px] text-stone-700  mt-6 flex flex-col gap-3 font-mono text-xs"
+                className="text-[15px] text-stone-700  mt-6 flex flex-col gap-3 font-mono"
               >
                 <Link href={"/docs"}>
                   <motion.div
@@ -57,14 +57,14 @@ export default function layout({ children }: { children: React.ReactNode }) {
                   </motion.div>
                 </Link>
               </motion.div>
-              <div className="text-sm font-extralight text-gray-400 uppercase mt-14 ml-2 pb-6 ">
+              <div className="text-sm font-extralight text-gray-400 uppercase mt-16 ml-2 pb-6 ">
                 ui components
               </div>
               <motion.div
                 initial="initial"
                 animate="animate"
                 transition={{ staggerChildren: 0.1, duration: 3 }}
-                className="flex flex-col text-[16px] text-stone-700 gap-5 font-mono text-xs"
+                className="flex flex-col text-[15px] text-stone-700 gap-5 font-mono text-xs"
               >
                 <Link href={"/docs/components/3d-effect"}>
                   <motion.div
