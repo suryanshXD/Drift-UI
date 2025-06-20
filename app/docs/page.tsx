@@ -5,17 +5,17 @@ import { ArrowRight } from "../components/Logo/Arrow-Right";
 export default function PageDocs() {
   return (
     <>
-      <div className="flex flex-col w-fit h-screen bg-gray-50 mx-10">
+      <div className="flex flex-col w-fit min-h-screen bg-gray-50 mx-10">
         <div className="flex flex-col ">
-          <div className="text-4xl text-stone-900  ml-16 mt-22">
+          <div className="text-4xl text-stone-900  ml-16 mt-22 font-semibold">
             Introduction
           </div>
           <div className="px-16">
-            <div className="text-md font-sans text-gray-400 mt-6">
+            <div className="text-md font-sans text-gray-400 mt-4">
               Redefined UI building for developers. Quickly add components,
               themes, and responsive layouts to your app at any scale
             </div>
-            <div className="mt-18 font-sans text-gray-600 text-md">
+            <div className="mt-20 font-sans text-gray-600 text-md">
               Drift/ui is a set of beautifully-designed, accessible components
               and a code distribution platform. Works with your favorite
               frameworks and AI models. Open Source. Open Code.
@@ -50,6 +50,9 @@ export default function PageDocs() {
           >
             Installation <ArrowRight />
           </Link>
+        </div>
+        <div className="pl-16 mt-16">
+          <div className="text-2xl font-semibold">FAQ's</div>
         </div>
       </div>
     </>
