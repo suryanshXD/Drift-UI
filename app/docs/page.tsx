@@ -2,11 +2,18 @@
 import Link from "next/link";
 import { ChevronRight } from "../components/Logo/Chevron-Right";
 import { ArrowRight } from "../components/Logo/Arrow-Right";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronDown } from "../components/Logo/Chevron-Down";
 import { AnimatePresence } from "motion/react";
 
 export default function PageDocs() {
+  // const faqRef = useRef(null);
+  // const srcollService = () => {
+  //   window.scrollTo({
+  //     top: faqRef.current.offsetTop,
+  //     behavior: "smooth",
+  //   });
+  // };
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
   const faq = [
     {
@@ -31,19 +38,13 @@ export default function PageDocs() {
   ];
   return (
     <>
-      <div className="flex flex-col w-4xl min-h-screen mx-32 ">
-        <div className="absolute mt-32 ml-[63%] font-light text-stone-800 ">
-          <div className="font-semibold text-[15px]">On This Page</div>
-          <div className="text-gray-600 border-l border-gray-500 pl-2 py-1 mt-1 cursor-pointer hover:text-black text-sm">
-            FAQ's
-          </div>
-        </div>
+      <div className="flex flex-col w-4xl min-h-screen mx-47.5 mt-17">
         <div className="flex flex-col px-20">
-          <div className="text-4xl text-stone-900 mt-22 font-semibold">
+          <div className="text-4xl text-stone-900 mt-6 font-semibold">
             Introduction
           </div>
           <div className="">
-            <div className="text-md font-sans text-gray-400 mt-4">
+            <div className="text-md font-sans text-gray-400 mt-2">
               Redefined UI building for developers. Quickly add components,
               themes, and responsive layouts to your app at any scale
             </div>
@@ -78,7 +79,7 @@ export default function PageDocs() {
         <div className="flex flex-row justify-end">
           <Link
             href={"/docs/installtion"}
-            className="flex flex-row items-center gap-2 mt-6 mr-12 bg-black text-white px-2.5 py-1 w-fit rounded-lg border border-gray-500 text-sm cursor-pointer"
+            className="flex flex-row items-center gap-2 mt-6 mr-20 bg-black text-white px-2.5 py-1 w-fit rounded-lg border border-gray-500 text-sm cursor-pointer"
           >
             Installation <ArrowRight />
           </Link>
@@ -100,4 +101,15 @@ export default function PageDocs() {
       </div>
     </>
   );
+}
+
+{
+  /* <div className="absolute mt-8 ml-[64%] font-light text-stone-800">
+          <div
+            onClick={srcollService}
+            className="text-gray-600 border-l border-gray-500 pl-2 py-1 mt-1 cursor-pointer hover:text-black text-sm"
+          >
+            FAQ's
+          </div>
+        </div> */
 }

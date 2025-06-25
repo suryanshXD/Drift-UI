@@ -26,7 +26,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <div className="bg-white h-[100%] w-full text-black scroll-smooth">
         <DocsHeader />
         <div className="flex flex-row ">
-          <div className="fixed top-16 left-0 h-[calc(100vh-4rem)] w-fit pl-8 pr-20 mt-1.5 border-r border-gray-300 bg-white">
+          <div className="fixed top-16 left-0 h-[calc(100vh-4rem)] w-fit pl-8 pr-14 mt-1.5 border-r border-gray-300 bg-white">
             <p className="text-sm font-extralight text-gray-400 uppercase pt-6 ml-2">
               Get started
             </p>
@@ -127,7 +127,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
               </motion.div>
             </div>
           </div>
-          <div className="ml-64">{children}</div>
+          <div className="ml-61">{children}</div>
         </div>
       </div>
     </>
