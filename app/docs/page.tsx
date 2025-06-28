@@ -38,8 +38,8 @@ export default function PageDocs() {
   ];
   return (
     <>
-      <div className="flex flex-col min-h-screen sm: mx-0 lg:mx-26 sm: mt-15 lg:mt-17 sm: max-w-full lg:w-4xl">
-        <div className="absolute mt-8 ml-[64%] font-light text-stone-800 sm: invisible">
+      <div className="flex flex-col min-h-screen sm: mx-0 lg:mx-26 sm: max-w-full lg:w-4xl">
+        <div className="absolute mt-8 ml-[64%] font-light text-stone-800 sm: invisible lg:visible">
           <div className="text-[14px] font-semibold">On This Page</div>
           <div
             onClick={srcollService}

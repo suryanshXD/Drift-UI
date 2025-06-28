@@ -1,56 +1,76 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 import Link from "next/link";
 import { DocsHeader } from "../components/docs/home/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronRight } from "../components/Logo/Chevron-Right";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const components = [
   {
-    label: "3D-Effect",
+    label: "3d-effect",
     herf: "/3d-effect",
   },
   {
     label: "Background",
-    herf: "/3d-effect",
+    herf: "/background",
   },
   {
     label: "Button",
-    herf: "/3d-effect",
+    herf: "/button",
   },
   {
     label: "Card",
-    herf: "/3d-effect",
+    herf: "/card",
   },
   {
-    label: "Header",
-    herf: "/3d-effect",
+    label: "Navbar",
+    herf: "/navbar",
   },
   {
     label: "Scroll",
-    herf: "/3d-effect",
+    herf: "/scroll",
   },
   {
     label: "Text",
-    herf: "/3d-effect",
+    herf: "/text",
   },
   {
     label: "Testimonial",
-    herf: "/3d-effect",
+    herf: "/testimonial",
   },
 ];
 
 export default function layout({ children }: { children: React.ReactNode }) {
-  const [selected, setSelected] = useState("introduction");
+  const pathname = usePathname();
+
+  const selectedPath = (path: string) => {
+    if (path === "/docs") return "introduction";
+    if (path.includes("/docs/installtion")) return "installtion";
+    if (path.includes("/docs/components/3d-effect")) return "3d-effect";
+    if (path.includes("/docs/components/background")) return "Background";
+    if (path.includes("/docs/components/button")) return "Button";
+    if (path.includes("/docs/components/card")) return "Card";
+    if (path.includes("/docs/components/header")) return "Header";
+    if (path.includes("/docs/components/scroll")) return "Scroll";
+    if (path.includes("/docs/components/text")) return "Text";
+    if (path.includes("/docs/components/testimonial")) return "Testimonial";
+
+    return ""; // fallback
+  };
+  const [selected, setSelected] = useState(selectedPath(pathname));
+
+  useEffect(() => {
+    setSelected(selectedPath(pathname));
+  }, [pathname]);
+
   return (
     <>
       <div className="bg-white h-[100%] w-full text-black scroll-smooth">
         <DocsHeader />
         <div className="flex  sm: flex-col md:flex-row">
-          <div className="fixed top-16 left-0 h-[calc(100vh-4rem)] pl-8 pr-14 mt-1.5 border-r border-gray-300 bg-white sm: invisible">
+          <div className="fixed top-16 left-0 h-[calc(100vh-4rem)] pl-8 pr-14 mt-1.5 border-r border-gray-300 bg-white sm: invisible lg:visible">
             <p className="text-sm font-extralight text-gray-400 uppercase pt-6 ml-2">
               Get started
             </p>
@@ -150,7 +170,9 @@ export default function layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
           </div>
-          <div className="sm: ml-0  lg:ml-61">{children}</div>
+          <div className="sm: ml-0 sm: mt-12  lg:ml-61 lg:mt-16">
+            {children}
+          </div>
         </div>
       </div>
     </>
