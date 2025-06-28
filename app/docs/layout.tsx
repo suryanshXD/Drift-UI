@@ -6,6 +6,7 @@ import Link from "next/link";
 import { DocsHeader } from "../components/docs/home/Header";
 import { useState } from "react";
 import { ChevronRight } from "../components/Logo/Chevron-Right";
+import { useParams, usePathname } from "next/navigation";
 
 const components = [
   {
@@ -48,8 +49,8 @@ export default function layout({ children }: { children: React.ReactNode }) {
     <>
       <div className="bg-white h-[100%] w-full text-black scroll-smooth">
         <DocsHeader />
-        <div className="flex flex-row ">
-          <div className="fixed top-16 left-0 h-[calc(100vh-4rem)] pl-8 pr-14 mt-1.5 border-r border-gray-300 bg-white">
+        <div className="flex  sm: flex-col md:flex-row">
+          <div className="fixed top-16 left-0 h-[calc(100vh-4rem)] pl-8 pr-14 mt-1.5 border-r border-gray-300 bg-white sm: invisible">
             <p className="text-sm font-extralight text-gray-400 uppercase pt-6 ml-2">
               Get started
             </p>
@@ -149,7 +150,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
           </div>
-          <div className="ml-61">{children}</div>
+          <div className="sm: ml-0  lg:ml-61">{children}</div>
         </div>
       </div>
     </>

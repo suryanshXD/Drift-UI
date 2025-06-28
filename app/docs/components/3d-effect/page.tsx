@@ -17,7 +17,7 @@ export default function page() {
   };
   return (
     <>
-      <div className="flex flex-row min-h-screen ml-36">
+      <div className="flex flex-row min-h-screen sm:ml-1 ml-36">
         <div className="pl-10  mt-24">
           <div className="text-3xl text-black font-sans font-bold">
             3D Card Effect
