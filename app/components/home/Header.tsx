@@ -13,7 +13,7 @@ export function Header() {
         initial="initial"
         animate="animate"
         transition={{ delay: 0.5, staggerChildren: 0.1 }}
-        className="flex flex-row justify-between items-center text-center sm: pt-8 md:pt-10 md:px-5"
+        className=" relative flex flex-row justify-between items-center text-center sm: pt-8 md:pt-10 md:px-70"
       >
         <motion.div
           variants={{
@@ -21,7 +21,7 @@ export function Header() {
             animate: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-semibold font-mono  text-white sm: ml-8 sm: text-xl  md:ml-30 md:text-2xl"
+          className="font-semibold font-mono  text-stone-900 sm: ml-8 sm: text-xl  md:ml-30 md:text-3xl"
         >
           Drift UI
         </motion.div>
@@ -50,7 +50,7 @@ export function Header() {
             className="sm: hidden md:block"
           >
             <Link href={"/docs"}>
-              <button className="flex flex-row items-center justify-center bg-neutral-200 text-black rounded-md py-1 px-2 cursor-pointer">
+              <button className="flex flex-row items-center justify-center border border-gray-400 bg-neutral-200 text-black rounded-md py-1 px-2 cursor-pointer">
                 <span className="pt-0.5 pr-2">Get Started </span>
                 <ExternalLink />
               </button>

@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 const components = [
   {
-    label: "3d-effect",
+    label: "3D-effect",
     herf: "/3d-effect",
   },
   {
@@ -48,16 +48,16 @@ export default function layout({ children }: { children: React.ReactNode }) {
   const selectedPath = (path: string) => {
     if (path === "/docs") return "introduction";
     if (path.includes("/docs/installtion")) return "installtion";
-    if (path.includes("/docs/components/3d-effect")) return "3d-effect";
+    if (path.includes("/docs/components/3d-effect")) return "3D-effect";
     if (path.includes("/docs/components/background")) return "Background";
     if (path.includes("/docs/components/button")) return "Button";
     if (path.includes("/docs/components/card")) return "Card";
-    if (path.includes("/docs/components/header")) return "Header";
+    if (path.includes("/docs/components/navbar")) return "Navbar";
     if (path.includes("/docs/components/scroll")) return "Scroll";
     if (path.includes("/docs/components/text")) return "Text";
     if (path.includes("/docs/components/testimonial")) return "Testimonial";
 
-    return ""; // fallback
+    return "";
   };
   const [selected, setSelected] = useState(selectedPath(pathname));
 
@@ -170,7 +170,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
           </div>
-          <div className="sm: ml-0 sm: mt-12  lg:ml-61 lg:mt-16">
+          <div className="sm: ml-0 sm: mt-12  lg:ml-62.5 lg:mt-16">
             {children}
           </div>
         </div>

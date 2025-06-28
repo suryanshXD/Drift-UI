@@ -12,7 +12,7 @@ export function Body() {
       <motion.div
         initial="initial"
         animate="animate"
-        className="flex flex-col justify-center items-center text-center sm: mt-32 md:mt-32"
+        className="flex flex-col justify-center items-center text-center sm:px-12 sm: mt-32 md:mt-44 md:px-60"
       >
         <motion.div
           variants={{
@@ -20,7 +20,7 @@ export function Body() {
             animate: { opacity: 1, y: 0 },
           }}
           transition={{ delay: 1.1, duration: 1 }}
-          className="font-semibold font-mono sm: text-2xl sm: px-5 md:text-4xl"
+          className="font-semibold text-stone-600 font-mono sm: text-2xl sm: px-5 md:text-3xl"
         >
           Build Beautiful Interfaces, Effortlessly.
         </motion.div>
@@ -30,7 +30,7 @@ export function Body() {
             animate: { opacity: 1, y: 0 },
           }}
           transition={{ delay: 1.2, duration: 1 }}
-          className=" text-neutral-300 font-sans text-center sm: mt-10 sm: px-5 sm: text-md md:px-46 md:mt-10 md:text-lg"
+          className=" text-gray-500   font-sans text-center sm: mt-10 sm: px-5 sm: text-md md:px-46 md:mt-10 md:text-lg"
         >
           A modern UI component library crafted for speed, elegance, and motion.
           Designed with Framer Motion, styled with Tailwind CSS, and{" "}
@@ -47,7 +47,7 @@ export function Body() {
             on creating, not coding from scratch.
           </motion.span>
         </motion.div>
-        <div className="flex flex-row items-center gap-14 mt-36">
+        <div className="flex flex-row items-center gap-14 mt-10">
           <Link href={"/docs"}>
             <motion.button
               variants={{
@@ -55,7 +55,7 @@ export function Body() {
                 animate: { opacity: 1, y: 0 },
               }}
               transition={{ delay: 1.5, duration: 1 }}
-              className="flex flex-row items-center justify-center bg-neutral-200 text-black rounded-md p-2 cursor-pointer"
+              className="flex flex-row items-center justify-center border border-gray-400 bg-neutral-200 text-black rounded-md p-2 cursor-pointer"
             >
               <span className="pt-0.5 pr-2">Get Started </span>
               <ExternalLink />
@@ -68,7 +68,7 @@ export function Body() {
                 animate: { opacity: 1, y: 0 },
               }}
               transition={{ delay: 1.5, duration: 1 }}
-              className="text-neutral-300 flex flex-row items-center font-semibold"
+              className="text-stone-700 flex flex-row items-center font-semibold"
             >
               <span className="pr-1.5">
                 <DownloadLogo />
@@ -77,7 +77,7 @@ export function Body() {
             </motion.div>
           </Link>
         </div>
-        <div className="text-neutral-400 font-sans font-semibold text-sm sm: mt-62 md:mt-38">
+        <div className="text-stone-600 font-sans font-semibold text-sm sm: mt-[86%] md:mt-46">
           <RotateWord
             words={["Component-Driven", "Motion-Enabled", "Production-Ready"]}
           />
