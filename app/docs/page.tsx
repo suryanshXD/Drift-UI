@@ -7,13 +7,13 @@ import { ChevronDown } from "../components/Logo/Chevron-Down";
 import { AnimatePresence } from "motion/react";
 
 export default function PageDocs() {
-  // const faqRef = useRef(null);
-  // const srcollService = () => {
-  //   window.scrollTo({
-  //     top: faqRef.current.offsetTop,
-  //     behavior: "smooth",
-  //   });
-  // };
+  const faqRef = useRef(null);
+  const srcollService = () => {
+    window.scrollTo({
+      top: faqRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
   const faq = [
     {
@@ -38,7 +38,16 @@ export default function PageDocs() {
   ];
   return (
     <>
-      <div className="flex flex-col w-4xl min-h-screen mx-47.5 mt-17">
+      <div className="flex flex-col w-4xl min-h-screen mx-26 mt-17">
+        <div className="absolute mt-8 ml-[64%] font-light text-stone-800">
+          <div className="text-[14px] font-semibold">On This Page</div>
+          <div
+            onClick={srcollService}
+            className="text-gray-600 border-l border-gray-500 pl-2 py-1 mt-1 cursor-pointer hover:text-black text-sm"
+          >
+            FAQ's
+          </div>
+        </div>
         <div className="flex flex-col px-20">
           <div className="text-4xl text-stone-900 mt-6 font-semibold">
             Introduction
@@ -85,7 +94,9 @@ export default function PageDocs() {
           </Link>
         </div>
         <div className="px-22 mt-32 mb-12 flex flex-col">
-          <div className="text-2xl font-semibold">FAQ's</div>
+          <div ref={faqRef} className="text-2xl font-semibold">
+            FAQ's
+          </div>
 
           {faq.map((q) => (
             <div
@@ -101,15 +112,4 @@ export default function PageDocs() {
       </div>
     </>
   );
-}
-
-{
-  /* <div className="absolute mt-8 ml-[64%] font-light text-stone-800">
-          <div
-            onClick={srcollService}
-            className="text-gray-600 border-l border-gray-500 pl-2 py-1 mt-1 cursor-pointer hover:text-black text-sm"
-          >
-            FAQ's
-          </div>
-        </div> */
 }
