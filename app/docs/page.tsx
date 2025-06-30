@@ -49,7 +49,7 @@ export default function PageDocs() {
           </div>
         </div>
         <div className="flex flex-col sm: px-5 lg:px-20">
-          <div className="text-4xl text-stone-900 mt-6 font-semibold">
+          <div className="text-4xl text-stone-900 sm: mt-10 lg:mt-6 font-semibold">
             Introduction
           </div>
           <div className="">
@@ -88,12 +88,12 @@ export default function PageDocs() {
         <div className="flex flex-row justify-end">
           <Link
             href={"/docs/installtion"}
-            className="flex flex-row items-center gap-2 mt-6 mr-20 bg-black text-white px-2.5 py-1 w-fit rounded-lg border border-gray-500 text-sm cursor-pointer"
+            className="flex flex-row items-center gap-2 mt-6 sm: mr-5 lg:mr-20 bg-black text-white px-2.5 py-1 w-fit rounded-lg border border-gray-500 text-sm cursor-pointer"
           >
             Installation <ArrowRight />
           </Link>
         </div>
-        <div className="px-22 mt-32 mb-12 flex flex-col">
+        <div className="sm: px-8 lg:px-22 mt-32 mb-12 flex flex-col">
           <div ref={faqRef} className="text-2xl font-semibold">
             FAQ's
           </div>
