@@ -7,7 +7,7 @@ import { ChevronDown } from "../components/Logo/Chevron-Down";
 import { AnimatePresence } from "motion/react";
 
 export default function PageDocs() {
-  const faqRef = useRef(null);
+  const faqRef = useRef<any>(null);
   const srcollService = () => {
     window.scrollTo({
       top: faqRef.current.offsetTop,
