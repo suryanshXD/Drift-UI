@@ -6,7 +6,7 @@ interface style {
   width: number;
 }
 
-export default function HoverTiltImage({ img, width }: style) {
+export default function Hover3DImage({ img, width }: style) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -46,20 +46,27 @@ export default function HoverTiltImage({ img, width }: style) {
   };
   return (
     <>
-      <motion.img
-        transition={{ duration: 0.3, delay: 0.3 }}
+      <motion.div
         style={{
-          transform: "translateZ(60px)",
           transformStyle: "preserve-3d",
           rotateX,
           rotateY,
         }}
-        className="rounded-lg shadow-3xl"
-        src={`${img}`}
-        width={`${width}`}
         onMouseMove={handelMouseMove}
         onMouseLeave={handelMouseLeave}
-      />
+        transition={{ delay: 0.3 }}
+        className=" p-4 rounded-lg bg-gradient-to-br from-indigo-300 to-violet-200 shadow-2xl"
+      >
+        <motion.img
+          style={{
+            transform: "translateZ(40px)",
+            transformStyle: "preserve-3d",
+          }}
+          className=" rounded-lg shadow-3xl"
+          src={`${img}`}
+          width={`${width}`}
+        />
+      </motion.div>
     </>
   );
 }

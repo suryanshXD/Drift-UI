@@ -6,7 +6,7 @@ export function DocsHeader() {
   return (
     <>
       <div className="fixed w-[100%] z-1">
-        <div className="flex flex-row justify-between px-16 py-4 border-b border-gray-300 items-center backdrop-blur-sm">
+        <div className="flex flex-row justify-between px-16 py-2.5 border-b border-gray-300 items-center backdrop-blur-sm">
           <div className="flex flex-row items-center">
             <Link
               href={"/"}
