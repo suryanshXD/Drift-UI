@@ -17,6 +17,7 @@ export default function page() {
   const [cli, setManual] = useState<"cli" | "manual">("cli");
   const previewRef = useRef<any>(null);
   const installtionRef = useRef<any>(null);
+  const propsRef = useRef<any>(null);
   const previewScroll = () => {
     window.scrollTo({
       top: previewRef.current.offsetTop,
@@ -29,13 +30,19 @@ export default function page() {
       behavior: "smooth",
     });
   };
+  const propsScroll = () => {
+    window.scrollTo({
+      top: propsRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <div className="flex flex-row min-h-screen sm: ml-1 lg:ml-24 items-start">
         <div className="lg:mt-5">
-          <div className="fixed flex flex-col ml-[62%] mt-15 font-semibold">
+          <div className="fixed flex flex-col ml-[62%] mt-4 font-semibold">
             On this page
-            <div className="flex flex-col gap-3 mt-4.5   text-[15.5px]  font-normal items-start">
+            <div className="flex flex-col gap-3 mt-4.5   text-[15.5px]  font-normal items-start ">
               <div
                 onClick={previewScroll}
                 className="text-gray-600 hover:text-black cursor-pointer flex items-center"
@@ -47,6 +54,12 @@ export default function page() {
                 className="text-gray-600 hover:text-black cursor-pointer flex items-center"
               >
                 <ChevronRight /> Installation
+              </div>
+              <div
+                onClick={propsScroll}
+                className="text-gray-600 hover:text-black cursor-pointer flex items-center"
+              >
+                <ChevronRight /> Props
               </div>
             </div>
           </div>
@@ -148,7 +161,7 @@ export default function page() {
                       <div className="flex ml-6.5">
                         {"<"}
                         <span className="text-purple-400">div</span>{" "}
-                        <span className="text-pink-400 mx-2">className</span>
+                        <span className="text-pink-300 mx-2">className</span>
                         <span className="text-purple-400">=</span>
                         <span className="text-emerald-400 ml-2">
                           "flex justify-center items-center"
@@ -160,7 +173,7 @@ export default function page() {
                         <span className="text-amber-400">
                           RainbowButton
                         </span>{" "}
-                        <span className="text-pink-400">text</span>
+                        <span className="text-pink-300">text</span>
                         <span className="text-purple-400 mx-2">=</span>
                         <span className="text-emerald-400">
                           "Rainbow" /{">"}
@@ -214,7 +227,7 @@ export default function page() {
                 Manual
               </div>
             </div>
-            <div className="border border-black w-[125%] bg-[#24292E] text-white mt-4 font-stretch-150% rounded-lg mb-100">
+            <div className="border border-black w-[125%] bg-[#24292E] text-white mt-4 font-stretch-150% rounded-lg">
               {cli === "cli" ? (
                 <div className="h-[60px] flex items-center justify-between ml-4 mr-2">
                   <div className="text-[15px]">
@@ -262,11 +275,11 @@ export default function page() {
                       <span className="text-amber-300">{"{"}</span>
                     </div>
                     <div className="flex ">
-                      <span className="text-pink-400">img</span>
+                      <span className="text-pink-300">img</span>
                       <span className="text-purple-400">: any</span>;
                     </div>
                     <div className="flex">
-                      <span className="text-pink-400">width</span>
+                      <span className="text-pink-300">width</span>
                       <span className="text-purple-400">: number</span>;
                     </div>
                     <div className="text-amber-300 flex">{"}"}</div>
@@ -610,6 +623,43 @@ export default function page() {
                   </span>
                 </pre>
               )}
+            </div>
+          </div>
+          <div className="flex flex-col ml-3 mb-18">
+            <div className="text-black font-semibold text-2xl mt-32 border-b border-gray-300 pb-0.5 w-[125%]">
+              Props
+            </div>
+            <div
+              ref={propsRef}
+              className="flex w-[125%] bg-gray-50 border border-gray-300 h-10 mt-9"
+            >
+              <div className="w-[20%] bg-gray-200 border-r border-gray-400 pl-2.5 pt-1.5">
+                Props
+              </div>
+              <div className="w-[20%] bg-gray-200 border-r border-gray-400 pl-2.5 pt-1.5">
+                Type
+              </div>
+              <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">
+                Description
+              </div>
+            </div>
+            <div className="flex w-[125%] h-18 mt-2.5 font-extralight">
+              <div className="flex flex-col w-[20%] text-gray-600">
+                <div className="h-[50%] pl-3 py-1.5">img</div>
+                <div className="pl-3 py-1.5 bg-gray-100">width</div>
+              </div>
+              <div className="flex flex-col w-[20%] text-gray-600">
+                <div className="h-[50%] pl-3 py-1.5">string</div>
+                <div className="pl-3 py-1.5 bg-gray-100">number</div>
+              </div>
+              <div className="flex flex-col w-[60%] text-gray-600">
+                <div className="h-[50%] pl-3 py-1.5">
+                  url or path of the image
+                </div>
+                <div className="pl-3 py-1.5 bg-gray-100">
+                  specify the width of the image
+                </div>
+              </div>
             </div>
           </div>
         </div>

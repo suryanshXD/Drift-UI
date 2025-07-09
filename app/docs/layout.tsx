@@ -70,12 +70,12 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <div className="bg-white h-[100%] w-full text-black scroll-smooth">
         <DocsHeader />
         <div className="flex  sm: flex-col md:flex-row">
-          <div className="fixed top-12 left-0 h-[calc(100vh-4rem)] pl-9 pr-18 mt-1.5 border-r border-gray-300 bg-white sm: invisible lg:visible">
+          <div className="fixed top-12 left-0 h-[calc(100vh-4rem)] pl-9 pr-6 mt-1.5 border-r border-gray-300 bg-white sm: invisible lg:visible">
             <p className="text-sm font-extralight text-gray-400 uppercase pt-8 ml-2">
               Get started
             </p>
             <div>
-              <div className="text-[14.5px] text-stone-800  mt-4 flex flex-col gap-3 font-mono w-41">
+              <div className="text-[14.5px] text-stone-800  mt-4 flex flex-col gap-3 font-mono w-52">
                 <Link href={"/docs"}>
                   <motion.div
                     onClick={() => setSelected("introduction")}
@@ -99,7 +99,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
                       <motion.span
                         layoutId="clicked"
                         animate={{ rotate: [25, 0, 20, 0] }}
-                        className="ml-7"
+                        className="ml-17"
                       >
                         <ChevronRight />
                       </motion.span>
@@ -129,7 +129,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
                       <motion.span
                         layoutId="clicked"
                         animate={{ rotate: [25, 0, 20, 0] }}
-                        className="ml-7"
+                        className="ml-17"
                       >
                         <ChevronRight />
                       </motion.span>
@@ -140,7 +140,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
               <div className="text-sm relative font-extralight text-gray-400 uppercase mt-16 ml-2 pb-4 ">
                 ui components
               </div>
-              <div className="flex flex-col text-[14.5px] gap-5 font-mono text-xs w-40 text-stone-800">
+              <div className="flex flex-col text-[14.5px] gap-5 font-mono text-xs w-52 text-stone-800">
                 {components.map((items) => (
                   <Link href={`/docs/components/${items.herf}`}>
                     <motion.div
@@ -165,7 +165,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
                         <motion.span
                           layoutId="clicked"
                           animate={{ rotate: [25, 0, 20, 0] }}
-                          className="pl-7"
+                          className="pl-17"
                         >
                           <ChevronRight />
                         </motion.span>
