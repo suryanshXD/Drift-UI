@@ -38,11 +38,11 @@ export default function page() {
   };
   return (
     <>
-      <div className="flex flex-row min-h-screen sm: ml-1 lg:ml-24 items-start">
+      <div className="flex flex-row min-h-screen sm: ml-1 lg:ml-16 items-start">
         <div className="lg:mt-5">
-          <div className="fixed flex flex-col ml-[62%] mt-4 font-semibold">
+          <div className="fixed flex flex-col ml-[64%] mt-4 font-semibold">
             On this page
-            <div className="flex flex-col gap-3 mt-4.5   text-[15.5px]  font-normal items-start ">
+            <div className="flex flex-col gap-3 mt-3 text-[15.5px]  font-normal items-start ">
               <div
                 onClick={previewScroll}
                 className="text-gray-600 hover:text-black cursor-pointer flex items-center"
@@ -63,7 +63,7 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-1.5 text-gray-500 mt-4 text-[14px]">
+          <div className="flex items-center gap-0.5 text-gray-500 mt-4 text-[14px]">
             <Link href={"/docs"} className="cursor-pointer">
               Documentation
             </Link>
@@ -83,11 +83,11 @@ export default function page() {
           >
             3D Card Effect
           </div>
-          <div className="text-neutral-500 font-light mt-6 text-[16px]">
+          <div className="text-neutral-500 font-light mt-3 text-[16px]">
             A 3D tilt effect gives the illusion of depth and motion, making your
             card designs more dynamic.
           </div>
-          <div className="flex mt-5 max-w-fit">
+          <div className="flex mt-6 max-w-fit">
             <Image
               src={profile}
               alt="meri photu"
@@ -633,10 +633,10 @@ export default function page() {
               ref={propsRef}
               className="flex w-[125%] bg-gray-50 border border-gray-300 h-10 mt-9"
             >
-              <div className="w-[20%] bg-gray-200 border-r border-gray-400 pl-2.5 pt-1.5">
+              <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5">
                 Props
               </div>
-              <div className="w-[20%] bg-gray-200 border-r border-gray-400 pl-2.5 pt-1.5">
+              <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5">
                 Type
               </div>
               <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">

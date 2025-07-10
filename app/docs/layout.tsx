@@ -176,7 +176,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
           </div>
-          <div className="sm: ml-0 sm: mt-12  lg:ml-62.5 lg:mt-16">
+          <div className="sm: ml-0 sm: mt-12  lg:ml-62.5 lg:mt-14">
             {children}
           </div>
         </div>
