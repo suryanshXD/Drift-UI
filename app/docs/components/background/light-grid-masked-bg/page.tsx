@@ -17,7 +17,7 @@ export default function page() {
 }>) {
   return (
     <>
-      <div className="bg-black text-white pointer-events-none absolute inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
+      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
         {children}
       </div>
     </>
@@ -42,12 +42,15 @@ export default function page() {
           Backgrounds
         </Link>
         <ChevronRight />
-        <Link href={"/docs/components/background"} className="cursor-pointer">
-          Dark-grid-background
+        <Link
+          href={"/docs/components/background/light-grid-masked-bg"}
+          className="cursor-pointer"
+        >
+          Light-grid-masked-background
         </Link>
       </div>
       <div className="text-3xl text-black font-sans font-bold mt-12">
-        Dark Grid Background
+        Light Grid Masked Background
       </div>
       <div className="text-neutral-500 font-light mt-3 text-[15.5px]">
         Subtle dark grid backdrop to frame your content with focus.
@@ -79,14 +82,14 @@ export default function page() {
           Code
         </div>
       </div>
-      <div className=" rounded-lg mt-4 w-[125%]">
+      <div className=" rounded-lg mt-4 w-[125%] border border-gray-300 ">
         {preview === "preview" ? (
           <motion.div
             whileHover={{
-              boxShadow: "rgba(0, 0, 0, 0.72) 0px 25px 40px -10px",
+              boxShadow: "rgba(0, 0, 0, 0.48) 0px 25px 20px -10px",
             }}
             transition={{ delay: 0.1 }}
-            className="bg-black  h-64 [background-size:24px_24px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)]"
+            className=" bg-gray-100 h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)]"
           ></motion.div>
         ) : (
           <div className="h-64 bg-[#212121] flex justify-between text-white text-[14px] rounded-md">
@@ -163,7 +166,7 @@ export default function page() {
               <span className="text-purple-400">npx</span>
               <span className="text-white mx-2">from</span>{" "}
               <span className="text-[#9ECBFF]">
-                https://drift-ui-jet.vercel.app/r/Dark-Grid-Background.json
+                https://drift-ui-jet.vercel.app/r/Dark-Grid-Masked-BG.json
               </span>
             </div>
             <motion.div
@@ -299,7 +302,7 @@ export default function page() {
       <div className="flex w-[125%] justify-end gap-2 mb-4">
         <motion.div whileTap={{ scale: 0.95 }}>
           <Link
-            href={"/docs/components/background"}
+            href={"/docs/components/background/dark-grid-bg"}
             className="bg-black text-[14px] px-5 py-2 text-neutral-300 rounded-lg"
           >
             Back
@@ -307,7 +310,7 @@ export default function page() {
         </motion.div>
         <motion.div whileTap={{ scale: 0.95 }}>
           <Link
-            href={"/docs/components/background/light-grid-masked-bg"}
+            href={"/docs/components/background/light-dot-bg"}
             className="bg-black text-[14px] px-5 py-2 text-neutral-300 rounded-lg"
           >
             Next

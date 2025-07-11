@@ -52,7 +52,7 @@ export default function page() {
             className=" border border-gray-400 rounded-lg"
           >
             <Link
-              href={"/docs/components/background/dark-grid-bg"}
+              href={"/docs/components/background/light-grid-masked-bg"}
               className="flex flex-col justify-center items-center text-[13px] text-gray-600 font-sans bg-gray-50 w-full h-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] cursor-pointer"
             >
               Light Gird Masked Bg
