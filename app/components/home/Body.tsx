@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
-import { animate, motion } from "framer-motion";
-import { redirect } from "next/navigation";
+import { motion } from "framer-motion";
 import { RotateWord } from "../Rotate-Text";
 import { DownloadLogo } from "../Logo/Book";
 import { ExternalLink } from "../Logo/External-Link-Logo";

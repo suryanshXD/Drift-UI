@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
-import AnimatedButton from "@/app/components/ui-components/Animated-Button";
 import RainbowButton from "@/app/components/ui-components/Rainbow-Button";
 
 export default function page() {

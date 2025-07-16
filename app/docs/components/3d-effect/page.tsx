@@ -38,7 +38,12 @@ export default function page() {
   };
   return (
     <>
-      <div className="flex flex-row min-h-screen sm: ml-1 lg:ml-16 items-start">
+      <motion.div
+        initial={{ filter: "blur(16px)" }}
+        animate={{ filter: "blur(0px)" }}
+        transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
+        className="flex flex-row min-h-screen sm: ml-1 lg:ml-16 items-start"
+      >
         <div className="lg:mt-5">
           <div className="fixed flex flex-col ml-[64%] mt-4 font-semibold">
             On this page
@@ -663,7 +668,7 @@ export default function page() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

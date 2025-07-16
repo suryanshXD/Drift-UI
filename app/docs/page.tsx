@@ -4,7 +4,6 @@ import { ChevronRight } from "../components/Logo/Chevron-Right";
 import { ArrowRight } from "../components/Logo/Arrow-Right";
 import { useRef, useState } from "react";
 import { ChevronDown } from "../components/Logo/Chevron-Down";
-import { AnimatePresence } from "motion/react";
 
 export default function PageDocs() {
   const faqRef = useRef<any>(null);

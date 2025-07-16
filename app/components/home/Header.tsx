@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import github from "../../../public/github-logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
 export function Header() {
   return (
