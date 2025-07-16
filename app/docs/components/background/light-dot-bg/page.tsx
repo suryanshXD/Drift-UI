@@ -10,20 +10,8 @@ import { Clipboard } from "@/app/components/Logo/Clipboard";
 export default function page() {
   const [preview, setPreview] = useState<"preview" | "code">("preview");
   const [cli, setCli] = useState<"cli" | "manual">("cli");
-  const previewCode = `export default function DarkGridBg({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
-        {children}
-      </div>
-    </>
-  );
-}
-`;
+
+  const previewCode = "Hii";
   return (
     <motion.div
       initial={{ filter: "blur(16px)" }}

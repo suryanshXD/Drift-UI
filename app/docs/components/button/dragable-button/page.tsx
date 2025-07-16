@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
 import AnimatedButton from "@/app/components/ui-components/Animated-Button";
+import DragableButton from "@/app/components/ui-components/Dragable-Button";
 
 export default function page() {
   const [preview, setPreview] = useState<"preview" | "code">("preview");
@@ -35,27 +36,13 @@ export default function page() {
     });
   };
 
-  const previewCode = `export default function DarkGridBg({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
-        {children}
-      </div>
-    </>
-  );
-}
-`;
   return (
     <>
       <motion.div
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="fixed flex flex-col ml-[66%] mt-9"
+        className="fixed flex flex-col ml-[66%] mt-10"
       >
         <div className="text-[15px] font-semibold">On this page</div>
         <div className="flex-col mt-4 text-gray-600">
@@ -89,7 +76,7 @@ export default function page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="flex flex-col min-h-screen ml-20 w-[800px]"
+        className="flex flex-col min-h-screen ml-20 w-[155%]"
       >
         <div className="flex items-center gap-0.5 text-gray-500 mt-8 text-[14px] ">
           <Link href={"/docs"} className="cursor-pointer">
@@ -103,17 +90,17 @@ export default function page() {
           </Link>
           <ChevronRight />
           <Link
-            href={"/docs/components/button/animated-button"}
+            href={"/docs/components/button/dragable-button"}
             className="cursor-pointer"
           >
-            Animated-Button
+            Dragable-Button
           </Link>
         </div>
         <div
           ref={previewRef}
           className="text-3xl text-black font-sans font-bold mt-12 "
         >
-          Animated Button
+          Dragable Button
         </div>
         <div className="text-neutral-500 font-light mt-3 text-[15.5px]">
           Subtle dark grid backdrop to frame your content with focus.
@@ -145,15 +132,16 @@ export default function page() {
             Code
           </div>
         </div>
-        <div className=" rounded-lg mt-4 w-full border border-gray-300 ">
+        <div className=" rounded-lg mt-4 w-full">
           {preview === "preview" ? (
-            <motion.div
-              whileHover={{
-                boxShadow: "rgba(0, 0, 0, 0.48) 0px 25px 20px -10px",
-              }}
-              transition={{ delay: 0.1 }}
-              className=" bg-gray-100 h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)]"
-            ></motion.div>
+            <div className="flex flex-col justify-center items-center bg-gray-50 h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border border-gray-300 rounded-lg p-5">
+              <motion.div
+                whileTap={{ scale: [0.95, 1] }}
+                transition={{ duration: 0.3 }}
+              >
+                <DragableButton text="Dragable-button" varient="default" />
+              </motion.div>
+            </div>
           ) : (
             <div className="h-64 bg-[#212121] flex justify-between text-white text-[14px] rounded-md">
               <div className="flex flex-col ml-5 my-16">
@@ -189,7 +177,7 @@ export default function page() {
               <div
                 className="mr-1.5 mt-2 cursor-pointer"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText("Hii bsdk");
                 }}
               >
                 <Clipboard />
@@ -234,7 +222,7 @@ export default function page() {
                 <span className="text-purple-400">npx</span>
                 <span className="text-white mx-2">from</span>{" "}
                 <span className="text-[#9ECBFF]">
-                  https://drift-ui-jet.vercel.app/r/Animated-Button.json
+                  https://drift-ui-jet.vercel.app/r/Dragable-Button.json
                 </span>
               </div>
               <motion.div
@@ -243,31 +231,33 @@ export default function page() {
                 }}
                 className="cursor-pointer mr-2"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText("Hii bsdk");
                 }}
               >
                 <Clipboard />
               </motion.div>
             </div>
           ) : (
-            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white text-[14px] flex justify-between">
-              <div className="min-w-max flex flex-col p-4 my-6">
+            <div className="h-fit bg-[#212121] flex justify-between text-white text-[14px]  rounded-md">
+              <div className="flex flex-col pl-6 mt-10 mb-4">
                 <div className="flex">
                   <span className="text-purple-400">
                     export default function
                   </span>{" "}
-                  <span className="text-amber-400 ml-1.5">DarkGridBg(</span>
-                  <span className="text-purple-400 ml-0.5">&#123;</span>
+                  <span className="text-amber-400 ml-1.5">
+                    DarkGridBg{"("}{" "}
+                  </span>
+                  <span className="text-purple-400 ml-0.5">{"{"}</span>
                 </div>
                 <div className="flex ml-4">
                   children<span className="text-purple-400">,</span>
                 </div>
                 <div className="flex">
-                  <span className="text-pink-400">&#125;</span>
+                  <span className="text-pink-400">{"}"}</span>
                   <span className="text-purple-400">:</span>{" "}
                   <span className="text-[#9ECBFF] ml-3">Readonly</span>
-                  <span className="text-pink-400 mt-[2]">&lt;</span>
-                  <span className="text-blue-400">&#123;</span>
+                  <span className="text-pink-400 mt-[2]">{"<"}</span>
+                  <span className="text-blue-400">{"{"}</span>
                 </div>
                 <div className="flex ml-4">
                   <span className="text-pink-300">children</span>
@@ -276,46 +266,67 @@ export default function page() {
                   <span className="text-pink-400">;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-blue-400">&#125;</span>
-                  <span className="text-pink-400 mt-[2]">&gt;</span>
-                  <span className="text-amber-400">&#41; &#123;</span>
+                  <span className="text-blue-400">{"}"}</span>
+                  <span className="text-pink-400 mt-[2]">{">"}</span>
+                  <span className="text-amber-400">{") {"}</span>
                 </div>
                 <div className="flex ml-4 mt-2">
                   <span className="text-purple-400">return</span>
-                  <span className="text-pink-400 ml-1.5">&#40;</span>
+                  <span className="text-pink-400 ml-1.5">{"("}</span>
                 </div>
-                <div className="flex ml-6">
-                  <span className="text-white">&lt;</span>
+                <div className="flex ml-8">
+                  <span className="text-white">{"<"}</span>
                   <span className="text-purple-400">div</span>{" "}
                   <span className="text-pink-300 ml-1.5">className</span>
                   <span className="text-purple-400">=</span>
-                  <span className="text-emerald-400 ml-1">
-                    "bg-white h-full w-full
-                    bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)]
-                    bg-[size:24px_24px]
-                    [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_85%,transparent_100%)]"
+                  <span className="text-emerald-400">
+                    "bg-black text-white inset-0
                   </span>
-                  <span className="text-white">&gt;</span>
                 </div>
                 <div className="flex ml-8">
-                  <span className="text-blue-400">&#123;</span>children
-                  <span className="text-blue-400">&#125;</span>
+                  <span className="text-emerald-400">
+                    [background-size:40px_40px] select-none
+                  </span>
                 </div>
-                <div className="flex ml-6">
-                  <span className="text-white">&lt;/</span>
+                <div className="flex ml-8">
+                  <span className="text-emerald-400">
+                    {"["}
+                    background-image:linear-gradient
+                  </span>
+                </div>
+                <div className="flex ml-8">
+                  <span className="text-emerald-400">
+                    (to_right,#171717_1px,transparent_1px),
+                  </span>
+                </div>
+                <div className="flex ml-8">
+                  <span className="text-emerald-400">
+                    linear-gradient(to_bottom,#171717_1px,transparent_1px)
+                    {"]}"}"<span className="mt-[2.5]">{">"}</span>
+                  </span>
+                </div>
+                <div className="flex ml-10">
+                  <span className="text-blue-400">{"{"}</span>children
+                  <span className="text-blue-400">{"}"}</span>
+                </div>
+                <div className="flex ml-8">
+                  <span className="text-white mt-[1]">{"</"}</span>
                   <span className="text-purple-400">div</span>
-                  <span className="text-white">&gt;</span>
+                  <span className="text-white mt-[1]">{">"}</span>
                 </div>
-                <div className="flex gap-0.5">
-                  <span className="text-pink-400">&#41;</span>
-                  <span className="text-amber-400 ml-1.5">&#125;</span>;
+                <div className="flex">
+                  <span className="text-pink-400">
+                    {")"}
+                    <span className="text-amber-400 ml-1.5">{"}"}</span>
+                  </span>
+                  ;
                 </div>
               </div>
 
               <div
-                className="mt-3 cursor-pointer fixed ml-[96.5%]"
+                className="mr-2 mt-3 cursor-pointer"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText("Hii bsdk");
                 }}
               >
                 <Clipboard />
@@ -338,7 +349,7 @@ export default function page() {
           </div>
           <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">Description</div>
         </div>
-        <div className="flex w-full h-10 mb-12 font-extralight bg-neutral-50">
+        <div className="flex w-full h-10 font-extralight bg-neutral-50 mb-12">
           <div className="flex flex-col w-[20%] text-gray-600">
             <div className=" pl-3 py-1.5">text</div>
           </div>
@@ -354,18 +365,10 @@ export default function page() {
         <div className="flex w-full justify-end gap-2 mb-4">
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
-              href={"/docs/components/background/dark-grid-bg"}
+              href={"/docs/components/button/rainbow-button"}
               className="bg-black text-[14px] px-5 py-2 text-neutral-300 rounded-lg"
             >
               Back
-            </Link>
-          </motion.div>
-          <motion.div whileTap={{ scale: 0.95 }}>
-            <Link
-              href={"/docs/components/background/light-dot-bg"}
-              className="bg-black text-[14px] px-5 py-2 text-neutral-300 rounded-lg"
-            >
-              Next
             </Link>
           </motion.div>
         </div>

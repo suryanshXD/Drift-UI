@@ -126,9 +126,9 @@ export default function page() {
               Code
             </button>
           </div>
-          <div className="border border-gray-800 rounded-lg mt-4 w-[125%] bg-gray-50">
+          <div className="rounded-lg mt-4 w-[125%] bg-white">
             {preview === "preview" ? (
-              <div className="flex flex-col justify-center items-center my-22 ">
+              <div className="flex flex-col justify-center items-center bg-gray-50 h-72 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border border-gray-300 rounded-lg p-5">
                 <div className="shadow-2xl">
                   <Hover3DImage img={img1} width={200} />
                 </div>

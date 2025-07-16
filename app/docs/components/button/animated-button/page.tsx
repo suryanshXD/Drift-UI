@@ -145,15 +145,16 @@ export default function page() {
             Code
           </div>
         </div>
-        <div className=" rounded-lg mt-4 w-full border border-gray-300 ">
+        <div className=" rounded-lg mt-4 w-full">
           {preview === "preview" ? (
-            <motion.div
-              whileHover={{
-                boxShadow: "rgba(0, 0, 0, 0.48) 0px 25px 20px -10px",
-              }}
-              transition={{ delay: 0.1 }}
-              className=" bg-gray-100 h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)]"
-            ></motion.div>
+            <div className="flex flex-col justify-center items-center bg-gray-50 h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border border-gray-300 rounded-lg p-5">
+              <motion.div
+                whileTap={{ scale: [0.95, 1] }}
+                transition={{ duration: 0.3 }}
+              >
+                <AnimatedButton text="Animated-button" />
+              </motion.div>
+            </div>
           ) : (
             <div className="h-64 bg-[#212121] flex justify-between text-white text-[14px] rounded-md">
               <div className="flex flex-col ml-5 my-16">
@@ -251,7 +252,7 @@ export default function page() {
             </div>
           ) : (
             <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white text-[14px] flex justify-between">
-              <div className="min-w-max flex flex-col p-4 my-6">
+              <div className="min-w-max flex flex-col p-4 my-2">
                 <div className="flex">
                   <span className="text-purple-400">
                     export default function
@@ -290,10 +291,9 @@ export default function page() {
                   <span className="text-pink-300 ml-1.5">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400 ml-1">
-                    "bg-white h-full w-full
-                    bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)]
-                    bg-[size:24px_24px]
-                    [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_85%,transparent_100%)]"
+                    "bg-black text-white inset-0 [background-size:40px_40px]
+                    select-none
+                    [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
                   </span>
                   <span className="text-white">&gt;</span>
                 </div>
@@ -306,7 +306,7 @@ export default function page() {
                   <span className="text-purple-400">div</span>
                   <span className="text-white">&gt;</span>
                 </div>
-                <div className="flex gap-0.5">
+                <div className="flex">
                   <span className="text-pink-400">&#41;</span>
                   <span className="text-amber-400 ml-1.5">&#125;</span>;
                 </div>
@@ -354,7 +354,7 @@ export default function page() {
         <div className="flex w-full justify-end gap-2 mb-4">
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
-              href={"/docs/components/background/dark-grid-bg"}
+              href={"/docs/components/button"}
               className="bg-black text-[14px] px-5 py-2 text-neutral-300 rounded-lg"
             >
               Back
@@ -362,7 +362,7 @@ export default function page() {
           </motion.div>
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
-              href={"/docs/components/background/light-dot-bg"}
+              href={"/docs/components/button/rainbow-button"}
               className="bg-black text-[14px] px-5 py-2 text-neutral-300 rounded-lg"
             >
               Next
