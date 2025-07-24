@@ -20,7 +20,7 @@ export default function PageDocs() {
       question: "Why copy/paste and not packaged as a dependency",
       answer: `The goal of Drift UI is to give developers complete ownership and flexibility over their components. By copying the code directly into your project, you’re free to customize the components to meet specific design needs without being restricted by pre-packaged styles or dependencies.
 
-  Starting with customizable defaults, you can adapt each component to align with your project’s unique style and requirements.
+  Starting with customizable defaults, you can adapt each component to align with your projects unique style and requirements.
 
   One of the limitations of npm packages is that design can often be tightly coupled with the component implementation. With Atomix UI, you maintain separation between design and implementation, allowing for more creative control.`,
     },
@@ -63,7 +63,7 @@ export default function PageDocs() {
             </div>
             <div className="mt-6 text-md font-sans text-gray-600">
               This is <span className="text-black font-semibold">NOT</span> a
-              traditional component library. Instead, it’s a toolkit of reusable
+              traditional component library. Instead, its a toolkit of reusable
               components meant to empower you to create a unique, scalable UI
               without dependency constraints.
             </div>
@@ -72,11 +72,11 @@ export default function PageDocs() {
             </div>
             <div className="mt-4 text-md font-sans text-gray-600  text-left">
               Unlike traditional libraries, Drift UI is not available as an
-              installable npm package. You won’t add it as a dependency;
-              instead, you choose and integrate only the components you need by
-              copying and pasting them into your codebase. This approach gives
-              you full control over customization, so the components truly feel
-              like part of your application.
+              installable npm package. You wont add it as a dependency; instead,
+              you choose and integrate only the components you need by copying
+              and pasting them into your codebase. This approach gives you full
+              control over customization, so the components truly feel like part
+              of your application.
             </div>
             <div className="mt-16 text-[17px] font-sans text-gray-600 ">
               Use DRIFT UI as a foundation to build your own tailored component
