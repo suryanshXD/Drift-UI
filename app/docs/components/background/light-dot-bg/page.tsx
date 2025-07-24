@@ -7,7 +7,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
 
-export default function page() {
+export default function Page() {
   const [preview, setPreview] = useState<"preview" | "code">("preview");
   const [cli, setCli] = useState<"cli" | "manual">("cli");
 

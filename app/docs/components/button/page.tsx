@@ -6,7 +6,7 @@ import AnimatedButton from "@/app/components/ui-components/Animated-Button";
 import RainbowButton from "@/app/components/ui-components/Rainbow-Button";
 import DragableButton from "@/app/components/ui-components/Dragable-Button";
 
-export default function page() {
+export default function Page() {
   return (
     <motion.div
       initial={{ filter: "blur(16px)" }}

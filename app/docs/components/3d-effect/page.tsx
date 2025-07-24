@@ -9,7 +9,7 @@ import { Clipboard } from "@/app/components/Logo/Clipboard";
 import Hover3DImage from "@/app/components/ui-components/3d-Effect";
 import { motion } from "framer-motion";
 
-export default function page() {
+export default function Page() {
   const img1 =
     "https://img.freepik.com/free-photo/anime-japanese-character_23-2151478190.jpg?ga=GA1.1.1804695545.1747980337&semt=ais_hybrid&w=740";
 

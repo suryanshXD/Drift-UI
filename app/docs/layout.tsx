@@ -42,7 +42,7 @@ const components = [
   },
 ];
 
-export default function layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   const selectedPath = (path: string) => {

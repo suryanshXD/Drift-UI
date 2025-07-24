@@ -3,7 +3,7 @@ import { ChevronRight } from "@/app/components/Logo/Chevron-Right";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function page() {
+export default function Page() {
   return (
     <div className="flex flex-col min-h-screen ml-5 bg-white text-black mb-8">
       <div className="ml-12 mt-5">

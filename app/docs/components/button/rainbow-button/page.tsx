@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
 import RainbowButton from "@/app/components/ui-components/Rainbow-Button";
 
-export default function page() {
+export default function Page() {
   const [preview, setPreview] = useState<"preview" | "code">("preview");
   const [cli, setCli] = useState<"cli" | "manual">("cli");
 
