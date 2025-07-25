@@ -183,7 +183,7 @@ export default function Page() {
         </div>
         <div
           ref={installationRef}
-          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-22 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
+          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-28 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
         >
           Installation
         </div>
@@ -310,7 +310,7 @@ export default function Page() {
         </div>
         <div
           ref={propsRef}
-          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-22 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
+          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-28 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
         >
           Props
         </div>
@@ -323,7 +323,7 @@ export default function Page() {
           </div>
           <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">Description</div>
         </div>
-        <div className="flex w-full h-14 font-extralight mb-12">
+        <div className="flex w-full h-14 font-extralight mb-12 border-b border-gray-200">
           <div className="flex flex-col w-[20%] sm: text-gray-800 lg:text-gray-600">
             <div className="sm: pl-1 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               children
@@ -340,7 +340,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="flex sm: w-[98%] lg:w-full justify-end gap-2 sm: mb-5 lg:mb-4 sm: mt-8 lg:mt-0">
+        <div className="flex sm: w-[98%] lg:w-full sm: justify-between lg:justify-end gap-2 sm: mb-5 lg:mb-4 sm: mt-10 lg:mt-0">
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
               href={"/docs/components/background"}
