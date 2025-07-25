@@ -75,9 +75,9 @@ export default function Page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="flex flex-col min-h-screen sm: ml-4 lg:ml-20 sm: max-w-screen lg:w-[800px]"
+        className="flex flex-col min-h-screen sm: ml-2 lg:ml-20 sm: max-w-screen lg:w-[800px]"
       >
-        <div className="flex items-center gap-0.5 text-gray-500 mt-8 sm: text-[11px] lg:text-[14px]">
+        <div className="flex items-center gap-0.5 text-gray-500 mt-8 sm: text-[11px] lg:text-[14px] sm: w-[98%] lg:w-full">
           <Link href={"/docs"} className="cursor-pointer">
             Documentation
           </Link>
@@ -94,7 +94,7 @@ export default function Page() {
         </div>
         <div
           ref={previewRef}
-          className="sm: text-2xl lg:text-3xl text-black font-sans font-bold sm: mt-8 lg:mt-12"
+          className="sm: text-2xl lg:text-3xl text-black font-sans font-bold sm: mt-12 lg:mt-12"
         >
           Dark Grid Background
         </div>
@@ -104,7 +104,7 @@ export default function Page() {
         <div className="mt-3">
           <Profile name="Suryansh" date="July 10" />
         </div>
-        <div className="flex gap-6 text-md font-sans font-stretch-150% mt-14 border-b border-gray-200 sm: w-[97%] lg:w-full pb-[1px]">
+        <div className="flex gap-6 text-md font-sans font-stretch-150% sm: mt-20 lg:mt-14 border-b border-gray-200 sm: w-[97%] lg:w-full pb-[1px]">
           <div
             className={cn(
               "pb-1 transition-colors font-medium cursor-pointer",
@@ -128,18 +128,18 @@ export default function Page() {
             Code
           </div>
         </div>
-        <div className=" rounded-lg mt-4 sm: w-[97%] lg:w-full">
+        <div className=" rounded-lg mt-4 sm: w-[98.5%] lg:w-full">
           {preview === "preview" ? (
             <motion.div
               whileHover={{
                 boxShadow: "rgba(0, 0, 0, 0.72) 0px 25px 40px -10px",
               }}
               transition={{ delay: 0.1 }}
-              className="bg-black sm: h-36 lg:h-64  [background-size:24px_24px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)]"
+              className="bg-black sm: h-48 lg:h-64  [background-size:24px_24px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)]"
             ></motion.div>
           ) : (
-            <div className="sm: h-40 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[14px] rounded-md">
-              <div className="flex flex-col sm: ml-3 lg:ml-5 sm: my-10 lg:my-16">
+            <div className="sm: h-48 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[14px] rounded-md">
+              <div className="flex flex-col sm: ml-3 lg:ml-5 sm: my-15 lg:my-16">
                 <div className="flex">
                   <span className="text-purple-400 mr-2">import</span>{" "}
                   DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
@@ -183,11 +183,11 @@ export default function Page() {
         </div>
         <div
           ref={installationRef}
-          className="text-black font-semibold text-2xl mt-32 border-b border-gray-300 pb-0.5 w-full"
+          className="text-black font-semibold text-2xl sm: mt-20 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
         >
           Installation
         </div>
-        <div className="flex gap-6 text-md font-sans font-stretch-150% mt-14 border-b border-gray-200 w-full pb-[1px]">
+        <div className="flex gap-6 text-md font-sans font-stretch-150% sm: mt-7 lg:mt-14 border-b border-gray-200 sm: w-[98%] lg:w-full pb-[1px]">
           <div
             className={cn(
               "pb-1 transition-colors font-medium cursor-pointer",
@@ -295,20 +295,21 @@ export default function Page() {
                 </div>
               </div>
 
-              <div
+              <motion.div
+                whileTap={{ scale: 0.9 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92%] lg:ml-[96.5%]"
                 onClick={() => {
                   navigator.clipboard.writeText(previewCode);
                 }}
               >
                 <Clipboard />
-              </div>
+              </motion.div>
             </div>
           )}
         </div>
         <div
           ref={propsRef}
-          className="text-black font-semibold sm: text-xl lg:text-2xl mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
+          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-20 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
         >
           Props
         </div>
@@ -322,23 +323,23 @@ export default function Page() {
           <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">Description</div>
         </div>
         <div className="flex w-full h-14 font-extralight mb-12">
-          <div className="flex flex-col w-[20%] text-gray-600">
+          <div className="flex flex-col w-[20%] sm: text-gray-800 lg:text-gray-600">
             <div className="sm: pl-1 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               children
             </div>
           </div>
-          <div className="flex flex-col w-[20%] text-gray-600">
+          <div className="flex flex-col w-[20%] sm: text-gray-800 lg:text-gray-600">
             <div className="sm: pl-0 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               ReactElement
             </div>
           </div>
-          <div className="flex flex-col w-[60%] text-gray-600">
+          <div className="flex flex-col w-[60%] sm: text-gray-800 lg:text-gray-600">
             <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               The child element that will have the magnetic interaction applied.{" "}
             </div>
           </div>
         </div>
-        <div className="flex sm: w-[98%] lg:w-full justify-end gap-2 mb-4">
+        <div className="flex sm: w-[98%] lg:w-full justify-end gap-2 sm: mb-5 lg:mb-4 sm: mt-8 lg:mt-0">
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
               href={"/docs/components/background"}
