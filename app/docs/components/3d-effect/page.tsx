@@ -148,7 +148,7 @@ export default function Page() {
                         RainbowButton{" "}
                         <span className="text-purple-400 mr-2">from</span>{" "}
                         <span className="text-emerald-400">
-                          "@/components/ui/Rainbow-Button";
+                          &quot;@/components/ui/Rainbow-Button&quot;;
                         </span>
                       </code>
                       <div className="flex mt-8">
@@ -156,7 +156,7 @@ export default function Page() {
                           export default function
                         </span>{" "}
                         <span className="text-amber-300 ml-2">
-                          3DEffectDemo() {"{"}
+                          3DEffectDemo() &#123;
                         </span>
                       </div>
                       <div className="flex ml-3">
@@ -169,7 +169,7 @@ export default function Page() {
                         <span className="text-pink-300 mx-2">className</span>
                         <span className="text-purple-400">=</span>
                         <span className="text-emerald-400 ml-2">
-                          "flex justify-center items-center"
+                          &quot;flex justify-center items-center&quot;
                         </span>
                         {">"}
                       </div>
@@ -181,7 +181,7 @@ export default function Page() {
                         <span className="text-pink-300">text</span>
                         <span className="text-purple-400 mx-2">=</span>
                         <span className="text-emerald-400">
-                          "Rainbow" /{">"}
+                          &quot;Rainbow&quot; /{">"}
                         </span>
                       </div>
                       <div className="ml-6.5">
@@ -191,7 +191,7 @@ export default function Page() {
                       <div className="flex ml-3">
                         <span className="text-pink-400">{")"}</span>;
                       </div>
-                      <div className="text-amber-300">{"}"}</div>
+                      <div className="text-amber-300">&#125;</div>
                     </div>
                     <div className="mt-3 mr-3 cursor-pointer">
                       <Clipboard />
@@ -239,7 +239,7 @@ export default function Page() {
                     <span className="text-purple-300">npx</span>{" "}
                     <span className="text-white mx-2">shadcn@latest add</span>
                     <span className="text-[#9ECBFF]">
-                      "https://drift-ui-jet.vercel.app/r/Hover-3D-Image.json"
+                      &quot;https://drift-ui-jet.vercel.app/r/Hover-3D-Image.json&quot;
                     </span>
                   </div>
                   <div className="cursor-pointer">
@@ -252,24 +252,26 @@ export default function Page() {
                  ml-5 min-h-fit bg-[#24292E]"
                 >
                   <code className="mt-8 flex flex-col text-[16px] pb-8">
-                    <div className="text-emerald-400">"use client";</div>
+                    <div className="text-emerald-400">
+                      &quot;use client&quot;;
+                    </div>
                     <div className="flex mt-8">
                       <span className="text-purple-400">import</span>
-                      <span className="text-amber-300 mx-2">{"{"}</span>motion
+                      <span className="text-amber-300 mx-2">&#123;</span>motion
                       <span className="text-pink-400">,</span> useMotionValue
-                      <span className="text-amber-300 mx-2">{"}"}</span>{" "}
-                      <span className="text-purple-400">{"from"}</span>
+                      <span className="text-amber-300 mx-2">&#125;</span>{" "}
+                      <span className="text-purple-400">from</span>
                       <span className="text-emerald-400 ml-2">
-                        "framer-motion";
+                        &quot;framer-motion&quot;;
                       </span>
                     </div>
                     <div className="flex">
                       <span className="text-purple-400">import</span>
-                      <span className="text-amber-300 mx-2">{"{"}</span>
+                      <span className="text-amber-300 mx-2">&#123;</span>
                       useSpring
                       <span className="text-pink-400">,</span> useTransform
-                      <span className="text-amber-300 mx-2">{"}"}</span>{" "}
-                      <span className="text-purple-400">{"from"}</span>
+                      <span className="text-amber-300 mx-2">&#125;</span>{" "}
+                      <span className="text-purple-400">from</span>
                       <span className="text-emerald-400 ml-2">
                         "framer-motion";
                       </span>
@@ -277,7 +279,7 @@ export default function Page() {
                     <div className="flex">
                       <span className="text-purple-400">interface</span>
                       <span className="text-[#9ECBFF] mx-2">style</span>
-                      <span className="text-amber-300">{"{"}</span>
+                      <span className="text-amber-300">&#123;</span>
                     </div>
                     <div className="flex ">
                       <span className="text-pink-300">img</span>
@@ -287,7 +289,7 @@ export default function Page() {
                       <span className="text-pink-300">width</span>
                       <span className="text-purple-400">: number</span>;
                     </div>
-                    <div className="text-amber-300 flex">{"}"}</div>
+                    <div className="text-amber-300 flex">&#125;</div>
                     <div className="flex">
                       <span className="text-purple-400">
                         export default function
@@ -295,9 +297,9 @@ export default function Page() {
                       <span className="text-amber-300 ml-2">
                         Hover3DImage{"("}
                       </span>
-                      <span className="text-pink-400">{"{"}</span> img
+                      <span className="text-pink-400">&#123;</span> img
                       <span className="text-pink-400">,</span> width{" "}
-                      <span className="text-pink-400">{"}"}</span>
+                      <span className="text-pink-400">&#125;</span>
                       <span className="text-purple-400">:</span>{" "}
                       <span className="text-blue-300 ml-2">style</span>
                       <span className="text-amber-300">{")  {"}</span>
@@ -355,11 +357,15 @@ export default function Page() {
                       <span className="text-pink-300">,</span>
                     </div>
                     <div className="flex">
-                      <span className="text-blue-400">{"["}</span>
-                      <span className="text-emerald-400">"17.5deg"</span>
+                      <span className="text-blue-400">[</span>
+                      <span className="text-emerald-400">
+                        &quot;17.5deg&quot;
+                      </span>
                       <span className="text-pink-300">,</span>
-                      <span className="text-emerald-400 ml-2">"-17.5deg"</span>
-                      <span className="text-blue-400">{"]"}</span>
+                      <span className="text-emerald-400 ml-2">
+                        &quot;-17.5deg&quot;
+                      </span>
+                      <span className="text-blue-400">]</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-400">{")"}</span>;
@@ -375,19 +381,23 @@ export default function Page() {
                       mouseXspring<span className="text-pink-300">,</span>
                     </div>
                     <div className="flex">
-                      <span className="text-blue-400">{"["}</span>
+                      <span className="text-blue-400">[</span>
                       <span className="text-emerald-400">-0.5</span>
                       <span className="text-pink-300">,</span>
                       <span className="text-emerald-400 ml-2">0.5</span>
-                      <span className="text-blue-400">{"]"}</span>
+                      <span className="text-blue-400">]</span>
                       <span className="text-pink-300">,</span>
                     </div>
                     <div className="flex">
-                      <span className="text-blue-400">{"["}</span>
-                      <span className="text-emerald-400">"17.5deg"</span>
+                      <span className="text-blue-400">[</span>
+                      <span className="text-emerald-400">
+                        &quot;17.5deg&quot;
+                      </span>
                       <span className="text-pink-300">,</span>
-                      <span className="text-emerald-400 ml-2">"-17.5deg"</span>
-                      <span className="text-blue-400">{"]"}</span>
+                      <span className="text-emerald-400 ml-2">
+                        &quot;-17.5deg&quot;
+                      </span>
+                      <span className="text-blue-400">]</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">{")"}</span>;
@@ -402,7 +412,7 @@ export default function Page() {
                       <span className="text-purple-400">: any</span>
                       <span className="text-pink-400">)</span>{" "}
                       <span className="text-purple-400 mx-2">{"=>"}</span>{" "}
-                      <span className="text-pink-400">{"{"}</span>
+                      <span className="text-pink-400">&#123;</span>
                     </div>
                     <div className="flex">
                       <span className="text-purple-400">const</span> rect{" "}
@@ -462,7 +472,7 @@ export default function Page() {
                       <span className="text-blue-400">)</span>;
                     </div>
                     <div className="flex">
-                      <span className="text-pink-300">{"}"}</span>;
+                      <span className="text-pink-300">&#125;</span>;
                     </div>
                     <div className="flex">
                       <span className="text-purple-400">const</span>{" "}
@@ -472,7 +482,7 @@ export default function Page() {
                       <span className="text-purple-400">=</span>{" "}
                       <span className="text-pink-300 mx-2">()</span>{" "}
                       <span className="text-purple-400">{"=>"}</span>
-                      <span className="text-pink-300 ml-2">{"{"}</span>
+                      <span className="text-pink-300 ml-2">&#123;</span>
                     </div>
                     <div className="flex">
                       x.<span className="text-amber-300">set</span>
@@ -487,7 +497,7 @@ export default function Page() {
                       <span className="text-blue-400">)</span>;
                     </div>
                     <div className="flex">
-                      <span className="text-pink-300">{"}"}</span>;
+                      <span className="text-pink-300">&#125;</span>;
                     </div>
                     <div className="flex">
                       <span className="text-purple-400">return</span>{" "}
@@ -501,8 +511,8 @@ export default function Page() {
                     <div className="flex">
                       <span className="text-pink-300">style</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-blue-400">{"{"}</span>
-                      <span className="text-amber-300">{"{"}</span>
+                      <span className="text-blue-400">&#123;</span>
+                      <span className="text-amber-300">&#123;</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">transformStyle: </span>
@@ -516,32 +526,32 @@ export default function Page() {
                       rotateY<span className="text-pink-300">,</span>
                     </div>
                     <div className="flex">
-                      <span className="text-amber-300">{"}"}</span>
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-amber-300">&#125;</span>
+                      <span className="text-blue-400">&#125;</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">onMouseMove</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-blue-400">{"{"}</span>
+                      <span className="text-blue-400">&#123;</span>
                       handelMouseMove
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-blue-400">&#125;</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">onMouseLeave</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-blue-400">{"{"}</span>
+                      <span className="text-blue-400">&#123;</span>
                       handelMouseLeave
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-blue-400">&#125;</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">transition</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-blue-400">{"{"}</span>
+                      <span className="text-blue-400">&#123;</span>
                       <span className="text-amber-300">{"{ "}</span>{" "}
                       <span className="text-pink-300">delay:</span>{" "}
                       <span className="text-emerald-300">0.3</span>{" "}
                       <span className="text-amber-300">{" }"}</span>
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-blue-400">&#125;</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">className</span>
@@ -563,8 +573,8 @@ export default function Page() {
                     <div className="flex">
                       <span className="text-pink-300">style</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-blue-400">{"{"}</span>
-                      <span className="text-amber-300">{"{"}</span>
+                      <span className="text-blue-400">&#123;</span>
+                      <span className="text-amber-300">&#123;</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">transform: </span>
@@ -575,12 +585,14 @@ export default function Page() {
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">transformStyle: </span>
-                      <span className="text-emerald-300">"preserve-3d"</span>
+                      <span className="text-emerald-300">
+                        &quot;preserve-3d&quot;
+                      </span>
                       <span className="text-pink-300">,</span>
                     </div>
                     <div className="flex">
-                      <span className="text-amber-300">{"}"}</span>
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-amber-300">&#125;</span>
+                      <span className="text-blue-400">&#125;</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">className</span>
@@ -592,22 +604,22 @@ export default function Page() {
                     <div className="flex">
                       <span className="text-pink-300">src</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-blue-400">{"{"}</span>
+                      <span className="text-blue-400">&#123;</span>
                       <span className="text-emerald-300">`</span>
-                      <span className="text-blue-400">{"${"}</span>img
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-blue-400">$&#123;</span>img
+                      <span className="text-blue-400">&#125;</span>
                       <span className="text-emerald-300">`</span>
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-blue-400">&#125;</span>
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">width</span>
                       <span className="text-purple-400">=</span>
-                      <span className="text-blue-400">{"{"}</span>
+                      <span className="text-blue-400">&#123;</span>
                       <span className="text-emerald-300">`</span>
-                      <span className="text-blue-400">{"${"}</span>width
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-blue-400">$&#123;</span>width
+                      <span className="text-blue-400">&#125;</span>
                       <span className="text-emerald-300">`</span>
-                      <span className="text-blue-400">{"}"}</span>
+                      <span className="text-blue-400">&#125;</span>
                     </div>
                     <div className="flex">{"/>"}</div>
                     <div className="flex">
@@ -620,7 +632,7 @@ export default function Page() {
                       <span className="text-pink-300">{")"}</span>;
                     </div>
                     <div>
-                      <span className="text-amber-300">{"}"}</span>
+                      <span className="text-amber-300">&#125;</span>
                     </div>
                   </code>
                   <span className="cursor-pointer mt-3 mr-3">

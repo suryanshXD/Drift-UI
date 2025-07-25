@@ -162,7 +162,7 @@ export default function Page() {
                   <span className="text-purple-400 mr-2">import</span>{" "}
                   DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
                   <span className="text-emerald-400">
-                    "@/components/ui/Dark-Grid-BG"
+                    &quot;@/components/ui/Dark-Grid-BG&quot;
                   </span>
                   ;
                 </div>
@@ -171,7 +171,7 @@ export default function Page() {
                     export default function
                   </span>{" "}
                   <span className="text-amber-400 mx-2">
-                    DarkGridBackgroundDemo () {"{"}
+                    DarkGridBackgroundDemo () &#123;
                   </span>
                 </div>
                 <div className="flex ml-3">
@@ -184,7 +184,7 @@ export default function Page() {
                   <span>{">"}</span>;
                 </div>
                 <div className="flex ">
-                  <span className="text-amber-400">{"}"}</span>
+                  <span className="text-amber-400">&#125;</span>
                 </div>
               </div>
               <div
@@ -291,9 +291,9 @@ export default function Page() {
                   <span className="text-pink-300 ml-1.5">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400 ml-1">
-                    "bg-black text-white inset-0 [background-size:40px_40px]
-                    select-none
-                    [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
+                    &quot;bg-black text-white inset-0
+                    [background-size:40px_40px] select-none
+                    [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]&quot;
                   </span>
                   <span className="text-white">&gt;</span>
                 </div>

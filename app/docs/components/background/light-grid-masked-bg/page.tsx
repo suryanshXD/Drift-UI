@@ -160,7 +160,7 @@ export default function Page() {
                   <span className="text-purple-400 mr-2">import</span>{" "}
                   DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
                   <span className="text-emerald-400">
-                    "@/components/ui/Dark-Grid-BG"
+                    &quot;@/components/ui/Dark-Grid-BG&quot;
                   </span>
                   ;
                 </div>
@@ -169,7 +169,7 @@ export default function Page() {
                     export default function
                   </span>{" "}
                   <span className="text-amber-400 mx-2">
-                    DarkGridBackgroundDemo () {"{"}
+                    DarkGridBackgroundDemo () &#123;
                   </span>
                 </div>
                 <div className="flex ml-3">
@@ -182,7 +182,7 @@ export default function Page() {
                   <span>{">"}</span>;
                 </div>
                 <div className="flex ">
-                  <span className="text-amber-400">{"}"}</span>
+                  <span className="text-amber-400">&#125;</span>
                 </div>
               </div>
               <div
@@ -289,10 +289,10 @@ export default function Page() {
                   <span className="text-pink-300 ml-1.5">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400 ml-1">
-                    "bg-white h-full w-full
+                    &quot;bg-white h-full w-full
                     bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)]
                     bg-[size:24px_24px]
-                    [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_85%,transparent_100%)]"
+                    [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_85%,transparent_100%)]&quot;
                   </span>
                   <span className="text-white">&gt;</span>
                 </div>

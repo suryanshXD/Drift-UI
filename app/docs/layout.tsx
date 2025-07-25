@@ -142,7 +142,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
               <div className="flex flex-col text-[14.5px] gap-5 font-mono text-xs w-52 text-stone-800">
                 {components.map((items) => (
-                  <Link href={`/docs/components/${items.herf}`}>
+                  <Link
+                    key={items.label}
+                    href={`/docs/components/${items.herf}`}
+                  >
                     <motion.div
                       onClick={() => setSelected(items.label)}
                       initial={false}

@@ -162,7 +162,7 @@ export default function Page() {
                   <span className="text-purple-400 mr-2">import</span>{" "}
                   DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
                   <span className="text-emerald-400">
-                    "@/components/ui/Dark-Grid-BG"
+                    &quot;@/components/ui/Dark-Grid-BG&quot;
                   </span>
                   ;
                 </div>
@@ -171,7 +171,7 @@ export default function Page() {
                     export default function
                   </span>{" "}
                   <span className="text-amber-400 mx-2">
-                    DarkGridBackgroundDemo () {"{"}
+                    DarkGridBackgroundDemo () &#123;
                   </span>
                 </div>
                 <div className="flex ml-3">
@@ -184,7 +184,7 @@ export default function Page() {
                   <span>{">"}</span>;
                 </div>
                 <div className="flex ">
-                  <span className="text-amber-400">{"}"}</span>
+                  <span className="text-amber-400">&#125;</span>
                 </div>
               </div>
               <div
@@ -260,17 +260,17 @@ export default function Page() {
                   <span className="text-amber-400 ml-1.5">
                     DarkGridBg{"("}{" "}
                   </span>
-                  <span className="text-purple-400 ml-0.5">{"{"}</span>
+                  <span className="text-purple-400 ml-0.5">&#123;</span>
                 </div>
                 <div className="flex ml-4">
                   children<span className="text-purple-400">,</span>
                 </div>
                 <div className="flex">
-                  <span className="text-pink-400">{"}"}</span>
+                  <span className="text-pink-400">&#125;</span>
                   <span className="text-purple-400">:</span>{" "}
                   <span className="text-[#9ECBFF] ml-3">Readonly</span>
                   <span className="text-pink-400 mt-[2]">{"<"}</span>
-                  <span className="text-blue-400">{"{"}</span>
+                  <span className="text-blue-400">&#123;</span>
                 </div>
                 <div className="flex ml-4">
                   <span className="text-pink-300">children</span>
@@ -279,7 +279,7 @@ export default function Page() {
                   <span className="text-pink-400">;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-blue-400">{"}"}</span>
+                  <span className="text-blue-400">&#125;</span>
                   <span className="text-pink-400 mt-[2]">{">"}</span>
                   <span className="text-amber-400">{") {"}</span>
                 </div>
@@ -293,7 +293,7 @@ export default function Page() {
                   <span className="text-pink-300 ml-1.5">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400">
-                    "bg-black text-white inset-0
+                    &quot;bg-black text-white inset-0
                   </span>
                 </div>
                 <div className="flex ml-8">
@@ -315,12 +315,12 @@ export default function Page() {
                 <div className="flex ml-8">
                   <span className="text-emerald-400">
                     linear-gradient(to_bottom,#171717_1px,transparent_1px)
-                    {"]}"}"<span className="mt-[2.5]">{">"}</span>
+                    {"]}"}&quot;<span className="mt-[2.5]">{">"}</span>
                   </span>
                 </div>
                 <div className="flex ml-10">
-                  <span className="text-blue-400">{"{"}</span>children
-                  <span className="text-blue-400">{"}"}</span>
+                  <span className="text-blue-400">&#123;</span>children
+                  <span className="text-blue-400">&#125;</span>
                 </div>
                 <div className="flex ml-8">
                   <span className="text-white mt-[1]">{"</"}</span>
@@ -330,7 +330,7 @@ export default function Page() {
                 <div className="flex">
                   <span className="text-pink-400">
                     {")"}
-                    <span className="text-amber-400 ml-1.5">{"}"}</span>
+                    <span className="text-amber-400 ml-1.5">&#125;</span>
                   </span>
                   ;
                 </div>
