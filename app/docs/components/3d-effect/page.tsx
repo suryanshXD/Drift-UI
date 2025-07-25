@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
 import Hover3DImage from "@/app/components/ui-components/3d-Effect";
 import { motion } from "framer-motion";
+import { Profile } from "@/libs/Profile-Card";
 
 export default function Page() {
   const img1 =
@@ -42,32 +43,43 @@ export default function Page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="flex flex-row min-h-screen sm: ml-1 lg:ml-16 items-start"
+        className="fixed flex flex-col ml-[66%] mt-9"
+      >
+        <div className="text-[15px] font-semibold">On this page</div>
+        <div className="flex-col mt-4 text-gray-600">
+          <motion.div
+            whileHover={{ color: "#212121" }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center text-[14.5px]  cursor-pointer"
+            onClick={previewScroll}
+          >
+            <ChevronRight /> Preview
+          </motion.div>
+          <motion.div
+            whileHover={{ color: "#212121" }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center text-[14.5px] mt-2 cursor-pointer"
+            onClick={installationScroll}
+          >
+            <ChevronRight /> Installation
+          </motion.div>
+          <motion.div
+            whileHover={{ color: "#212121" }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center text-[14.5px] mt-2 cursor-pointer"
+            onClick={propsScroll}
+          >
+            <ChevronRight /> Props
+          </motion.div>
+        </div>
+      </motion.div>
+      <motion.div
+        initial={{ filter: "blur(16px)" }}
+        animate={{ filter: "blur(0px)" }}
+        transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
+        className="flex flex-row min-h-screen sm: ml-1 lg:ml-18 items-start"
       >
         <div className="lg:mt-5">
-          <div className="fixed flex flex-col ml-[64%] mt-4 font-semibold">
-            On this page
-            <div className="flex flex-col gap-3 mt-3 text-[15.5px]  font-normal items-start ">
-              <div
-                onClick={previewScroll}
-                className="text-gray-600 hover:text-black cursor-pointer flex items-center"
-              >
-                <ChevronRight /> Preview
-              </div>
-              <div
-                onClick={installationScroll}
-                className="text-gray-600 hover:text-black cursor-pointer flex items-center"
-              >
-                <ChevronRight /> Installation
-              </div>
-              <div
-                onClick={propsScroll}
-                className="text-gray-600 hover:text-black cursor-pointer flex items-center"
-              >
-                <ChevronRight /> Props
-              </div>
-            </div>
-          </div>
           <div className="flex items-center gap-0.5 text-gray-500 mt-4 text-[14px]">
             <Link href={"/docs"} className="cursor-pointer">
               Documentation
@@ -92,20 +104,8 @@ export default function Page() {
             A 3D tilt effect gives the illusion of depth and motion, making your
             card designs more dynamic.
           </div>
-          <div className="flex mt-6 max-w-fit">
-            <Image
-              src={profile}
-              alt="meri photu"
-              className="rounded-full size-10"
-            />
-            <div className="flex flex-col gap-0.5 justify-start ml-4">
-              <div className="text-[14.5px] text-stone-800 font-medium">
-                Written by Suryansh
-              </div>
-              <div className="text-[12px] text-gray-500">
-                Last updated on July 01
-              </div>
-            </div>
+          <div className="mt-8">
+            <Profile name="Suryansh" date="July 01" />
           </div>
           <div className="flex flex-row gap-6 text-md font-sans font-stretch-150% mt-14 border-b border-gray-200 w-[125%] pb-[1px]">
             <button
@@ -232,7 +232,7 @@ export default function Page() {
                 Manual
               </div>
             </div>
-            <div className="border border-black w-[125%] bg-[#24292E] text-white mt-4 font-stretch-150% rounded-lg">
+            <div className="w-[125%] bg-[#24292E] text-white mt-4 font-stretch-150% rounded-lg">
               {cli === "cli" ? (
                 <div className="h-[60px] flex items-center justify-between ml-4 mr-2">
                   <div className="text-[15px]">
@@ -249,7 +249,7 @@ export default function Page() {
               ) : (
                 <pre
                   className="flex justify-between
-                 ml-5 min-h-fit bg-[#24292E]"
+                 ml-5 min-h-fit bg-[#24292E] rounded-lg"
                 >
                   <code className="mt-8 flex flex-col text-[16px] pb-8">
                     <div className="text-emerald-400">

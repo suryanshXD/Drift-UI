@@ -5,7 +5,12 @@ import { motion } from "framer-motion";
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen ml-5 bg-white text-black mb-8">
+    <motion.div
+      initial={{ filter: "blur(16px)" }}
+      animate={{ filter: "blur(0px)" }}
+      transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
+      className="flex flex-col min-h-screen ml-5 bg-white text-black mb-8"
+    >
       <div className="ml-12 mt-5">
         <div className="flex items-center gap-0.5 text-gray-500 mt-4 text-[14px]">
           <Link href={"/docs"} className="cursor-pointer">
@@ -33,11 +38,11 @@ export default function Page() {
             }}
             whileTap={{ scale: 0.95 }}
             transition={{ delay: 0.1, duration: 0.3 }}
-            className="cursor-pointer rounded-lg"
+            className="cursor-pointer "
           >
             <Link
               href={"/docs/components/background/dark-grid-bg"}
-              className="bg-black text-[12.5px] h-full flex flex-col justify-center items-center text-gray-200  inset-0 [background-size:20px_20px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)] font-sans"
+              className="bg-black text-[12.5px]  h-full flex flex-col justify-center items-center text-gray-200  inset-0 [background-size:20px_20px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)] font-sans rounded-lg"
             >
               Dark Grid Bg
             </Link>
@@ -76,6 +81,6 @@ export default function Page() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

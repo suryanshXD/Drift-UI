@@ -252,7 +252,7 @@ export default function Page() {
             </div>
           ) : (
             <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white text-[14px] flex justify-between">
-              <div className="min-w-max flex flex-col p-4 my-2">
+              <div className="min-w-max flex flex-col p-4 mt-8 mb-4">
                 <div className="flex">
                   <span className="text-purple-400">
                     export default function
@@ -263,7 +263,7 @@ export default function Page() {
                 <div className="flex ml-4">
                   children<span className="text-purple-400">,</span>
                 </div>
-                <div className="flex">
+                <div className="flex ml-1">
                   <span className="text-pink-400">&#125;</span>
                   <span className="text-purple-400">:</span>{" "}
                   <span className="text-[#9ECBFF] ml-3">Readonly</span>
@@ -276,12 +276,12 @@ export default function Page() {
                   <span className="text-[#9ECBFF]">React.ReactNode</span>
                   <span className="text-pink-400">;</span>
                 </div>
-                <div className="flex">
+                <div className="flex ml-1">
                   <span className="text-blue-400">&#125;</span>
                   <span className="text-pink-400 mt-[2]">&gt;</span>
                   <span className="text-amber-400">&#41; &#123;</span>
                 </div>
-                <div className="flex ml-4 mt-2">
+                <div className="flex ml-4 mt-1.5">
                   <span className="text-purple-400">return</span>
                   <span className="text-pink-400 ml-1.5">&#40;</span>
                 </div>
@@ -306,9 +306,9 @@ export default function Page() {
                   <span className="text-purple-400">div</span>
                   <span className="text-white">&gt;</span>
                 </div>
-                <div className="flex">
+                <div className="flex ml-1">
                   <span className="text-pink-400">&#41;</span>
-                  <span className="text-amber-400 ml-1.5">&#125;</span>;
+                  <span className="text-amber-400 ml-1">&#125;</span>;
                 </div>
               </div>
 
