@@ -273,7 +273,7 @@ export default function Page() {
                       <span className="text-amber-300 mx-2">&#125;</span>{" "}
                       <span className="text-purple-400">from</span>
                       <span className="text-emerald-400 ml-2">
-                        "framer-motion";
+                        &quot;framer-motion&quot;;
                       </span>
                     </div>
                     <div className="flex">
@@ -516,7 +516,9 @@ export default function Page() {
                     </div>
                     <div className="flex">
                       <span className="text-pink-300">transformStyle: </span>
-                      <span className="text-emerald-300">"preserve-3d"</span>
+                      <span className="text-emerald-300">
+                        &quot;preserve-3d&quot;
+                      </span>
                       <span className="text-pink-300">,</span>
                     </div>
                     <div className="flex">
@@ -558,10 +560,10 @@ export default function Page() {
                       <span className="text-purple-400">=</span>
                       <div className="flex flex-col">
                         <span className="text-emerald-300">
-                          "p-4 rounded-lg bg-gradient-to-br
+                          &quot;p-4 rounded-lg bg-gradient-to-br
                         </span>
                         <span className="text-emerald-300 ml-2">
-                          from-indigo-300 to-violet-200 shadow-2xl"
+                          from-indigo-300 to-violet-200 shadow-2xl&quot;
                         </span>
                       </div>
                     </div>
@@ -579,7 +581,7 @@ export default function Page() {
                     <div className="flex">
                       <span className="text-pink-300">transform: </span>
                       <span className="text-emerald-300">
-                        "translateZ(40px)"
+                        &quot;translateZ(40px)&quot;
                       </span>
                       <span className="text-pink-300">,</span>
                     </div>
@@ -598,7 +600,7 @@ export default function Page() {
                       <span className="text-pink-300">className</span>
                       <span className="text-purple-400">=</span>
                       <span className="text-emerald-300">
-                        "rounded-lg shadow-3xl"
+                        &quot;rounded-lg shadow-3xl&quot;
                       </span>
                     </div>
                     <div className="flex">
