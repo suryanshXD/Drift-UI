@@ -77,7 +77,7 @@ export default function Page() {
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
         className="flex flex-col min-h-screen sm: ml-2 lg:ml-20 sm: max-w-screen lg:w-[800px]"
       >
-        <div className="flex items-center gap-0.5 text-gray-500 mt-8 sm: text-[11px] lg:text-[14px] sm: w-[98%] lg:w-full">
+        <div className="flex items-center gap-0.2 text-gray-500 mt-8 sm: text-[11px] lg:text-[14px] sm: w-[98%] lg:w-full">
           <Link href={"/docs"} className="cursor-pointer">
             Documentation
           </Link>
@@ -94,7 +94,7 @@ export default function Page() {
         </div>
         <div
           ref={previewRef}
-          className="sm: text-2xl lg:text-3xl text-black font-sans font-bold sm: mt-12 lg:mt-12"
+          className="sm: text-2xl lg:text-3xl text-black font-sans font-bold sm: mt-14 lg:mt-12"
         >
           Dark Grid Background
         </div>
@@ -104,7 +104,7 @@ export default function Page() {
         <div className="mt-3">
           <Profile name="Suryansh" date="July 10" />
         </div>
-        <div className="flex gap-6 text-md font-sans font-stretch-150% sm: mt-20 lg:mt-14 border-b border-gray-200 sm: w-[97%] lg:w-full pb-[1px]">
+        <div className="flex gap-6 text-md font-sans font-stretch-150% sm: mt-22 lg:mt-14 border-b border-gray-200 sm: w-[97%] lg:w-full pb-[1px]">
           <div
             className={cn(
               "pb-1 transition-colors font-medium cursor-pointer",
@@ -135,10 +135,10 @@ export default function Page() {
                 boxShadow: "rgba(0, 0, 0, 0.72) 0px 25px 40px -10px",
               }}
               transition={{ delay: 0.1 }}
-              className="bg-black sm: h-48 lg:h-64  [background-size:24px_24px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)]"
+              className="bg-black sm: h-52 lg:h-64  [background-size:24px_24px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)]"
             ></motion.div>
           ) : (
-            <div className="sm: h-48 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[14px] rounded-md">
+            <div className="sm: h-52 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[14px] rounded-md">
               <div className="flex flex-col sm: ml-3 lg:ml-5 sm: my-15 lg:my-16">
                 <div className="flex">
                   <span className="text-purple-400 mr-2">import</span>{" "}
@@ -183,7 +183,7 @@ export default function Page() {
         </div>
         <div
           ref={installationRef}
-          className="text-black font-semibold text-2xl sm: mt-20 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
+          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-22 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
         >
           Installation
         </div>
@@ -197,7 +197,8 @@ export default function Page() {
             )}
             onClick={() => setCli("cli")}
           >
-            CLI
+            <span className="sm: hidden lg:block">CLI</span>
+            <span className="sm: block lg:hidden">Cli</span>
           </div>
           <div
             className={cn(
@@ -309,7 +310,7 @@ export default function Page() {
         </div>
         <div
           ref={propsRef}
-          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-20 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
+          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-22 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
         >
           Props
         </div>

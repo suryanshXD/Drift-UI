@@ -69,7 +69,7 @@ export function DocsHeader() {
   return (
     <>
       <div className="fixed w-[100%] z-1">
-        <div className="flex flex-row justify-between sm: px-6 lg:px-16 py-2.5 border-b border-gray-300 items-center backdrop-blur-sm">
+        <div className="flex flex-row justify-between sm: px-6 lg:px-16 py-2.5 border-b border-gray-300 items-center sm: backdrop-blur-md lg:backdrop-blur-sm">
           <div className="flex flex-row items-center">
             <Link
               href={"/"}
@@ -111,7 +111,7 @@ export function DocsHeader() {
                     Get started
                   </p>
                   <div>
-                    <div className="text-[14.5px] text-stone-800  mt-4 flex flex-col gap-3 font-mono max-w-56">
+                    <div className="text-[14.5px] text-stone-800  mt-4 flex flex-col gap-3 font-mono max-w-48">
                       <Link href={"/docs"}>
                         <motion.div
                           onClick={() => setSelected("introduction")}
@@ -180,7 +180,7 @@ export function DocsHeader() {
                     <div className="text-sm relative font-extralight text-gray-400 uppercase mt-16 ml-2 pb-4 ">
                       ui components
                     </div>
-                    <div className="flex flex-col text-[14.5px] gap-5 font-mono text-xs max-w-56 text-stone-800">
+                    <div className="flex flex-col text-[14.5px] gap-5 font-mono text-xs max-w-48 text-stone-800">
                       {components.map((items) => (
                         <Link
                           key={items.label}
