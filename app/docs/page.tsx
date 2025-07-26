@@ -4,6 +4,7 @@ import { ChevronRight } from "../components/Logo/Chevron-Right";
 import { ArrowRight } from "../components/Logo/Arrow-Right";
 import { useRef, useState } from "react";
 import { ChevronDown } from "../components/Logo/Chevron-Down";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function PageDocs() {
   const faqRef = useRef<any>(null);
@@ -18,16 +19,16 @@ export default function PageDocs() {
     {
       id: 1,
       question: "Why copy/paste and not packaged as a dependency",
-      answer: `The goal of Drift UI is to give developers complete ownership and flexibility over their components. By copying the code directly into your project, you&#39;re free to customize the components to meet specific design needs without being restricted by pre-packaged styles or dependencies.
+      answer: `The goal of Drift UI is to give developers complete ownership and flexibility over their components. By copying the code directly into your project, you're free to customize the components to meet specific design needs without being restricted by pre-packaged styles or dependencies.
 
-Starting with customizable defaults, you can adapt each component to align with your project&#39;s unique style and requirements.
+Starting with customizable defaults, you can adapt each component to align with your project's unique style and requirements.
 
 One of the limitations of npm packages is that design can often be tightly coupled with the component implementation. With Atomix UI, you maintain separation between design and implementation, allowing for more creative control.`,
     },
     {
       id: 2,
       question: `Which frameworks are supported?`,
-      answer: `Currently, our project supports Next.js out of the box. We&#39;re optimized for seamless integration with the Next.js ecosystem, ensuring the best developer experience and performance. Support for additional frameworks may be added in the future based on community demand.`,
+      answer: `Currently, our project supports Next.js out of the box. We're optimized for seamless integration with the Next.js ecosystem, ensuring the best developer experience and performance. Support for additional frameworks may be added in the future based on community demand.`,
     },
     {
       id: 3,
@@ -38,16 +39,26 @@ One of the limitations of npm packages is that design can often be tightly coupl
 
   return (
     <>
-      <div className="flex flex-col min-h-screen sm: mx-0 lg:mx-26 sm: max-w-full lg:w-4xl">
-        <div className="absolute mt-8 ml-[64%] font-light text-stone-800 sm: invisible lg:visible">
-          <div className="text-[14px] font-semibold">On This Page</div>
-          <div
-            onClick={srcollService}
-            className="text-gray-600 border-l border-gray-500 pl-2 py-1 mt-1 cursor-pointer hover:text-black text-sm"
-          >
-            FAQ&#39;s
-          </div>
+      <motion.div
+        initial={{ filter: "blur(16px)" }}
+        animate={{ filter: "blur(0px)" }}
+        transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
+        className="fixed mt-8 ml-[70%] font-light text-stone-800 sm: invisible lg:visible"
+      >
+        <div className="text-[14px] font-semibold">On This Page</div>
+        <div
+          onClick={srcollService}
+          className="text-gray-600 border-l border-gray-500 pl-2 py-1 mt-1 cursor-pointer hover:text-black text-sm"
+        >
+          FAQ&#39;s
         </div>
+      </motion.div>
+      <motion.div
+        initial={{ filter: "blur(16px)" }}
+        animate={{ filter: "blur(0px)" }}
+        transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
+        className="flex flex-col min-h-screen sm: mx-0 lg:mx-26 sm: max-w-full lg:w-4xl"
+      >
         <div className="flex flex-col sm: px-5 lg:px-20">
           <div className="text-4xl text-stone-900 sm: mt-10 lg:mt-6 font-semibold">
             Introduction
@@ -79,7 +90,7 @@ One of the limitations of npm packages is that design can often be tightly coupl
               you full control over customization, so the components truly feel
               like part of your application.
             </div>
-            <div className="mt-16 text-[17px] font-sans text-gray-600">
+            <div className="mt-16 sm: text-[15.5px] lg:text-[17px] font-sans text-gray-600">
               Use DRIFT UI as a foundation to build your own tailored component
               libraries.
             </div>
@@ -94,22 +105,36 @@ One of the limitations of npm packages is that design can often be tightly coupl
           </Link>
         </div>
         <div className="sm: px-8 lg:px-22 mt-32 mb-12 flex flex-col">
-          <div ref={faqRef} className="text-2xl font-semibold">
+          <div ref={faqRef} className="sm: text-xl lg:text-2xl font-semibold">
             FAQ&#39;s
           </div>
 
           {faq.map((q) => (
-            <div
-              key={q.id}
-              className="text-zinc-800 px-1 py-1 mt-8 flex flex-row items-center justify-between cursor-pointer border-b border-gray-500 "
-              onClick={() => setActiveFAQ(activeFAQ === q.id ? null : q.id)}
-            >
-              {q.question}{" "}
-              {activeFAQ === q.id ? <ChevronDown /> : <ChevronRight />}
+            <div key={q.id}>
+              <div
+                className="text-gray-800 font-sans px-1 py-1 mt-5 flex flex-row items-center justify-between cursor-pointer border-b border-gray-400 sm: text-[14px] lg:text-[15px] mb-4  "
+                onClick={() => setActiveFAQ(activeFAQ === q.id ? null : q.id)}
+              >
+                {q.question}
+                {activeFAQ === q.id ? <ChevronDown /> : <ChevronRight />}
+              </div>
+
+              <AnimatePresence>
+                {activeFAQ === q.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden bg-gray-100 text-zinc-700  font-sans px-2 py-2 text-[14.5px] rounded-lg sm: mb-3 lg:mb-5"
+                  >
+                    {q.answer}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

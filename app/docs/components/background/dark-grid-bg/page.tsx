@@ -138,8 +138,8 @@ export default function Page() {
               className="bg-black sm: h-52 lg:h-64  [background-size:24px_24px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)]"
             ></motion.div>
           ) : (
-            <div className="sm: h-52 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[14px] rounded-md">
-              <div className="flex flex-col sm: ml-3 lg:ml-5 sm: my-15 lg:my-16">
+            <div className="sm: h-52 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[15.5px] rounded-md">
+              <div className="flex flex-col sm: ml-3 lg:ml-5 sm: my-15 lg:my-18">
                 <div className="flex">
                   <span className="text-purple-400 mr-2">import</span>{" "}
                   DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
@@ -148,7 +148,7 @@ export default function Page() {
                   </span>
                   ;
                 </div>
-                <div className="flex sm: mt-3 lg:mt-6">
+                <div className="flex sm: mt-3 lg:mt-5">
                   <span className="text-purple-400">
                     export default function
                   </span>{" "}
@@ -323,7 +323,7 @@ export default function Page() {
           </div>
           <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">Description</div>
         </div>
-        <div className="flex w-full h-14 font-extralight mb-12 border-b border-gray-200">
+        <div className="flex w-full h-14 font-extralight mb-12 border-b sm: border-gray-200 lg:border-white">
           <div className="flex flex-col w-[20%] sm: text-gray-800 lg:text-gray-600">
             <div className="sm: pl-1 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               children
@@ -340,7 +340,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="flex sm: w-[98%] lg:w-full sm: justify-between lg:justify-end gap-2 sm: mb-5 lg:mb-4 sm: mt-10 lg:mt-0">
+        <div className="flex sm: w-[98%] lg:w-full justify-end gap-2 sm: mb-5 lg:mb-4 sm: mt-10 lg:mt-0">
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
               href={"/docs/components/background"}

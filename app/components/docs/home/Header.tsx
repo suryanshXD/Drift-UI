@@ -102,16 +102,19 @@ export function DocsHeader() {
               <SheetTrigger asChild>
                 <Menu />
               </SheetTrigger>
-              <SheetContent side="left">
-                <div className="left-0 h-[calc(100vh-4rem)] ml-6 mt-4  bg-white sm: block lg:hidden">
+              <SheetContent
+                side="left"
+                className="w-[260px] sm:w-[280px] max-w-[90vw]"
+              >
+                <div className="ml-6 mt-4  bg-white sm: block lg:hidden">
                   <div className="text-2xl  text-stone-900 font-sans font-bold ml-2">
                     drift/ui
                   </div>
-                  <p className="text-sm font-extralight text-gray-400 uppercase mt-14 ml-2">
+                  <p className="text-sm font-extralight text-gray-400 uppercase mt-10 ml-2">
                     Get started
                   </p>
                   <div>
-                    <div className="text-[14.5px] text-stone-800  mt-4 flex flex-col gap-3 font-mono max-w-48">
+                    <div className="text-[14.5px] text-stone-800  mt-4 flex flex-col gap-3 font-mono max-w-52">
                       <Link href={"/docs"}>
                         <motion.div
                           onClick={() => setSelected("introduction")}
@@ -144,7 +147,7 @@ export function DocsHeader() {
                           )}
                         </motion.div>
                       </Link>
-                      <Link href={"/docs/installtion"}>
+                      <Link href={"/docs/installation"}>
                         <motion.div
                           onClick={() => setSelected("installation")}
                           initial={false}
@@ -180,7 +183,7 @@ export function DocsHeader() {
                     <div className="text-sm relative font-extralight text-gray-400 uppercase mt-16 ml-2 pb-4 ">
                       ui components
                     </div>
-                    <div className="flex flex-col text-[14.5px] gap-5 font-mono text-xs max-w-48 text-stone-800">
+                    <div className="flex flex-col text-[14.5px] gap-5 font-mono text-xs w-52 text-stone-800">
                       {components.map((items) => (
                         <Link
                           key={items.label}

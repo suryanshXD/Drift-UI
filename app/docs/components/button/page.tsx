@@ -12,7 +12,7 @@ export default function Page() {
       initial={{ filter: "blur(16px)" }}
       animate={{ filter: "blur(0px)" }}
       transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-      className="flex flex-col min-h-screen ml-5 bg-white text-black mb-8"
+      className="flex flex-col min-h-screen ml-5 bg-white text-black mb-8 "
     >
       <div className="ml-12 mt-5">
         <div className="flex items-center gap-0.5 text-gray-500 mt-4 text-[14px]">

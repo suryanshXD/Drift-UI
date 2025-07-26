@@ -47,7 +47,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const selectedPath = (path: string) => {
     if (path === "/docs") return "introduction";
-    if (path.includes("/docs/installtion")) return "installtion";
+    if (path.includes("/docs/installation")) return "installation";
     if (path.includes("/docs/components/3d-effect")) return "3D-effect";
     if (path.includes("/docs/components/background")) return "Background";
     if (path.includes("/docs/components/button")) return "Button";
@@ -106,13 +106,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     )}
                   </motion.div>
                 </Link>
-                <Link href={"/docs/installtion"}>
+                <Link href={"/docs/installation"}>
                   <motion.div
                     onClick={() => setSelected("installation")}
                     initial={false}
                     animate={{
                       background:
-                        selected == "installtion" ? "#C8C8C8 " : "#fff",
+                        selected == "installation" ? "#C8C8C8 " : "#fff",
                       fontWeight: selected == "installation" ? "700" : "",
                     }}
                     whileHover={{
@@ -124,8 +124,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     transition={{ delay: 0.2 }}
                     className=" rounded-lg px-2 py-1.5 flex items-center justify-between"
                   >
-                    Installtion{" "}
-                    {selected === "installtion" && (
+                    Installation{" "}
+                    {selected === "installation" && (
                       <motion.span
                         layoutId="clicked"
                         animate={{ rotate: [25, 0, 20, 0] }}
