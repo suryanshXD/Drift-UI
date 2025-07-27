@@ -6,11 +6,15 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
-import AnimatedButton from "@/app/components/ui-components/Animated-Button";
+import AnimatedButton from "@/registry/new-york/Animated-Button/Animated-Button";
 
 export default function Page() {
   const [preview, setPreview] = useState<"preview" | "code">("preview");
   const [cli, setCli] = useState<"cli" | "manual">("cli");
+
+  const [notifyPreview, setNotifyPreview] = useState<"show" | null>(null);
+  const [notifyCli, setNotifyCli] = useState<"show" | null>(null);
+  const [notifyManual, setNotifyManual] = useState<"show" | null>(null);
 
   const previewRef = useRef<any>(null);
   const installationRef = useRef<any>(null);
@@ -91,7 +95,7 @@ export default function Page() {
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
         className="flex flex-col min-h-screen sm: ml-2 lg:ml-20 sm: max-w-screen lg:w-[800px]"
       >
-        <div className="flex items-center gap-0.5 text-gray-500 sm: mt-5  lg:mt-8 sm: text-[12px] lg:text-[14px] ">
+        <div className="flex items-center gap-0.5 text-gray-600 sm: mt-5  lg:mt-8 sm: text-[12px] lg:text-[14px] ">
           <Link href={"/docs"} className="cursor-pointer">
             Documentation
           </Link>
@@ -117,13 +121,14 @@ export default function Page() {
         >
           Animated Button
         </div>
-        <div className="text-neutral-500 font-light mt-3 sm: text-[12.5px] lg:text-[15.5px]">
-          Subtle dark grid backdrop to frame your content with focus.
+        <div className="text-gray-600  mt-3 sm: text-[12.5px] lg:text-[15.5px] font-stretch-200%">
+          A sleek, animated button that gently catches your attention with a
+          smooth, glowing border.
         </div>
         <div className="mt-3">
           <Profile name="Suryansh" date="July 13" />
         </div>
-        <div className="flex gap-6 text-md font-sans font-stretch-150% mt-14 border-b border-gray-200 sm: w-[98.5%] lg:w-full pb-[1px]">
+        <div className="relative flex gap-6 text-md font-sans font-stretch-150% mt-14 border-b border-gray-200 sm: w-[98.5%] lg:w-full pb-[1px]">
           <div
             className={cn(
               "pb-1 transition-colors font-medium cursor-pointer",
@@ -146,10 +151,20 @@ export default function Page() {
           >
             Code
           </div>
+          {notifyPreview === "show" && (
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 0, display: "none" }}
+              transition={{ duration: 3, ease: "easeInOut", delay: 0.3 }}
+              className="absolute top-4.5 right-0 z-50 flex items-center gap-2 rounded-lg bg-black/80 px-2 py-1 text-xs text-white shadow-lg backdrop-blur-md"
+            >
+              Copied!
+            </motion.div>
+          )}
         </div>
-        <div className=" rounded-lg mt-4 sm: w-[98.5%] lg:w-full">
+        <div className=" rounded-lg mt-4 sm: w-[98%] lg:w-full">
           {preview === "preview" ? (
-            <div className="flex flex-col justify-center items-center bg-gray-50 h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border sm: border-gray-400 lg:border-gray-300 rounded-lg p-5">
+            <div className="flex flex-col justify-center items-center bg-gray-50 h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border sm: border-gray-500 lg:border-gray-400 rounded-lg p-5">
               <motion.div
                 whileTap={{ scale: [0.95, 1] }}
                 transition={{ duration: 0.3 }}
@@ -159,7 +174,7 @@ export default function Page() {
             </div>
           ) : (
             <div className="h-64 bg-[#212121] flex justify-between text-white sm: text-[12.5px] lg:text-[14px] rounded-md">
-              <div className="flex flex-col ml-5 sm: my-18 lg:my-16">
+              <div className="flex flex-col sm: ml-2 lg:ml-5 sm: my-22 lg:my-16">
                 <div className="flex">
                   <span className="text-purple-400 mr-2">import</span>{" "}
                   DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
@@ -188,9 +203,13 @@ export default function Page() {
               </div>
               <motion.div
                 whileTap={{ scale: 0.95 }}
-                className="fixed ml-[92%] mt-2.5 cursor-pointer"
+                className="fixed sm: ml-[92%] lg:ml-[96.5%] mt-2.5 cursor-pointer"
                 onClick={() => {
                   navigator.clipboard.writeText(previewCode);
+                  setNotifyPreview("show");
+                  setTimeout(() => {
+                    setNotifyPreview(null);
+                  }, 3000);
                 }}
               >
                 <Clipboard />
@@ -198,12 +217,12 @@ export default function Page() {
             </div>
           )}
         </div>
-        <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-20 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98.5%] lg:w-full">
+        <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-20 lg:mt-26 border-b border-gray-300 pb-0.5 sm: w-[98.5%] lg:w-full">
           Installation
         </div>
         <div
           ref={installationRef}
-          className="relative flex  gap-6 text-md font-sans font-stretch-150% sm: mt-2.5 lg:mt-9 border-b border-gray-200 sm: w-[98.5%] lg:w-full lg:pb-[1px]"
+          className="relative flex  gap-6 text-md font-sans font-stretch-150% sm: mt-2.5 lg:mt-6 border-b border-gray-200 sm: w-[98.5%] lg:w-full lg:pb-[1px]"
         >
           <div
             className={cn(
@@ -227,32 +246,56 @@ export default function Page() {
           >
             Manual
           </div>
+          {notifyCli === "show" && (
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 0, display: "none" }}
+              transition={{ duration: 3, ease: "easeInOut", delay: 0.3 }}
+              className="absolute top-4.5 right-0 z-50 flex items-center gap-2 rounded-lg bg-black/80 px-2 py-1 text-xs text-white shadow-lg backdrop-blur-md"
+            >
+              Copied!
+            </motion.div>
+          )}
+          {notifyManual === "show" && (
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 0, display: "none" }}
+              transition={{ duration: 3, ease: "easeInOut", delay: 0.3 }}
+              className="absolute top-4.5 right-0 z-50 flex items-center gap-2 rounded-lg bg-black/80 px-2 py-1 text-xs text-white shadow-lg backdrop-blur-md"
+            >
+              Copied!
+            </motion.div>
+          )}
         </div>
         <div className=" rounded-lg mt-4 sm: w-[98.5%] lg:w-full">
           {cli === "cli" ? (
-            <div className="bg-[#212121] flex justify-between items-center text-white sm: text-[13px] lg:text-[14.5px] rounded-md py-5  pl-4">
-              <div className="flex">
-                <span className="text-purple-400">npx</span>
-                <span className="text-white mx-2">from</span>{" "}
-                <span className="text-[#9ECBFF]">
-                  https://drift-ui-jet.vercel.app/r/Animated-Button.json
-                </span>
+            <div className="bg-[#212121] overflow-x-auto w-full rounded-md sm: py-4 lg:py-5 pl-4">
+              <div className="flex min-w-max justify-between items-center text-white sm: text-[12px] lg:text-[14.5px]">
+                <div className="flex">
+                  <span className="text-purple-400">npx</span>
+                  <span className="text-white mx-2">from</span>
+                  <span className="text-[#9ECBFF]">
+                    https://drift-ui-jet.vercel.app/r/Animated-Button.json
+                  </span>
+                </div>
+                <motion.div
+                  whileTap={{ scale: 0.9 }}
+                  className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88.5%] lg:ml-[94%]"
+                  onClick={() => {
+                    navigator.clipboard.writeText(previewCode);
+                    setNotifyCli("show");
+                    setTimeout(() => {
+                      setNotifyCli(null);
+                    }, 3000);
+                  }}
+                >
+                  <Clipboard />
+                </motion.div>
               </div>
-              <motion.div
-                whileTap={{
-                  scale: 0.9,
-                }}
-                className="cursor-pointer mr-2"
-                onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
-                }}
-              >
-                <Clipboard />
-              </motion.div>
             </div>
           ) : (
-            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white text-[14px] flex justify-between">
-              <div className="min-w-max flex flex-col p-4 mt-8 mb-4">
+            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12.5px] lg:text-[14px] flex justify-between">
+              <div className="min-w-max flex flex-col p-4 sm: mt-6 lg:mt-8 sm: mb-0 lg:mb-4">
                 <div className="flex">
                   <span className="text-purple-400">
                     export default function
@@ -314,9 +357,13 @@ export default function Page() {
 
               <motion.div
                 whileTap={{ scale: 0.95 }}
-                className="mt-3 cursor-pointer fixed ml-[92.5%]"
+                className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
                   navigator.clipboard.writeText(previewCode);
+                  setNotifyManual("show");
+                  setTimeout(() => {
+                    setNotifyManual(null);
+                  }, 3000);
                 }}
               >
                 <Clipboard />
@@ -324,45 +371,45 @@ export default function Page() {
             </div>
           )}
         </div>
-        <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-20 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98.5%] lg:w-full">
+        <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-20 lg:mt-26 border-b border-gray-300 pb-0.5 sm: w-[98.5%] lg:w-full">
           Props
         </div>
         <div
           ref={propsRef}
-          className="flex sm: w-[98.5%] lg:w-full bg-gray-50 border-r border-l border-t border-gray-300 h-10 sm: mt-3 lg:mt-9"
+          className="flex sm: w-[98.5%] lg:w-full bg-gray-50 border-r border-l border-t border-gray-300 h-10 sm: mt-3 lg:mt-6 font-medium"
         >
-          <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[15px]">
+          <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[14px]">
             Props
           </div>
-          <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[15px]">
+          <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[14px]">
             Type
           </div>
-          <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[15px]">
+          <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[14px]">
             Description
           </div>
         </div>
-        <div className="flex w-full h-10 mb-12 font-extralight bg-neutral-50 border-b sm: border-gray-200 lg:border-white">
-          <div className="flex flex-col w-[20%] text-gray-600">
+        <div className="flex w-full sm: h-8 lg:h-10 mb-12 font-extralight bg-neutral-50 border-b sm: border-gray-200 lg:border-white">
+          <div className="flex flex-col w-[20%] text-gray-700">
             <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               text
             </div>
           </div>
-          <div className="flex flex-col w-[20%] text-gray-600">
+          <div className="flex flex-col w-[20%] text-gray-700">
             <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               string
             </div>
           </div>
-          <div className="flex flex-col w-[60%] text-gray-600">
-            <div className=" sm: pl-1 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
+          <div className="flex flex-col w-[60%] text-gray-700">
+            <div className=" sm: pl-1 lg:pl-3 py-1.5 sm: text-[12px] lg:text-[15px]">
               The text you want to display on the Button.{" "}
             </div>
           </div>
         </div>
-        <div className="flex sm: w-[98.5%] lg:w-full justify-end gap-2 sm: mb-6 lg:mb-4">
+        <div className="flex sm: w-[98.5%] lg:w-full justify-end gap-2 sm: mt-10 lg:mt-8 sm: mb-4 lg:mb-4">
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
               href={"/docs/components/button"}
-              className="bg-black text-[14px] px-5 py-2 text-neutral-300 rounded-lg"
+              className="bg-black sm: text-sm lg:text-[14px] sm: px-5 lg:px-5 sm: py-1.5 lg:py-2 text-neutral-300 rounded-lg"
             >
               Back
             </Link>
@@ -370,7 +417,7 @@ export default function Page() {
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
               href={"/docs/components/button/rainbow-button"}
-              className="bg-black text-[14px] px-5 py-2 text-neutral-300 rounded-lg"
+              className="bg-black sm: text-sm lg:text-[14px] sm: px-5 lg:px-5 sm: py-1.5 lg:py-2 text-neutral-300 rounded-lg"
             >
               Next
             </Link>
