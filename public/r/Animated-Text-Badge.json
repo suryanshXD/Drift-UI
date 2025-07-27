@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Animated-Text-Badge",
+  "type": "registry:ui",
+  "title": "Animated Text Badge",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Animated-Text-Badge/Animated-Text-Badge.tsx",
+      "content": "\"use client\";\r\nimport { motion } from \"framer-motion\";\r\nimport React, { useState } from \"react\";\r\n\r\ninterface content {\r\n  words: string[];\r\n  varient: \"default\" | \"outline\";\r\n}\r\n\r\nexport default function AnimatedTextBadge({ words, varient }: content) {\r\n  const [index, setIndex] = useState(0);\r\n\r\n  const varientClass =\r\n    varient === \"default\"\r\n      ? \"bg-black text-white\"\r\n      : \"text-black bg-neutral-200 border-2 border-gray-500\";\r\n\r\n  React.useEffect(() => {\r\n    const interval = setInterval(() => {\r\n      setIndex((currentIndex) => (currentIndex + 1) % words.length);\r\n    }, 6000);\r\n    return () => clearInterval(interval);\r\n  }, []);\r\n\r\n  return (\r\n    <>\r\n      <motion.div\r\n        style={{\r\n          boxShadow:\r\n            \"5px 5px 32px darkpink, 0 0 15px lightblue, 0 0 5px darkpink\",\r\n        }}\r\n        transition={{ duration: 0.5 }}\r\n        className={`${varientClass} rounded-4xl p-2  relative w-fit cursor-default transition-transform`}\r\n      >\r\n        <motion.p\r\n          key={words[index]}\r\n          initial={{ opacity: 0, y: -20 }}\r\n          animate={{ opacity: 1, y: 0 }}\r\n          exit={{ opacity: 0, y: 20 }}\r\n          transition={{ duration: 0.5 }}\r\n        >\r\n          {words[index]}\r\n        </motion.p>\r\n      </motion.div>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

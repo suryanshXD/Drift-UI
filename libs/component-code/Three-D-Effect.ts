@@ -1,41 +1,58 @@
-"use client";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+export const previewCode = `import
+RainbowButton 
+from
+"@/components/ui/Rainbow-Button";
+export default function
+3DEffectDemo() {
+return
+(
+<
+div
+className
+=
+"flex justify-center items-center"
+>
+<RainbowButton text="Rainbow" />
+</div>
+)
+;`;
 
+//installation
+export const cliCode = `npx shadcn@latest add"https://drift-ui-jet.vercel.app/r/Hover-3D-Image.json"`;
+
+//installation
+export const manualCode = String.raw`"use client";
+import {
+  motion,
+  useMotionValue
+} from "framer-motion";
+import {
+  useSpring,
+  useTransform
+} from "framer-motion";
 interface style {
   img: any;
   width: number;
 }
-
-export default function Hover3DImage({ img, width }: style) {
+export default function Hover3DImage({
+  img,
+  width
+}: style) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-
   const mouseXspring = useSpring(x);
   const mouseYspring = useSpring(y);
-
-  const rotateX = useTransform(
-    mouseYspring,
-    [-0.5, 0.5],
-    ["17.5deg", "-17.5deg"]
-  );
-  const rotateY = useTransform(
-    mouseXspring,
-    [-0.5, 0.5],
-    ["17.5deg", "-17.5deg"]
-  );
+  const rotateX = useTransform(mouseYspring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
+  const rotateY = useTransform(mouseXspring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
 
   const handelMouseMove = (e: any) => {
     const rect = e.target.getBoundingClientRect();
-
     const height = rect.height;
     const width = rect.width;
-
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
-
     const xPert = mouseX / width - 0.5;
     const yPert = mouseY / height - 0.5;
-
     x.set(xPert);
     y.set(yPert);
   };
@@ -44,6 +61,7 @@ export default function Hover3DImage({ img, width }: style) {
     x.set(0);
     y.set(0);
   };
+
   return (
     <>
       <motion.div
@@ -55,18 +73,18 @@ export default function Hover3DImage({ img, width }: style) {
         onMouseMove={handelMouseMove}
         onMouseLeave={handelMouseLeave}
         transition={{ delay: 0.3 }}
-        className=" p-4 rounded-lg bg-gradient-to-br from-indigo-300 to-violet-200 shadow-2xl"
+        className="p-4 rounded-lg bg-gradient-to-br from-indigo-300 to-violet-200 shadow-2xl"
       >
         <motion.img
           style={{
             transform: "translateZ(40px)",
             transformStyle: "preserve-3d",
           }}
-          className=" rounded-lg shadow-3xl"
+          className="rounded-lg shadow-3xl"
           src={img}
           width={width}
         />
       </motion.div>
     </>
   );
-}
+}`;

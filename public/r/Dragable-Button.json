@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Dragable-Button",
+  "type": "registry:ui",
+  "title": "Dargable Button",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Dragable-Button/Dragable-Button.tsx",
+      "content": "\"use client\";\r\nimport { motion } from \"framer-motion\";\r\n\r\ninterface style {\r\n  varient: \"default\" | \"outline\";\r\n  text: string;\r\n}\r\n\r\nexport default function DragableButton({ varient, text }: style) {\r\n  const varientClass =\r\n    varient === \"default\"\r\n      ? \"bg-black text-white\"\r\n      : \"text-black bg-neutral-100 border-1 black\";\r\n  return (\r\n    <>\r\n      <motion.button\r\n        drag\r\n        dragConstraints={{\r\n          top: 0,\r\n          bottom: 0,\r\n          left: 0,\r\n          right: 0,\r\n        }}\r\n        whileTap={{ scale: [0.95, 1.02] }}\r\n        className={` ${varientClass} border-1 border-black text-center px-4 py-1.5 rounded-lg w-fit cursor-pointer`}\r\n      >\r\n        {text}\r\n      </motion.button>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

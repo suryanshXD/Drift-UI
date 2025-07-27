@@ -167,7 +167,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       {selected === items.label && (
                         <motion.span
                           layoutId="clicked"
-                          animate={{ rotate: [25, 0, 20, 0] }}
+                          animate={{ rotate: [8, 0, 8, 0] }}
                           className="pl-17"
                         >
                           <ChevronRight />

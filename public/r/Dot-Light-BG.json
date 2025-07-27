@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Dot-Light-BG",
+  "type": "registry:ui",
+  "title": "Dot Light Background",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Dot-Light-BG/Dot-Light-BG.tsx",
+      "content": "export default function DotLighBg({\r\n  children,\r\n}: Readonly<{ children: React.ReactNode }>) {\r\n  return (\r\n    <>\r\n      <div className=\"absolute inset-0 h-full w-full bg-white bg-[radial-gradient(#c8cbcc_1px,transparent_1px)] [background-size:16px_16px]\">\r\n        {children}\r\n      </div>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

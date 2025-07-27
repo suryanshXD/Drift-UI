@@ -9,6 +9,11 @@ import { Clipboard } from "@/app/components/Logo/Clipboard";
 import Hover3DImage from "@/app/components/ui-components/3d-Effect";
 import { motion } from "framer-motion";
 import { Profile } from "@/libs/Profile-Card";
+import {
+  cliCode,
+  manualCode,
+  previewCode,
+} from "@/libs/component-code/Three-D-Effect";
 
 export default function Page() {
   const img1 =
@@ -43,7 +48,7 @@ export default function Page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="fixed flex flex-col ml-[66%] mt-9"
+        className="fixed flex flex-col ml-[66%] mt-9 sm: hidden lg:block"
       >
         <div className="text-[15px] font-semibold">On this page</div>
         <div className="flex-col mt-4 text-gray-600">
@@ -77,10 +82,10 @@ export default function Page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="flex flex-row min-h-screen sm: ml-1 lg:ml-18 items-start"
+        className="flex flex-row min-h-screen sm: ml-2 lg:ml-18 items-start"
       >
         <div className="lg:mt-5">
-          <div className="flex items-center gap-0.5 text-gray-500 mt-4 text-[14px]">
+          <div className="flex items-center sm: gap-0.2 lg:gap-0.5 text-gray-500 mt-4 sm: text-[12.5px] lg:text-[14px]">
             <Link href={"/docs"} className="cursor-pointer">
               Documentation
             </Link>
@@ -96,18 +101,18 @@ export default function Page() {
           </div>
           <div
             ref={previewRef}
-            className="text-3xl text-black font-sans font-bold mt-12"
+            className="sm: text-2xl lg:text-3xl text-black font-sans font-bold sm: mt-10 lg:mt-12"
           >
             3D Card Effect
           </div>
-          <div className="text-neutral-500 font-light mt-3 text-[16px]">
+          <div className="text-neutral-500 font-light mt-3 sm: text-[13px] lg:text-[16px] sm: w-[118%] lg:w-[125%] ">
             A 3D tilt effect gives the illusion of depth and motion, making your
             card designs more dynamic.
           </div>
           <div className="mt-8">
             <Profile name="Suryansh" date="July 01" />
           </div>
-          <div className="flex flex-row gap-6 text-md font-sans font-stretch-150% mt-14 border-b border-gray-200 w-[125%] pb-[1px]">
+          <div className="flex flex-row gap-6 text-md font-sans font-stretch-150% sm: mt-10 lg:mt-14 border-b border-gray-200 sm: w-[118%] lg:w-[125%] pb-[1px]">
             <button
               className={cn(
                 "pb-1 transition-colors font-medium",
@@ -131,15 +136,15 @@ export default function Page() {
               Code
             </button>
           </div>
-          <div className="rounded-lg mt-4 w-[125%] bg-white">
+          <div className="rounded-lg mt-4 sm: w-[118%] lg:w-[125%] bg-white">
             {preview === "preview" ? (
-              <div className="flex flex-col justify-center items-center bg-gray-50 h-72 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border border-gray-300 rounded-lg p-5">
+              <div className="flex flex-col justify-center items-center bg-gray-50 h-72 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border sm: border-gray-500 lg:border-gray-400 rounded-lg p-5">
                 <div className="shadow-2xl">
                   <Hover3DImage img={img1} width={200} />
                 </div>
               </div>
             ) : (
-              <pre className="bg-[#24292E]  rounded-md text-sm min-h-fit pb-10">
+              <pre className="bg-[#24292E]  rounded-md text-sm min-h-fit  pb-10">
                 <code className="text-gray-100 flex flex-col text-start">
                   <div className="flex justify-between">
                     <div className="flex flex-col items-start text-[16px]  ml-4 pt-16">
@@ -193,9 +198,13 @@ export default function Page() {
                       </div>
                       <div className="text-amber-300">&#125;</div>
                     </div>
-                    <div className="mt-3 mr-3 cursor-pointer">
+                    <motion.div
+                      whileTap={{ scale: 0.95 }}
+                      className="fixed sm: ml-[149%] lg:ml-[120.5%] mt-3 cursor-pointer"
+                      onClick={() => navigator.clipboard.writeText(previewCode)}
+                    >
                       <Clipboard />
-                    </div>
+                    </motion.div>
                   </div>
                 </code>
               </pre>
@@ -204,11 +213,11 @@ export default function Page() {
           <div className="ml-3 flex flex-col">
             <div
               ref={installtionRef}
-              className="text-black font-semibold text-2xl mt-32 border-b border-gray-300 pb-0.5 w-[125%]"
+              className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-18 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[118%] lg:w-[125%]"
             >
               Installation
             </div>
-            <div className="flex flex-row gap-6 text-[15px] font-medium font-mono font-stretch-150% mt-9 border-b border-gray-300 w-[125%] pb-0.5">
+            <div className="flex flex-row gap-6 text-[15px] font-medium font-mono font-stretch-150% sm: mt-6 lg:mt-9 border-b border-gray-300 sm: w-[118%] lg:w-[125%] pb-0.5">
               <div
                 className={cn(
                   "pb-1 transition-colors px-1.5 cursor-pointer",
@@ -232,26 +241,30 @@ export default function Page() {
                 Manual
               </div>
             </div>
-            <div className="w-[125%] bg-[#24292E] text-white mt-4 font-stretch-150% rounded-lg">
+            <div className="sm: w-[118%] lg:w-[125%] bg-[#24292E] text-white mt-4 font-stretch-150% rounded-lg">
               {cli === "cli" ? (
-                <div className="h-[60px] flex items-center justify-between ml-4 mr-2">
-                  <div className="text-[15px]">
+                <div className="h-[60px] flex items-center justify-between sm: ml-2 sm: mr-1 lg:ml-4 lg:mr-2">
+                  <div className="sm: text-[12px] lg:text-[15px]">
                     <span className="text-purple-300">npx</span>{" "}
-                    <span className="text-white mx-2">shadcn@latest add</span>
+                    <span className="text-white mx-1.5">shadcn@latest add</span>
                     <span className="text-[#9ECBFF]">
                       &quot;https://drift-ui-jet.vercel.app/r/Hover-3D-Image.json&quot;
                     </span>
                   </div>
-                  <div className="cursor-pointer">
+                  <motion.div
+                    whileTap={{ scale: 0.95 }}
+                    className="cursor-pointer"
+                    onClick={() => navigator.clipboard.writeText(cliCode)}
+                  >
                     <Clipboard />
-                  </div>
+                  </motion.div>
                 </div>
               ) : (
                 <pre
                   className="flex justify-between
                  ml-5 min-h-fit bg-[#24292E] rounded-lg"
                 >
-                  <code className="mt-8 flex flex-col text-[16px] pb-8">
+                  <code className="mt-8 flex flex-col sm: text-[12.5px] lg:text-[16px] pb-8">
                     <div className="text-emerald-400">
                       &quot;use client&quot;;
                     </div>
@@ -637,45 +650,57 @@ export default function Page() {
                       <span className="text-amber-300">&#125;</span>
                     </div>
                   </code>
-                  <span className="cursor-pointer mt-3 mr-3">
+                  <motion.span
+                    whileTap={{ scale: 0.95 }}
+                    className="fixed sm: ml-[119%] lg:ml-[115%] cursor-pointer mt-3 mr-3"
+                    onClick={() => navigator.clipboard.writeText(manualCode)}
+                  >
                     <Clipboard />
-                  </span>
+                  </motion.span>
                 </pre>
               )}
             </div>
           </div>
           <div className="flex flex-col ml-3 mb-18">
-            <div className="text-black font-semibold text-2xl mt-32 border-b border-gray-300 pb-0.5 w-[125%]">
+            <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-18 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[118%] lg:w-[125%]">
               Props
             </div>
             <div
               ref={propsRef}
-              className="flex w-[125%] bg-gray-50 border border-gray-300 h-10 mt-9"
+              className="flex sm: w-[118%] lg:w-[125%] bg-gray-50 border border-gray-300 sm: h-8 lg:h-10 sm: mt-6 lg:mt-9"
             >
-              <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5">
+              <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[15px]">
                 Props
               </div>
-              <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5">
+              <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[15px]">
                 Type
               </div>
-              <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">
+              <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[15px]">
                 Description
               </div>
             </div>
-            <div className="flex w-[125%] h-18 mt-2.5 font-extralight">
-              <div className="flex flex-col w-[20%] text-gray-600">
-                <div className="h-[50%] pl-3 py-1.5">img</div>
-                <div className="pl-3 py-1.5 bg-gray-100">width</div>
+            <div className="flex sm: w-[121%] lg:w-[125%] sm: h-14 lg:h-18 lg:mt-1  font-extralight">
+              <div className="flex flex-col w-[20%] text-gray-600 h-full">
+                <div className="h-[60%] pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
+                  img
+                </div>
+                <div className="pl-3 py-1.5 bg-gray-100 border-b sm: border-gray-300 lg:border-white sm: text-[13px] lg:text-[15px]">
+                  width
+                </div>
               </div>
               <div className="flex flex-col w-[20%] text-gray-600">
-                <div className="h-[50%] pl-3 py-1.5">string</div>
-                <div className="pl-3 py-1.5 bg-gray-100">number</div>
+                <div className="h-[60%] pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
+                  string
+                </div>
+                <div className="pl-3 py-1.5 bg-gray-100 border-b sm: border-gray-300 lg:border-white sm: text-[13px] lg:text-[15px]">
+                  number
+                </div>
               </div>
               <div className="flex flex-col w-[60%] text-gray-600">
-                <div className="h-[50%] pl-3 py-1.5">
+                <div className="h-[60%] pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
                   url or path of the image
                 </div>
-                <div className="pl-3 py-1.5 bg-gray-100">
+                <div className="pl-3 py-1.5 bg-gray-100 border-b sm: border-gray-300 lg:border-white sm: text-[13px] lg:text-[15px]">
                   specify the width of the image
                 </div>
               </div>

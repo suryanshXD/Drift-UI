@@ -87,9 +87,14 @@ export default function Page() {
           <Link href={"/docs/components/background"} className="cursor-pointer">
             Backgrounds
           </Link>
-          <ChevronRight />
-          <Link href={"/docs/components/background"} className="cursor-pointer">
-            Dark-grid-background
+          <span className="sm: hidden lg:block">
+            <ChevronRight />
+          </span>
+          <Link
+            href={"/docs/components/background/dark-grid-bg"}
+            className="cursor-pointer sm: hidden lg:block"
+          >
+            Dark-Grid-Bg
           </Link>
         </div>
         <div
@@ -128,14 +133,14 @@ export default function Page() {
             Code
           </div>
         </div>
-        <div className=" rounded-lg mt-4 sm: w-[98.5%] lg:w-full">
+        <div className="mt-4 sm: w-[98.5%] lg:w-full">
           {preview === "preview" ? (
             <motion.div
               whileHover={{
                 boxShadow: "rgba(0, 0, 0, 0.72) 0px 25px 40px -10px",
               }}
               transition={{ delay: 0.1 }}
-              className="bg-black sm: h-52 lg:h-64  [background-size:24px_24px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)]"
+              className="bg-black sm: h-52 lg:h-64  [background-size:24px_24px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)] rounded-lg"
             ></motion.div>
           ) : (
             <div className="sm: h-52 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[15.5px] rounded-md">
@@ -323,7 +328,7 @@ export default function Page() {
           </div>
           <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">Description</div>
         </div>
-        <div className="flex w-full h-14 font-extralight mb-12 border-b sm: border-gray-200 lg:border-white">
+        <div className="flex w-full h-10 font-extralight mb-12 border-b sm: border-gray-200 lg:border-white bg-gray-50">
           <div className="flex flex-col w-[20%] sm: text-gray-800 lg:text-gray-600">
             <div className="sm: pl-1 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               children

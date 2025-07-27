@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Three-Card-ScrollUp",
+  "type": "registry:ui",
+  "title": "Three-Card-ScrollUp",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Three-Card-ScrollUp/Three-Card-ScrollUp.tsx",
+      "content": "\"use client\";\r\nimport { motion } from \"framer-motion\";\r\n\r\ninterface style {\r\n  img1: any;\r\n  img2: any;\r\n  img3: any;\r\n  width: number;\r\n}\r\n\r\nexport default function ThreeCardScrollUp({ img1, img2, img3, width }: style) {\r\n  return (\r\n    <motion.div\r\n      initial=\"initial\"\r\n      whileInView=\"inView\"\r\n      viewport={{ amount: \"all\" }}\r\n      className=\"flex justify-center size-\"\r\n    >\r\n      <motion.img\r\n        className={`absolute bg-green-200 rounded-md z-20 text-center flex items-center justify-center`}\r\n        variants={{\r\n          initial: { x: 0, rotate: 0 },\r\n          inView: { x: -360, rotate: 0 },\r\n        }}\r\n        transition={{ duration: 1 }}\r\n        src={`${img1}`}\r\n        width={width}\r\n      />\r\n\r\n      <motion.img\r\n        className={`absolute bg-pink-200 rounded-md z-10 text-center flex items-center justify-center`}\r\n        variants={{\r\n          initial: { x: 0, rotate: 20 },\r\n          inView: { x: 0, rotate: 0 },\r\n        }}\r\n        transition={{ duration: 1 }}\r\n        src={`${img2}`}\r\n        width={width}\r\n      />\r\n\r\n      <motion.img\r\n        className={`absolute bg-blue-200 rounded-md z-20 text-center flex items-center justify-center`}\r\n        variants={{\r\n          initial: { x: 0, rotate: 10 },\r\n          inView: { x: 360, rotate: 0 },\r\n        }}\r\n        transition={{ duration: 1 }}\r\n        src={`${img3}`}\r\n        width={width}\r\n      />\r\n    </motion.div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

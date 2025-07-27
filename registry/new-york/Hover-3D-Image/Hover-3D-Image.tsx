@@ -63,8 +63,8 @@ export default function Hover3DImage({ img, width }: style) {
             transformStyle: "preserve-3d",
           }}
           className=" rounded-lg shadow-3xl"
-          src={img}
-          width={width}
+          src={`${img}`}
+          width={`${width}`}
         />
       </motion.div>
     </>

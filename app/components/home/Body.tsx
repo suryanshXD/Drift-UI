@@ -76,7 +76,7 @@ export function Body() {
             </motion.div>
           </Link>
         </div>
-        <div className="text-stone-600 font-sans font-semibold text-sm sm: mt-[86%] md:mt-46">
+        <div className="fixed text-stone-600 font-sans font-semibold text-sm  bottom-0 pb-2">
           <RotateWord
             words={["Component-Driven", "Motion-Enabled", "Production-Ready"]}
           />

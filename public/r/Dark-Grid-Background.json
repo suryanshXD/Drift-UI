@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Dark-Grid-Background",
+  "type": "registry:ui",
+  "title": "Dark Grid Background",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Dark-Grid-BG/Dark-Grid-BG.tsx",
+      "content": "export default function DarkGridBg({\r\n  children,\r\n}: Readonly<{\r\n  children: React.ReactNode;\r\n}>) {\r\n  return (\r\n    <div className=\"bg-black text-white pointer-events-none absolute inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]\">\r\n      {children}\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

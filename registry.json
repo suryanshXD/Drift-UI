@@ -1,0 +1,212 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "acme",
+  "homepage": "https://drift-ui-swart.vercel.app/",
+  "items": [
+    {
+      "name": "Animated-Button",
+      "type": "registry:ui",
+      "title": "Animated Button",
+      "description": "Animated button with border motion effect.",
+      "files": [
+        {
+          "path": "registry/new-york/Animated-Button/Animated-Button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Animated-Text-Badge",
+      "type": "registry:ui",
+      "title": "Animated Text Badge",
+      "files": [
+        {
+          "path": "registry/new-york/Animated-Text-Badge/Animated-Text-Badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Card-Scroll-Up",
+      "type": "registry:ui",
+      "title": "Card Scroll Up",
+      "files": [
+        {
+          "path": "registry/new-york/Card-Scroll-Up/Card-Scroll-Up.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Dark-Grid-Background",
+      "type": "registry:ui",
+      "title": "Dark Grid Background",
+      "files": [
+        {
+          "path": "registry/new-york/Dark-Grid-BG/Dark-Grid-BG.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Light-Grid-Masked-BG",
+      "type": "registry:ui",
+      "title": "Light Grid Masked Background",
+      "files": [
+        {
+          "path": "registry/new-york/Light-Grid-Masked-BG/Light-Grid-Masked-BG.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Dot-Light-BG",
+      "type": "registry:ui",
+      "title": "Dot Light Background",
+      "files": [
+        {
+          "path": "registry/new-york/Dot-Light-BG/Dot-Light-BG.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Dragable-Button",
+      "type": "registry:ui",
+      "title": "Dargable Button",
+      "files": [
+        {
+          "path": "registry/new-york/Dragable-Button/Dragable-Button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Gaping-Text",
+      "type": "registry:ui",
+      "title": "Gaping Text",
+      "files": [
+        {
+          "path": "registry/new-york/Gaping-Text/Gaping-Text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Hover-3D-Image",
+      "type": "registry:ui",
+      "title": "Hover 3D Image",
+      "files": [
+        {
+          "path": "registry/new-york/Hover-3D-Image/Hover-3D-Image.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Hover-Tap-Image",
+      "type": "registry:ui",
+      "title": "Hover Tap Image",
+      "files": [
+        {
+          "path": "registry/new-york/Hover-Tap-Image/Hover-Tap-Image.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Modal-Card",
+      "type": "registry:ui",
+      "title": "Modal Card",
+      "files": [
+        {
+          "path": "registry/new-york/Modal-Card/Modal-Card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Navbar",
+      "type": "registry:ui",
+      "title": "Navbar",
+      "files": [
+        {
+          "path": "registry/new-york/Navbar/Navbar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Rainbow-Button",
+      "type": "registry:ui",
+      "title": "Rainbow Button",
+      "files": [
+        {
+          "path": "registry/new-york/Rainbow-Button/Rainbow-Button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Rotate-Words",
+      "type": "registry:ui",
+      "title": "Rotate-Words",
+      "files": [
+        {
+          "path": "registry/new-york/Rotate-Words/Rotate-Words.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Testimonial",
+      "type": "registry:ui",
+      "title": "Testimonial",
+      "files": [
+        {
+          "path": "registry/new-york/Testimonial/Testimonial.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion", "lucide-react"]
+    },
+    {
+      "name": "Three-Card-Hover",
+      "type": "registry:ui",
+      "title": "Three-Card-Hover",
+      "files": [
+        {
+          "path": "registry/new-york/Three-Card-Hover/Three-Card-Hover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "Three-Card-ScrollUp",
+      "type": "registry:ui",
+      "title": "Three-Card-ScrollUp",
+      "files": [
+        {
+          "path": "registry/new-york/Three-Card-ScrollUp/Three-Card-ScrollUp.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    }
+  ]
+}

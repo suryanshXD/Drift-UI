@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Navbar",
+  "type": "registry:ui",
+  "title": "Navbar",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Navbar/Navbar.tsx",
+      "content": "\"use client\";\r\nimport Link from \"next/link\";\r\nimport { useState } from \"react\";\r\nimport { motion } from \"framer-motion\";\r\n\r\ninterface NavbarItem {\r\n  name: string;\r\n  href: string;\r\n}\r\n\r\ninterface items {\r\n  navbarItem: NavbarItem[];\r\n}\r\n\r\nexport function Navbar({ navbarItem }: items) {\r\n  const [hover, setHover] = useState<number | null>(null);\r\n  return (\r\n    <div>\r\n      <div className=\"sm: max-w-60 md:max-w-xl bg-gray-50 rounded-lg px-2 py-1 mx-auto flex\">\r\n        {navbarItem.map((item, idx) => (\r\n          <Link\r\n            onMouseEnter={() => setHover(idx)}\r\n            onMouseLeave={() => setHover(null)}\r\n            href={item.href}\r\n            className=\"w-full relative text-center text-sm py-3 hover:text-white\"\r\n          >\r\n            {hover === idx && (\r\n              <motion.div\r\n                layoutId=\"1\"\r\n                className=\"bg-black inset-0 absolute rounded-lg w-full h-full\"\r\n              ></motion.div>\r\n            )}\r\n            <motion.span\r\n              animate={{\r\n                color: hover === idx ? \"white\" : \"black\",\r\n              }}\r\n              className=\"relative\"\r\n            >\r\n              {item.name}\r\n            </motion.span>\r\n          </Link>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

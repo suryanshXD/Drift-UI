@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Hover-3D-Image",
+  "type": "registry:ui",
+  "title": "Hover 3D Image",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Hover-3D-Image/Hover-3D-Image.tsx",
+      "content": "\"use client\";\r\nimport { motion, useMotionValue, useSpring, useTransform } from \"framer-motion\";\r\n\r\ninterface style {\r\n  img: any;\r\n  width: number;\r\n}\r\n\r\nexport default function Hover3DImage({ img, width }: style) {\r\n  const x = useMotionValue(0);\r\n  const y = useMotionValue(0);\r\n\r\n  const mouseXspring = useSpring(x);\r\n  const mouseYspring = useSpring(y);\r\n\r\n  const rotateX = useTransform(\r\n    mouseYspring,\r\n    [-0.5, 0.5],\r\n    [\"17.5deg\", \"-17.5deg\"]\r\n  );\r\n  const rotateY = useTransform(\r\n    mouseXspring,\r\n    [-0.5, 0.5],\r\n    [\"17.5deg\", \"-17.5deg\"]\r\n  );\r\n\r\n  const handelMouseMove = (e: any) => {\r\n    const rect = e.target.getBoundingClientRect();\r\n\r\n    const height = rect.height;\r\n    const width = rect.width;\r\n\r\n    const mouseX = e.clientX - rect.left;\r\n    const mouseY = e.clientY - rect.top;\r\n\r\n    const xPert = mouseX / width - 0.5;\r\n    const yPert = mouseY / height - 0.5;\r\n\r\n    x.set(xPert);\r\n    y.set(yPert);\r\n  };\r\n\r\n  const handelMouseLeave = () => {\r\n    x.set(0);\r\n    y.set(0);\r\n  };\r\n  return (\r\n    <>\r\n      <motion.div\r\n        style={{\r\n          transformStyle: \"preserve-3d\",\r\n          rotateX,\r\n          rotateY,\r\n        }}\r\n        onMouseMove={handelMouseMove}\r\n        onMouseLeave={handelMouseLeave}\r\n        transition={{ delay: 0.3 }}\r\n        className=\" p-4 rounded-lg bg-gradient-to-br from-indigo-300 to-violet-200 shadow-2xl\"\r\n      >\r\n        <motion.img\r\n          style={{\r\n            transform: \"translateZ(40px)\",\r\n            transformStyle: \"preserve-3d\",\r\n          }}\r\n          className=\" rounded-lg shadow-3xl\"\r\n          src={`${img}`}\r\n          width={`${width}`}\r\n        />\r\n      </motion.div>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

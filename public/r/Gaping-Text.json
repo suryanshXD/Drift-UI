@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Gaping-Text",
+  "type": "registry:ui",
+  "title": "Gaping Text",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Gaping-Text/Gaping-Text.tsx",
+      "content": "import { AnimatePresence, motion } from \"framer-motion\";\r\nimport React from \"react\";\r\n\r\nexport default function GapingText({ text }: { text: string }) {\r\n  return (\r\n    <>\r\n      <motion.div\r\n        initial=\"initial\"\r\n        animate=\"animate\"\r\n        transition={{ staggerChildren: 0.1 }}\r\n      >\r\n        <AnimatePresence>\r\n          {text.split(\"\").map((char, i) => (\r\n            <motion.span\r\n              key={i}\r\n              variants={{\r\n                initial: { opacity: 0, x: -18 },\r\n                animate: {\r\n                  opacity: 1,\r\n                  x: 0,\r\n                  paddingRight: \"1.5px\",\r\n                },\r\n              }}\r\n              transition={{ duration: 0.1 }}\r\n            >\r\n              {char === \" \" ? <span>&nbsp;</span> : char}\r\n            </motion.span>\r\n          ))}\r\n        </AnimatePresence>\r\n      </motion.div>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

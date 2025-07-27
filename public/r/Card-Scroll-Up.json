@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Card-Scroll-Up",
+  "type": "registry:ui",
+  "title": "Card Scroll Up",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Card-Scroll-Up/Card-Scroll-Up.tsx",
+      "content": "\"use client\";\r\nimport { motion } from \"framer-motion\";\r\n\r\ninterface content {\r\n  img1: any;\r\n  img2: any;\r\n  img3: any;\r\n  width: number;\r\n}\r\n\r\nexport default function CardScrollUp({ img1, img2, img3, width }: content) {\r\n  return (\r\n    <>\r\n      <motion.div\r\n        initial=\"initial\"\r\n        whileInView=\"inView\"\r\n        viewport={{ once: true }}\r\n      >\r\n        <motion.img\r\n          variants={{\r\n            initial: { opacity: 0, y: -20 },\r\n            inView: { opacity: 1, x: -300 },\r\n          }}\r\n          whileHover={{ scale: 0.95 }}\r\n          transition={{ duration: 1.4 }}\r\n          className=\"absolute\"\r\n          src={`${img1}`}\r\n          alt=\"img\"\r\n          width={`${width}`}\r\n        />\r\n        <motion.img\r\n          variants={{\r\n            initial: { opacity: 0, y: -20 },\r\n            inView: { opacity: 1, x: 0 },\r\n          }}\r\n          whileHover={{ scale: 0.95 }}\r\n          transition={{ duration: 1.4 }}\r\n          className=\"absolute\"\r\n          src={`${img2}`}\r\n          alt=\"img\"\r\n          width={`${width}`}\r\n        />\r\n        <motion.img\r\n          variants={{\r\n            initial: { opacity: 0, y: -20 },\r\n            inView: { opacity: 1, x: 300 },\r\n          }}\r\n          whileHover={{ scale: 0.95 }}\r\n          transition={{ duration: 1.4 }}\r\n          className=\"absolute\"\r\n          src={`${img3}`}\r\n          alt=\"img\"\r\n          width={`${width}`}\r\n        />\r\n      </motion.div>\r\n    </>\r\n  );\r\n}\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}
