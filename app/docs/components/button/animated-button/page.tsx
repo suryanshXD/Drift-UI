@@ -217,7 +217,7 @@ export default function Page() {
             </div>
           )}
         </div>
-        <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-20 lg:mt-26 border-b border-gray-300 pb-0.5 sm: w-[98.5%] lg:w-full">
+        <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-14 lg:mt-26 border-b border-gray-300 pb-0.5 sm: w-[98.5%] lg:w-full">
           Installation
         </div>
         <div
@@ -270,17 +270,17 @@ export default function Page() {
         <div className=" rounded-lg mt-4 sm: w-[98.5%] lg:w-full">
           {cli === "cli" ? (
             <div className="bg-[#212121] overflow-x-auto w-full rounded-md sm: py-4 lg:py-5 pl-4">
-              <div className="flex min-w-max justify-between items-center text-white sm: text-[12px] lg:text-[14.5px]">
+              <div className="flex min-w-max justify-between items-center text-white sm: text-[12px] lg:text-[14.5px] pr-7">
                 <div className="flex">
                   <span className="text-purple-400">npx</span>
                   <span className="text-white mx-2">from</span>
                   <span className="text-[#9ECBFF]">
-                    https://drift-ui-jet.vercel.app/r/Animated-Button.json
+                    https://drift-ui-swart.vercel.app/r/Animated-Button.json
                   </span>
                 </div>
                 <motion.div
                   whileTap={{ scale: 0.9 }}
-                  className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88.5%] lg:ml-[94%]"
+                  className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
                     navigator.clipboard.writeText(previewCode);
                     setNotifyCli("show");
@@ -371,7 +371,7 @@ export default function Page() {
             </div>
           )}
         </div>
-        <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-20 lg:mt-26 border-b border-gray-300 pb-0.5 sm: w-[98.5%] lg:w-full">
+        <div className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-14 lg:mt-26 border-b border-gray-300 pb-0.5 sm: w-[98.5%] lg:w-full">
           Props
         </div>
         <div
@@ -405,7 +405,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="flex sm: w-[98.5%] lg:w-full justify-end gap-2 sm: mt-10 lg:mt-8 sm: mb-4 lg:mb-4">
+        <div className="flex sm: w-[98.5%] lg:w-full justify-end gap-2 mt-8 sm: mb-4 lg:mb-4">
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
               href={"/docs/components/button"}
