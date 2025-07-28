@@ -10,7 +10,7 @@ export default function DragableButton({ varient, text }: style) {
   const varientClass =
     varient === "default"
       ? "bg-black text-white"
-      : "text-black bg-neutral-100 border-1 black";
+      : "text-black bg-neutral-100 border-1 border-gray-500";
   return (
     <>
       <motion.button
@@ -22,7 +22,7 @@ export default function DragableButton({ varient, text }: style) {
           right: 0,
         }}
         whileTap={{ scale: [0.95, 1.02] }}
-        className={` ${varientClass} border-1 border-black text-center px-4 py-1.5 rounded-lg w-fit cursor-pointer`}
+        className={` ${varientClass} border-1 border-black text-center px-4 py-1.5 rounded-md w-fit cursor-pointer`}
       >
         {text}
       </motion.button>

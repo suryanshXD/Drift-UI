@@ -23,7 +23,7 @@ export default function PageDocs() {
 
 Starting with customizable defaults, you can adapt each component to align with your project's unique style and requirements.
 
-One of the limitations of npm packages is that design can often be tightly coupled with the component implementation. With Atomix UI, you maintain separation between design and implementation, allowing for more creative control.`,
+One of the limitations of npm packages is that design can often be tightly coupled with the component implementation. With Drift UI, you maintain separation between design and implementation, allowing for more creative control.`,
     },
     {
       id: 2,
@@ -82,7 +82,7 @@ One of the limitations of npm packages is that design can often be tightly coupl
             <div className="text-black font-sans text-[18px] mt-12">
               What do you mean by not a component library?
             </div>
-            <div className="mt-4 text-md font-sans text-gray-600 text-left">
+            <div className="mt-3 text-md font-sans text-gray-600 text-left">
               Unlike traditional libraries, Drift UI is not available as an
               installable npm package. You won&#39;t add it as a dependency;
               instead, you choose and integrate only the components you need by
@@ -98,7 +98,7 @@ One of the limitations of npm packages is that design can often be tightly coupl
         </div>
         <div className="flex flex-row justify-end">
           <Link
-            href={"/docs/installtion"}
+            href={"/docs/installation"}
             className="flex flex-row items-center gap-2 mt-6 sm: mr-5 lg:mr-20 bg-black text-white px-2.5 py-1 w-fit rounded-lg border border-gray-500 text-sm cursor-pointer"
           >
             Installation <ArrowRight />

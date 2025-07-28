@@ -14,7 +14,9 @@ DarkGridMasked></DarkGridMasked
 }`;
 
 //installation
-export const LightGridMaskedCli = ``;
+export const LightGridMaskedCli = `npx
+from
+https://drift-ui-swart.vercel.app/r/Light-Grid-Masked-BG.json`;
 
 //installation
 export const LightGridMaskedManual = `export default function

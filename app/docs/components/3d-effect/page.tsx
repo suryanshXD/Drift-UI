@@ -1,8 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
 import { cn } from "../../../../libs/utils";
-import profile from "../../../../public/profile.jpg";
-import Image from "next/image";
 import { ChevronRight } from "@/app/components/Logo/Chevron-Right";
 import Link from "next/link";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
@@ -21,6 +19,11 @@ export default function Page() {
 
   const [preview, setPreview] = useState<"preview" | "code">("preview");
   const [cli, setManual] = useState<"cli" | "manual">("cli");
+
+  const [notifyPreview, setNotifyPreview] = useState<"show" | null>(null);
+  const [notifyCli, setNotifyCli] = useState<"show" | null>(null);
+  const [notifyManual, setNotifyManual] = useState<"show" | null>(null);
+
   const previewRef = useRef<any>(null);
   const installtionRef = useRef<any>(null);
   const propsRef = useRef<any>(null);
@@ -48,7 +51,7 @@ export default function Page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="fixed flex flex-col ml-[66%] mt-9 sm: hidden lg:block"
+        className="fixed  ml-[66%] mt-9 sm: hidden lg:block"
       >
         <div className="text-[15px] font-semibold">On this page</div>
         <div className="flex-col mt-4 text-gray-600">
@@ -82,7 +85,7 @@ export default function Page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="flex flex-row min-h-screen sm: ml-2 lg:ml-18 items-start"
+        className="flex flex-row min-h-screen sm: ml-2 lg:ml-18 items-start sm: max-w-screen"
       >
         <div className="lg:mt-5">
           <div className="flex items-center sm: gap-0.2 lg:gap-0.5 text-gray-500 mt-4 sm: text-[12.5px] lg:text-[14px]">
@@ -105,7 +108,7 @@ export default function Page() {
           >
             3D Card Effect
           </div>
-          <div className="text-neutral-500 font-light mt-3 sm: text-[13px] lg:text-[16px] sm: w-[118%] lg:w-[125%] ">
+          <div className="text-neutral-500 font-light mt-3 sm: text-[13px] lg:text-[16px] sm: w-[100%] lg:w-[125%] ">
             A 3D tilt effect gives the illusion of depth and motion, making your
             card designs more dynamic.
           </div>
@@ -243,21 +246,29 @@ export default function Page() {
             </div>
             <div className="sm: w-[118%] lg:w-[125%] bg-[#24292E] text-white mt-4 font-stretch-150% rounded-lg">
               {cli === "cli" ? (
-                <div className="h-[60px] flex items-center justify-between sm: ml-2 sm: mr-1 lg:ml-4 lg:mr-2">
-                  <div className="sm: text-[12px] lg:text-[15px]">
-                    <span className="text-purple-300">npx</span>{" "}
-                    <span className="text-white mx-1.5">shadcn@latest add</span>
-                    <span className="text-[#9ECBFF]">
-                      &quot;https://drift-ui-jet.vercel.app/r/Hover-3D-Image.json&quot;
-                    </span>
+                <div className="bg-[#212121] overflow-x-auto rounded-md sm: py-4 lg:py-5 pl-4">
+                  <div className="flex min-w-max items-center text-white sm: text-[12px] lg:text-[14.5px] pr-7">
+                    <div className="flex">
+                      <span className="text-purple-400">npx</span>
+                      <span className="text-white mx-2">from</span>
+                      <span className="text-[#9ECBFF]">
+                        https://drift-ui-swart.vercel.app/r/Animated-Button.json
+                      </span>
+                    </div>
+                    <motion.div
+                      whileTap={{ scale: 0.9 }}
+                      className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[120%] lg:ml-[116%]"
+                      onClick={() => {
+                        navigator.clipboard.writeText(previewCode);
+                        setNotifyCli("show");
+                        setTimeout(() => {
+                          setNotifyCli(null);
+                        }, 3000);
+                      }}
+                    >
+                      <Clipboard />
+                    </motion.div>
                   </div>
-                  <motion.div
-                    whileTap={{ scale: 0.95 }}
-                    className="cursor-pointer"
-                    onClick={() => navigator.clipboard.writeText(cliCode)}
-                  >
-                    <Clipboard />
-                  </motion.div>
                 </div>
               ) : (
                 <pre

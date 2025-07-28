@@ -376,7 +376,7 @@ export default function Page() {
         </div>
         <div
           ref={propsRef}
-          className="flex sm: w-[98.5%] lg:w-full bg-gray-50 border-r border-l border-t border-gray-300 h-10 sm: mt-3 lg:mt-6 font-medium"
+          className="flex sm: w-[98.5%] lg:w-full sm: h-8 lg:h-10 bg-gray-50 border-r border-l border-t border-gray-300 sm: mt-3 lg:mt-6 font-medium"
         >
           <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[14px]">
             Props
@@ -389,17 +389,19 @@ export default function Page() {
           </div>
         </div>
         <div className="flex w-full sm: h-8 lg:h-10 mb-12 font-extralight bg-neutral-50 border-b sm: border-gray-200 lg:border-white">
-          <div className="flex flex-col w-[20%] text-gray-700">
+          <div className="flex flex-col w-[20%] text-gray-800">
             <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
               text
             </div>
           </div>
-          <div className="flex flex-col w-[20%] text-gray-700">
+          <div className="flex flex-col w-[20%] text-gray-800">
             <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
-              string
+              <span className="bg-black/85 text-white px-2 py-0.2 rounded-md">
+                string
+              </span>
             </div>
           </div>
-          <div className="flex flex-col w-[60%] text-gray-700">
+          <div className="flex flex-col w-[60%] text-gray-800">
             <div className=" sm: pl-1 lg:pl-3 py-1.5 sm: text-[12px] lg:text-[15px]">
               The text you want to display on the Button.{" "}
             </div>

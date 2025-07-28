@@ -85,7 +85,7 @@ export default function Page() {
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
         className="flex flex-col min-h-screen sm: ml-2 lg:ml-20 sm: max-w-screen lg:w-[800px]"
       >
-        <div className="flex items-center gap-0.2 text-gray-500 mt-8 sm: text-[11px] lg:text-[14px] sm: w-[98%] lg:w-full">
+        <div className="flex items-center gap-0.2 text-gray-600 mt-8 sm: text-[12px] lg:text-[14px] sm: w-[98%] lg:w-full">
           <Link href={"/docs"} className="cursor-pointer">
             Documentation
           </Link>
@@ -102,7 +102,7 @@ export default function Page() {
             href={"/docs/components/background/light-grid-masked-bg"}
             className="cursor-pointer sm: hidden lg:block"
           >
-            Light-Grid-Masked-nBg
+            Light-Grid-Masked-Bg
           </Link>
         </div>
         <div
@@ -111,14 +111,14 @@ export default function Page() {
         >
           Light Grid Masked Background
         </div>
-        <div className="text-neutral-500 font-light mt-3 sm: text-[13px] lg:text-[15.5px]">
+        <div className="text-neutral-600 font-light mt-3 sm: text-[13px] lg:text-[15.5px]">
           A seamless mesh of fine lines forming a subtle grid, gently fading
           outward with an elliptical mask for focused depth.
         </div>
         <div className="mt-3">
           <Profile name="Suryansh" date="July 10" />
         </div>
-        <div className="relative flex gap-6 text-md font-sans font-stretch-150% sm: mt-22 lg:mt-14 border-b border-gray-200 sm: w-[97%] lg:w-full pb-[1px]">
+        <div className="relative flex gap-6 text-md font-sans font-stretch-150% mt-14 border-b border-gray-200 sm: w-[97%] lg:w-full pb-[1px]">
           <div
             className={cn(
               "pb-1 transition-colors font-medium cursor-pointer",
@@ -152,17 +152,17 @@ export default function Page() {
             </motion.div>
           )}
         </div>
-        <div className=" rounded-lg mt-4 sm: w-[98.5%] lg:w-full border border-gray-400 ">
+        <div className=" rounded-lg mt-4 sm: w-[98%] lg:w-full border border-gray-400 ">
           {preview === "preview" ? (
             <motion.div
               whileHover={{
                 boxShadow: "rgba(0, 0, 0, 0.72) 0px 25px 40px -10px",
               }}
               transition={{ delay: 0.1 }}
-              className=" bg-neutral-100 h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)]"
+              className=" bg-neutral-100 sm: h-48 lg:h-64 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)]"
             ></motion.div>
           ) : (
-            <div className="sm: h-52 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[15.5px] rounded-md">
+            <div className="sm: h-52 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[11px] lg:text-[15.5px] rounded-md">
               <div className="flex flex-col sm: ml-3 lg:ml-5 sm: my-15 lg:my-18">
                 <div className="flex">
                   <span className="text-purple-400 mr-2">import</span>{" "}
@@ -211,15 +211,15 @@ export default function Page() {
         </div>
         <div
           ref={installationRef}
-          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-28 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
+          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-14 lg:mt-26 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
         >
           Installation
         </div>
 
-        <div className="relative flex gap-6 text-md font-sans font-stretch-150% sm: mt-7 lg:mt-14 border-b border-gray-200 sm: w-[98%] lg:w-full pb-[1px]">
+        <div className="relative flex gap-6 text-md font-sans font-stretch-150% sm: mt-2.5 lg:mt-14 border-b border-gray-200 sm: w-[98%] lg:w-full pb-[1px]">
           <div
             className={cn(
-              "pb-1 transition-colors font-medium cursor-pointer",
+              "pb-1 transition-colors font-medium cursor-pointer sm: text-[13px] lg:text-[14.5px] sm: mt-3",
               cli === "cli"
                 ? "text-black border-b-2 border-black "
                 : "text-gray-400 hover:text-gray-300"
@@ -231,7 +231,7 @@ export default function Page() {
           </div>
           <div
             className={cn(
-              "pb-1 transition-colors cursor-pointer font-medium",
+              "pb-1 transition-colors cursor-pointer font-medium sm: text-[13px] lg:text-[14.5px] sm: mt-3",
               cli === "manual"
                 ? "text-black border-b-2 border-black"
                 : "text-gray-400 hover:text-gray-300"
@@ -263,29 +263,29 @@ export default function Page() {
         </div>
         <div className="relative rounded-lg mt-4 sm: w-[98.5%] lg:w-full">
           {cli === "cli" ? (
-            <div className="bg-[#212121] flex justify-between items-center text-white sm: text-[12px] lg:text-[14.5px] rounded-md sm: py-4 lg:py-5  pl-4">
-              <div className="flex">
-                <span className="text-purple-400">npx</span>
-                <span className="text-white mx-2">from</span>{" "}
-                <span className="text-[#9ECBFF]">
-                  https://drift-ui-jet.vercel.app/r/Dark-Grid-Background.json
-                </span>
+            <div className="bg-[#212121] overflow-x-auto w-full rounded-md sm: py-4 lg:py-5 pl-4">
+              <div className="flex min-w-max justify-between items-center text-white sm: text-[12px] lg:text-[14.5px] pr-7">
+                <div className="flex">
+                  <span className="text-purple-400">npx</span>
+                  <span className="text-white mx-2">from</span>
+                  <span className="text-[#9ECBFF]">
+                    https://drift-ui-swart.vercel.app/r/Light-Grid-Masked-BG.json
+                  </span>
+                </div>
+                <motion.div
+                  whileTap={{ scale: 0.9 }}
+                  className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
+                  onClick={() => {
+                    navigator.clipboard.writeText(LightGridMaskedCli);
+                    setNotifyCli("show");
+                    setTimeout(() => {
+                      setNotifyCli(null);
+                    }, 3000);
+                  }}
+                >
+                  <Clipboard />
+                </motion.div>
               </div>
-              <motion.div
-                whileTap={{
-                  scale: 0.95,
-                }}
-                className="cursor-pointer mr-2"
-                onClick={() => {
-                  navigator.clipboard.writeText(LightGridMaskedCli);
-                  setNotifyCli("show");
-                  setTimeout(() => {
-                    setNotifyCli(null);
-                  }, 3000);
-                }}
-              >
-                <Clipboard />
-              </motion.div>
             </div>
           ) : (
             <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12.5px] lg:text-[14px] flex justify-between">
@@ -368,32 +368,36 @@ export default function Page() {
         </div>
         <div
           ref={propsRef}
-          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-28 lg:mt-32 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
+          className="text-black font-semibold sm: text-xl lg:text-2xl sm: mt-14 lg:mt-26 border-b border-gray-300 pb-0.5 sm: w-[98%] lg:w-full"
         >
           Props
         </div>
-        <div className="flex sm: w-[98%] lg:w-full bg-gray-50 border border-gray-300 h-10 mt-9">
-          <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5">
+        <div className="flex sm: w-[98%] lg:w-full bg-gray-50 border border-gray-300 sm: h-8 lg:h-10 mt-9">
+          <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[14px]">
             Props
           </div>
-          <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5">
+          <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[14px]">
             Type
           </div>
-          <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5">Description</div>
+          <div className="w-[60%] bg-gray-200 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[14px]">
+            Description
+          </div>
         </div>
-        <div className="flex w-full h-10 font-extralight mb-12 border-b sm: border-gray-200 lg:border-white bg-gray-50">
+        <div className="flex w-full sm: h-11 lg:h-10 font-extralight mb-12 border-b sm: border-gray-200 lg:border-white bg-gray-50">
           <div className="flex flex-col w-[20%] sm: text-gray-800 lg:text-gray-600">
             <div className="sm: pl-1 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
-              children
+              <span className="bg-black/85 text-white px-2 py-0.2 rounded-md">
+                children
+              </span>
             </div>
           </div>
           <div className="flex flex-col w-[20%] sm: text-gray-800 lg:text-gray-600">
-            <div className="sm: pl-0 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
+            <div className="sm: pl-0 lg:pl-3 py-1.5 sm: text-[12px] lg:text-[15px]">
               ReactElement
             </div>
           </div>
           <div className="flex flex-col w-[60%] sm: text-gray-800 lg:text-gray-600">
-            <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
+            <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[11px] lg:text-[15px]">
               The child element that will have the magnetic interaction applied.{" "}
             </div>
           </div>

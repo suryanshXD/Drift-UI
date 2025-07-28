@@ -18,7 +18,7 @@ export default function AnimatedButton({ text }: styling) {
     <>
       <button className="relative w-fit">
         <div
-          className={`relative bg-black text-white text-center border-1 border-black py-2 px-6 rounded-lg transition-colors duration-200 z-1 cursor-pointer`}
+          className={`relative bg-black text-white text-center border-1 border-black py-2 px-6 rounded-md transition-colors duration-200 z-1 cursor-pointer`}
         >
           {text}
         </div>
