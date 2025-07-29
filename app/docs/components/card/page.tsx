@@ -6,5 +6,5 @@ import GapingText from "@/registry/new-york/Gaping-Text/Gaping-Text";
 import RotateWord from "@/registry/new-york/Rotate-Words/Rotate-Words";
 
 export default function Page() {
-  return <div className="ml-5">I'll be writing it soon</div>;
+  return <div className="ml-5">I&apos;ll be writing it soon</div>;
 }
