@@ -165,10 +165,10 @@ export default function Page() {
             <div className="sm: h-52 lg:h-64 bg-[#212121] flex justify-between text-white sm: text-[11px] lg:text-[15.5px] rounded-md">
               <div className="flex flex-col sm: ml-3 lg:ml-5 sm: my-15 lg:my-18">
                 <div className="flex">
-                  <span className="text-purple-400 mr-2">import</span>{" "}
-                  DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
+                  <span className="text-purple-400 mr-2">import</span> DotLighBg{" "}
+                  <span className="text-purple-400 mx-2">from</span>{" "}
                   <span className="text-emerald-400">
-                    &quot;@/components/ui/Dark-Grid-BG&quot;
+                    &quot;@/components/ui/Dot-Light-BG&quot;
                   </span>
                   ;
                 </div>
@@ -184,8 +184,8 @@ export default function Page() {
                   <span className="text-purple-400 mr-2">return</span>{" "}
                   <span>{"<"}</span>
                   <span className="text-amber-400">
-                    DarkGridMasked<span className="text-white">{"></"}</span>
-                    DarkGridMasked
+                    DotLighBg<span className="text-white">{"></"}</span>
+                    DotLighBg
                   </span>
                   <span>{">"}</span>;
                 </div>
@@ -328,10 +328,9 @@ export default function Page() {
                   <span className="text-pink-300 ml-1.5">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400 ml-1">
-                    &quot;h-full w-full bg-white text-black
-                    bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)]
-                    bg-[size:24px_24px]
-                    [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_85%,transparent_100%)]&quot;
+                    &quot;inset-0 h-full w-full bg-white
+                    bg-[radial-gradient(#c8cbcc_1px,transparent_1px)]
+                    [background-size:16px_16px]&quot;
                   </span>
                   <span className="text-white">&gt;</span>
                 </div>

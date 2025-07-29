@@ -184,8 +184,8 @@ export default function Page() {
                   <span className="text-purple-400 mr-2">return</span>{" "}
                   <span>{"<"}</span>
                   <span className="text-amber-400">
-                    DarkGridMasked<span className="text-white">{"></"}</span>
-                    DarkGridMasked
+                    DarkGridBg<span className="text-white">{"></"}</span>
+                    DarkGridBg
                   </span>
                   <span>{">"}</span>;
                 </div>
@@ -328,10 +328,9 @@ export default function Page() {
                   <span className="text-pink-300 ml-1.5">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400 ml-1">
-                    &quot;h-full w-full bg-white text-black
-                    bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)]
-                    bg-[size:24px_24px]
-                    [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_85%,transparent_100%)]&quot;
+                    &quot;h-full w-full bg-black text-white pointer-events-none
+                    absolute inset-0 [background-size:40px_40px] select-none
+                    [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]&quot;
                   </span>
                   <span className="text-white">&gt;</span>
                 </div>

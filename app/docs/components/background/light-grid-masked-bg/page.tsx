@@ -168,7 +168,7 @@ export default function Page() {
                   <span className="text-purple-400 mr-2">import</span>{" "}
                   DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
                   <span className="text-emerald-400">
-                    &quot;@/components/ui/Dark-Grid-BG&quot;
+                    &quot;@/components/ui/Light-Grid-Masked-BG&quot;
                   </span>
                   ;
                 </div>
@@ -184,8 +184,8 @@ export default function Page() {
                   <span className="text-purple-400 mr-2">return</span>{" "}
                   <span>{"<"}</span>
                   <span className="text-amber-400">
-                    DarkGridMasked<span className="text-white">{"></"}</span>
-                    DarkGridMasked
+                    LightGridMasked<span className="text-white">{"></"}</span>
+                    LightGridMasked
                   </span>
                   <span>{">"}</span>;
                 </div>

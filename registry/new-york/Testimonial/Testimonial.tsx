@@ -26,7 +26,7 @@ export default function Testimonial({ content }: content) {
   return (
     <>
       <div className="flex flex-row bg-linear-to-r from from-neutral-100 via-blue-200 to-neutral-100 rounded-xl  gap-3 sm:w-full sm: mx-4 lg:mx-0  md:w-3xl border border-gray-300">
-        <motion.span whileTap={{ scale: [0.8] }}>
+        <motion.span whileTap={{ scale: [0.9] }}>
           <ArrowLeft
             onClick={handleNext}
             className="text-black size-6 font-semibold bg-white rounded-full p-1 border border-black ml-2.5 sm: my-15 lg:my-16"
@@ -36,13 +36,19 @@ export default function Testimonial({ content }: content) {
           {
             <motion.span
               key={index.name}
-              initial={{ opacity: 0, x: -40, scale: 1 }}
-              animate={{ opacity: 1, x: 0, scale: [0.7, 1, 0.95] }}
+              initial={{ opacity: 0, x: -40, scale: 1, filter: "blur(8px)" }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: [0.7, 1, 0.95],
+                filter: "blur(0px)",
+              }}
+              transition={{ delay: 0.15, duration: 0.3 }}
             >
               <Image
                 src={index.img}
                 alt="img"
-                className="rounded-lg border border-black w-32 sm: ml-0 md:ml-12"
+                className="rounded-lg border border-black sm: w-24 lg:w-32 sm: ml-0 md:ml-12"
               />
             </motion.span>
           }
@@ -51,9 +57,15 @@ export default function Testimonial({ content }: content) {
               {index.name.split("").map((char: string, i: number) => (
                 <motion.span
                   key={char + i}
-                  initial={{ opacity: 0, y: 40, rotate: -45 }}
-                  animate={{ opacity: 1, y: 0, rotate: 0 }}
-                  transition={{ duration: 0.2 * i }}
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                    rotate: -45,
+                    filter: "blur(8px)",
+                  }}
+                  animate={{ opacity: 1, y: 0, rotate: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.2 }}
+                  exit={{ filter: "blur(0px)" }}
                 >
                   {char}
                 </motion.span>
@@ -63,9 +75,10 @@ export default function Testimonial({ content }: content) {
               {index.testimonial.split("").map((char: string, i: number) => (
                 <motion.span
                   key={char + i}
-                  initial={{ opacity: 0, x: 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.05 * i }}
+                  initial={{ opacity: 0, x: 40, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.03 * i }}
+                  exit={{ filter: "blur(0px)" }}
                 >
                   {char}
                 </motion.span>
@@ -73,7 +86,7 @@ export default function Testimonial({ content }: content) {
             </div>
           </div>
         </div>
-        <motion.span whileTap={{ scale: 0.8 }}>
+        <motion.span whileTap={{ scale: 0.9 }}>
           <ArrowRight
             onClick={handlePrev}
             className="text-black size-6 font-semibold bg-white rounded-full p-1 border border-black mr-2.5 sm: my-15 lg:my-16"

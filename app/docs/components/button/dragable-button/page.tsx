@@ -59,7 +59,7 @@ export default function Page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="fixed flex flex-col ml-[66%] mt-9 sm: hidden lg:block"
+        className="fixed ml-[66%] mt-9 sm: hidden lg:block"
       >
         <div className="text-[15px] font-semibold">On this page</div>
         <div className="flex-col mt-4 text-gray-600">
@@ -392,11 +392,11 @@ export default function Page() {
           <div className="flex flex-col w-[20%] text-gray-800 h-full font-sans">
             <div className="h-[80%] pl-3 py-1.5 sm: text-[12.5px] lg:text-[15px]">
               <span className="bg-black/85 text-white px-2 py-0.2 rounded-md">
-                img
+                text
               </span>
             </div>
             <div className="pl-3 py-1.5 bg-gray-100 border-b sm: border-gray-300 lg:border-white sm: text-[13px] lg:text-[15px]">
-              width
+              varient
             </div>
           </div>
           <div className="flex flex-col w-[20%] text-gray-800 font-sans">
@@ -405,16 +405,16 @@ export default function Page() {
             </div>
             <div className="pl-3 py-1.5 bg-gray-100 border-b sm: border-gray-300 lg:border-white sm: text-[13px] lg:text-[15px]">
               <span className="bg-black/85 text-white px-2 py-0.2 rounded-md">
-                number
+                string
               </span>
             </div>
           </div>
           <div className="flex flex-col w-[60%] text-gray-800 font-sans">
-            <div className="h-[80%] pl-3 py-1.5 sm: text-[12.5px] lg:text-[15px]">
+            <div className="h-[85%] pl-3 py-1.5 sm: text-[12px] lg:text-[15px]">
               url or path of the image
             </div>
-            <div className="pl-3 py-1.5 bg-gray-100 border-b sm: border-gray-300 lg:border-white sm: text-[13px] lg:text-[15px]">
-              specify the width of the image
+            <div className="pl-3 py-1.5 bg-gray-100 border-b sm: border-gray-300 lg:border-white sm: text-[12px] lg:text-[15px]">
+              button style variant
             </div>
           </div>
         </div>

@@ -60,7 +60,7 @@ export default function Page() {
         initial={{ filter: "blur(16px)" }}
         animate={{ filter: "blur(0px)" }}
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
-        className="fixed flex flex-col ml-[66%] mt-9 sm: hidden lg:block"
+        className="fixed ml-[66%] mt-9 sm: hidden lg:block"
       >
         <div className="text-[15px] font-semibold">On this page</div>
         <div className="flex-col mt-4 text-gray-600">
@@ -403,7 +403,7 @@ export default function Page() {
             </div>
           </div>
           <div className="flex flex-col w-[60%] text-gray-800">
-            <div className=" sm: pl-1 lg:pl-3 py-1.5 sm: text-[12px] lg:text-[15px]">
+            <div className=" sm: pl-1 lg:pl-3 py-1.5 sm: text-[11px] lg:text-[15px]">
               The text you want to display on the Button.{" "}
             </div>
           </div>

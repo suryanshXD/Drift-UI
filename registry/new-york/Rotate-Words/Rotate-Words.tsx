@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 
 interface content {
-  text: string;
+  text?: string;
   words: string[];
 }
 

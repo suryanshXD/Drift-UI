@@ -29,18 +29,6 @@
       "dependencies": ["framer-motion"]
     },
     {
-      "name": "Card-Scroll-Up",
-      "type": "registry:ui",
-      "title": "Card Scroll Up",
-      "files": [
-        {
-          "path": "registry/new-york/Card-Scroll-Up/Card-Scroll-Up.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["framer-motion"]
-    },
-    {
       "name": "Dark-Grid-Background",
       "type": "registry:ui",
       "title": "Dark Grid Background",

@@ -678,7 +678,7 @@ export default function Page() {
             </div>
             <div
               ref={propsRef}
-              className="flex sm: w-[118%] lg:w-[125%] bg-gray-50 border border-gray-300 sm: h-8 lg:h-10 sm: mt-6 lg:mt-9"
+              className="flex sm: w-[118%] lg:w-[125%] bg-gray-50 font-medium border border-gray-300 sm: h-8 lg:h-10 sm: mt-6 lg:mt-9"
             >
               <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[15px]">
                 Props
@@ -691,7 +691,7 @@ export default function Page() {
               </div>
             </div>
             <div className="flex sm: w-[121%] lg:w-[125%] sm: h-14 lg:h-18 lg:mt-1  font-extralight">
-              <div className="flex flex-col w-[20%] text-gray-600 h-full">
+              <div className="flex flex-col w-[20%] text-gray-800 h-full">
                 <div className="h-[60%] pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
                   img
                 </div>
@@ -699,7 +699,7 @@ export default function Page() {
                   width
                 </div>
               </div>
-              <div className="flex flex-col w-[20%] text-gray-600">
+              <div className="flex flex-col w-[20%] text-gray-800">
                 <div className="h-[60%] pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
                   string
                 </div>
@@ -707,7 +707,7 @@ export default function Page() {
                   number
                 </div>
               </div>
-              <div className="flex flex-col w-[60%] text-gray-600">
+              <div className="flex flex-col w-[60%] text-gray-800">
                 <div className="h-[60%] pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
                   url or path of the image
                 </div>

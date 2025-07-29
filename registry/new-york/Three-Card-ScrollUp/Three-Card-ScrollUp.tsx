@@ -14,13 +14,13 @@ export default function ThreeCardScrollUp({ img1, img2, img3, width }: style) {
       initial="initial"
       whileInView="inView"
       viewport={{ amount: "all" }}
-      className="flex justify-center size-"
+      className="flex justify-center"
     >
       <motion.img
         className={`absolute bg-green-200 rounded-md z-20 text-center flex items-center justify-center`}
         variants={{
           initial: { x: 0, rotate: 0 },
-          inView: { x: -360, rotate: 0 },
+          inView: { x: "-120%", rotate: 0 },
         }}
         transition={{ duration: 1 }}
         src={`${img1}`}
@@ -42,7 +42,7 @@ export default function ThreeCardScrollUp({ img1, img2, img3, width }: style) {
         className={`absolute bg-blue-200 rounded-md z-20 text-center flex items-center justify-center`}
         variants={{
           initial: { x: 0, rotate: 10 },
-          inView: { x: 360, rotate: 0 },
+          inView: { x: "120%", rotate: 0 },
         }}
         transition={{ duration: 1 }}
         src={`${img3}`}
