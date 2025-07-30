@@ -6,9 +6,8 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
-import Testimonial from "@/registry/new-york/Testimonial/Testimonial";
-import { img1, img2 } from "@/libs/images";
-import profile from "@/public/Anime-Profile.jpg";
+import { img1 } from "@/libs/images";
+import ModalCard from "@/registry/new-york/Modal-Card/Modal-Card";
 
 export default function Page() {
   const [preview, setPreview] = useState<"preview" | "code">("preview");
@@ -41,20 +40,20 @@ export default function Page() {
     });
   };
 
-  const feed = [
-    {
-      img: profile,
-      name: "Suryansh",
-      testimonial: "Feels great using your product",
-    },
-    {
-      img: profile,
-      name: "Aryan",
-      testimonial:
-        "Better than any other out in the market keep going great product",
-    },
-  ];
-
+  const previewCode = `export default function DarkGridBg({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <>
+      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
+        {children}
+      </div>
+    </>
+  );
+}
+`;
   return (
     <>
       <motion.div
@@ -104,22 +103,32 @@ export default function Page() {
           <ChevronRight />
           <div>Components</div>
           <ChevronRight />
-          <Link href={"/docs/components/button"} className="cursor-pointer">
-            Scroll
+          <Link href={"/docs/components/card"} className="cursor-pointer">
+            Cards
+          </Link>
+          <span className="sm: hidden lg:block">
+            <ChevronRight />
+          </span>
+          <Link
+            href={"/docs/components/card/modal-card"}
+            className="cursor-pointer sm: hidden lg:block"
+          >
+            Modal-Card
           </Link>
         </div>
         <div
           ref={previewRef}
           className="sm: text-2xl lg:text-3xl text-black font-sans font-bold mt-12 "
         >
-          Testimonial
+          Modal Card
         </div>
         <div className="text-gray-600  mt-3 sm: text-[12.5px] lg:text-[15.5px] font-stretch-200%">
-          A smooth and playful testimonial carousel that lets users explore
-          feedback with animated transitions and subtle swipe controls.
+          A sleek, interactive image modal that smoothly reveals your visuals
+          with stylish pop-up animations—perfect for showcasing content with a
+          touch of elegance and control.
         </div>
         <div className="mt-3">
-          <Profile name="Suryansh" date="July 13" />
+          <Profile name="Suryansh" date="July 30" />
         </div>
         <div className="relative flex gap-6 text-md font-sans font-stretch-150% mt-14 border-b border-gray-200 sm: w-[98.5%] lg:w-full pb-[1px]">
           <div
@@ -155,15 +164,20 @@ export default function Page() {
             </motion.div>
           )}
         </div>
-        <div className=" rounded-lg mt-4 sm: w-[154%] lg:w-full">
+        <div className="rounded-lg mt-4 sm: w-[98%] lg:w-full">
           {preview === "preview" ? (
-            <div className="flex flex-col justify-center items-center bg-gray-50 h-80 sm: pb-20 w-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border sm: border-gray-500 lg:border-gray-400 rounded-lg p-5">
-              <div className="mt-18">
-                <Testimonial content={feed} />
+            <div className="flex justify-center items-center bg-gray-50 h-96 bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] border sm: border-gray-500 lg:border-gray-400 rounded-lg">
+              <div className="mt-48">
+                <div className="sm: block lg:hidden ">
+                  <ModalCard img={img1} width={150} />
+                </div>
+                <div className="sm: hidden lg:block">
+                  <ModalCard img={img1} width={180} />
+                </div>
               </div>
             </div>
           ) : (
-            <div className="h-64 bg-[#212121] flex justify-between text-white sm: text-[12px] lg:text-[14px] rounded-md">
+            <div className="h-64 bg-[#212121] flex justify-between text-white sm: text-[12.5px] lg:text-[14px] rounded-md">
               <div className="flex flex-col sm: ml-2 lg:ml-5 sm: my-22 lg:my-16">
                 <div className="flex">
                   <span className="text-purple-400 mr-2">import</span>{" "}
@@ -195,7 +209,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="fixed sm: ml-[92%] lg:ml-[96.5%] mt-2.5 cursor-pointer"
                 onClick={() => {
-                  navigator.clipboard.writeText("Hi");
+                  navigator.clipboard.writeText(previewCode);
                   setNotifyPreview("show");
                   setTimeout(() => {
                     setNotifyPreview(null);
@@ -265,14 +279,14 @@ export default function Page() {
                   <span className="text-purple-400">npx</span>
                   <span className="text-white mx-2">from</span>
                   <span className="text-[#9ECBFF]">
-                    https://drift-ui-swart.vercel.app/r/Testimonial.json
+                    https://drift-ui-swart.vercel.app/r/Animated-Button.json
                   </span>
                 </div>
                 <motion.div
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText("Hi");
+                    navigator.clipboard.writeText(previewCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -349,7 +363,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText("hi");
+                  navigator.clipboard.writeText(previewCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -366,7 +380,7 @@ export default function Page() {
         </div>
         <div
           ref={propsRef}
-          className="flex sm: w-[98%] lg:w-full sm: h-8 lg:h-10 bg-gray-50 border-r border-l border-t border-gray-300 sm: mt-3 lg:mt-6 font-medium"
+          className="flex sm: w-[98.5%] lg:w-full sm: h-8 lg:h-10 bg-gray-50 border-r border-l border-t border-gray-300 sm: mt-3 lg:mt-6 font-medium"
         >
           <div className="w-[20%] bg-gray-200 border-r border-gray-300 pl-2.5 pt-1.5 sm: text-[13px] lg:text-[14px]">
             Props
@@ -380,27 +394,35 @@ export default function Page() {
         </div>
         <div className="flex w-full sm: h-8 lg:h-10 mb-12 font-extralight bg-neutral-50 border-b sm: border-gray-200 lg:border-white">
           <div className="flex flex-col w-[20%] text-gray-800">
-            <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[11px] lg:text-[15px]">
-              content
+            <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
+              text
             </div>
           </div>
           <div className="flex flex-col w-[20%] text-gray-800">
-            <div className="sm: pl-2 lg:pl-3 py-1.5 lg:mt-0.5 sm: text-[10.5px] lg:text-[14.5px]">
-              <span className="bg-black/85 text-white sm: px-[4px] lg:px-3 sm: py-[1.2px] lg:py-[3px] rounded-sm">
-                string [ ]
+            <div className="sm: pl-2 lg:pl-3 py-1.5 sm: text-[13px] lg:text-[15px]">
+              <span className="bg-black/85 text-white px-2 py-0.2 rounded-md">
+                string
               </span>
             </div>
           </div>
           <div className="flex flex-col w-[60%] text-gray-800">
-            <div className=" sm: pl-0 lg:pl-3 sm: py-0.1 lg:py-1.5 sm: text-[10px] lg:text-[15px]">
-              The array of content which you want to show for the testimonials.
+            <div className=" sm: pl-1 lg:pl-3 py-1.5 sm: text-[11px] lg:text-[15px]">
+              The text you want to display on the Button.{" "}
             </div>
           </div>
         </div>
         <div className="flex sm: w-[98.5%] lg:w-full justify-end gap-2 mt-8 sm: mb-4 lg:mb-4">
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
-              href={"/docs/components/text"}
+              href={"/docs/components/card"}
+              className="bg-black sm: text-sm lg:text-[14px] sm: px-5 lg:px-5 sm: py-1.5 lg:py-2 text-neutral-300 rounded-lg"
+            >
+              Back
+            </Link>
+          </motion.div>
+          <motion.div whileTap={{ scale: 0.95 }}>
+            <Link
+              href={"/docs/components/card/hover-tap-card"}
               className="bg-black sm: text-sm lg:text-[14px] sm: px-5 lg:px-5 sm: py-1.5 lg:py-2 text-neutral-300 rounded-lg"
             >
               Next

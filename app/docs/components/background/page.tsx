@@ -2,6 +2,7 @@
 import { ChevronRight } from "@/app/components/Logo/Chevron-Right";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function Page() {
   return (
@@ -42,9 +43,15 @@ export default function Page() {
           >
             <Link
               href={"/docs/components/background/dark-grid-bg"}
-              className="bg-black text-[12.5px]  h-full w-[98.5%] flex flex-col justify-center items-center text-gray-200  inset-0 [background-size:20px_20px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)] font-sans rounded-lg"
+              className="bg-black text-[12.5px]  h-full w-[98.5%] flex justify-center items-center gap-1 text-gray-200  inset-0 [background-size:20px_20px]  [background-image:linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)] font-sans rounded-lg"
             >
-              Dark Grid Bg
+              Dark Grid Bg{" "}
+              <span className="sm: hidden lg:block">
+                <SquareArrowOutUpRight size={15} />
+              </span>
+              <span className="sm: block lg:hidden">
+                <SquareArrowOutUpRight size={11} />
+              </span>
             </Link>
           </motion.div>
           <motion.div
@@ -58,9 +65,15 @@ export default function Page() {
           >
             <Link
               href={"/docs/components/background/light-grid-masked-bg"}
-              className="flex flex-col justify-center items-center text-[13px] text-gray-600 font-sans bg-gray-50 h-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] cursor-pointer"
+              className="flex justify-center items-center gap-1 text-[13px] text-gray-600 font-sans bg-gray-50 h-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_75%_50%_at_50%_50%,#fff_70%,transparent_100%)] cursor-pointer"
             >
-              Light Gird Masked Bg
+              Light Gird Masked Bg{" "}
+              <span className="sm: hidden lg:block">
+                <SquareArrowOutUpRight size={15} />
+              </span>
+              <span className="sm: block lg:hidden">
+                <SquareArrowOutUpRight size={11} />
+              </span>
             </Link>
           </motion.div>
           <motion.div
@@ -74,9 +87,15 @@ export default function Page() {
           >
             <Link
               href={"/docs/components/background/light-dot-bg"}
-              className="flex flex-col justify-center items-center text-[13px] text-gray-600 font-sans inset-0 h-full bg-gray bg-[radial-gradient(#c8cbcc_1px,transparent_1px)] [background-size:16px_16px] cursor-pointer"
+              className="flex justify-center items-center gap-1 text-[13px] text-gray-600 font-sans inset-0 h-full bg-gray bg-[radial-gradient(#c8cbcc_1px,transparent_1px)] [background-size:16px_16px] cursor-pointer"
             >
-              Dot Light Bg
+              Dot Light Bg{" "}
+              <span className="sm: hidden lg:block">
+                <SquareArrowOutUpRight size={15} />
+              </span>
+              <span className="sm: block lg:hidden">
+                <SquareArrowOutUpRight size={11} />
+              </span>
             </Link>
           </motion.div>
         </div>

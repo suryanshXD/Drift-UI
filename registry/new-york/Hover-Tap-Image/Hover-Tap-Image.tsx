@@ -11,19 +11,20 @@ export default function HoverTapImage({ img, width }: style) {
     <>
       <motion.img
         whileHover={{
-          rotateX: 10,
-          rotateY: 10,
+          rotateX: 6.66,
+          rotateY: 20,
           scale: 1.05,
           transition: {
             type: "spring",
             stiffness: 300,
             damping: 20,
-            duration: 2,
+            duration: 1,
+            delay: 0.1,
           },
         }}
-        whileTap={{ scale: 1.15 }}
+        whileTap={{ scale: [1.09, 1] }}
         style={{ perspective: 1000 }}
-        className={`cursor-pointer`}
+        className={`cursor-pointer rounded-md`}
         src={`${img}`}
         width={`${width}`}
       />

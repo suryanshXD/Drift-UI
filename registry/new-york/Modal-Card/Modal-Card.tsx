@@ -13,26 +13,35 @@ export default function ModalCard({ img, width }: style) {
 
   return (
     <>
-      <motion.button
-        whileTap={{ y: 1.5 }}
-        onClick={() => setIsVisible(!isVisible)}
-        className="absolute p-2 bg-black text-white rounded-full cursor-pointer"
-      >
-        {!isVisible ? "Show" : "Close"}
-      </motion.button>
-      <AnimatePresence initial={false}>
-        {isVisible ? (
-          <motion.img
-            style={{ transformStyle: "preserve-3d" }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1, marginBottom: "18%" }}
-            exit={{ opacity: 0, scale: 1, marginTop: "8%" }}
-            className="relative rounded-xl shadow-3xl"
-            src={`${img}`}
-            width={`${width}`}
-          />
-        ) : null}
-      </AnimatePresence>
+      <div className="flex flex-col justify-center items-center">
+        <motion.button
+          whileTap={{ y: 1.5, scale: 0.95 }}
+          transition={{ ease: "easeOut", delay: 0.1 }}
+          onClick={() => setIsVisible(!isVisible)}
+          className="relative p-2 bg-black text-white rounded-full cursor-pointer sm: text-[11px] lg:text-[14px]"
+        >
+          {!isVisible ? "Show" : "Close"}
+        </motion.button>
+        <AnimatePresence initial={false}>
+          {isVisible ? (
+            <motion.img
+              style={{ transformStyle: "preserve-3d" }}
+              initial={{ opacity: 0, scale: 0.2, filter: "blur(10px)" }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: "-72%",
+                filter: "blur(0px)",
+              }}
+              exit={{ opacity: 0, scale: 0.5, y: "-40%" }}
+              transition={{ ease: "easeOut", delay: 0.05 }}
+              className="absolute rounded-xl shadow-3xl"
+              src={`${img}`}
+              width={`${width}`}
+            />
+          ) : null}
+        </AnimatePresence>
+      </div>
     </>
   );
 }

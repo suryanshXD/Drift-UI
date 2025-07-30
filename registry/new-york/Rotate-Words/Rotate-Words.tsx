@@ -12,7 +12,7 @@ export default function RotateWord({ text, words }: content) {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((current) => current + (1 % words.length));
+      setIndex((current) => (current + 1) % words.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);

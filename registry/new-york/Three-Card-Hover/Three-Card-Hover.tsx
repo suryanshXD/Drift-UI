@@ -19,9 +19,9 @@ export default function ThreeCardHover({ img1, img2, img3, width }: style) {
         className={`absolute bg-green-200 rounded-md z-20 text-center flex items-center justify-center`}
         variants={{
           initial: { x: 0, rotate: 0 },
-          hover: { x: -300, rotate: 0 },
+          hover: { x: "-120%", rotate: 0 },
         }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
         src={`${img1}`}
         width={width}
       />
@@ -32,7 +32,7 @@ export default function ThreeCardHover({ img1, img2, img3, width }: style) {
           initial: { x: 0, rotate: 20 },
           hover: { x: 0, rotate: 0 },
         }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
         src={`${img2}`}
         width={width}
       />
@@ -41,9 +41,9 @@ export default function ThreeCardHover({ img1, img2, img3, width }: style) {
         className={`absolute bg-blue-200 rounded-md z-20 text-center flex items-center justify-center`}
         variants={{
           initial: { x: 0, rotate: 10 },
-          hover: { x: 300, rotate: 0 },
+          hover: { x: "120%", rotate: 0 },
         }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
         src={`${img3}`}
         width={width}
       />

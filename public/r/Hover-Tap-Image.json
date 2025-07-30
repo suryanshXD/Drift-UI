@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/new-york/Hover-Tap-Image/Hover-Tap-Image.tsx",
-      "content": "\"use client\";\r\nimport { motion } from \"framer-motion\";\r\n\r\ninterface style {\r\n  img: any;\r\n  width: number;\r\n}\r\n\r\nexport default function HoverTapImage({ img, width }: style) {\r\n  return (\r\n    <>\r\n      <motion.img\r\n        whileHover={{\r\n          rotateX: 10,\r\n          rotateY: 10,\r\n          scale: 1.05,\r\n          transition: {\r\n            type: \"spring\",\r\n            stiffness: 300,\r\n            damping: 20,\r\n            duration: 2,\r\n          },\r\n        }}\r\n        whileTap={{ scale: 1.15 }}\r\n        style={{ perspective: 1000 }}\r\n        className={`cursor-pointer`}\r\n        src={`${img}`}\r\n        width={`${width}`}\r\n      />\r\n    </>\r\n  );\r\n}\r\n",
+      "content": "\"use client\";\r\nimport { motion } from \"framer-motion\";\r\n\r\ninterface style {\r\n  img: any;\r\n  width: number;\r\n}\r\n\r\nexport default function HoverTapImage({ img, width }: style) {\r\n  return (\r\n    <>\r\n      <motion.img\r\n        whileHover={{\r\n          rotateX: 6.66,\r\n          rotateY: 20,\r\n          scale: 1.05,\r\n          transition: {\r\n            type: \"spring\",\r\n            stiffness: 300,\r\n            damping: 20,\r\n            duration: 1,\r\n            delay: 0.1,\r\n          },\r\n        }}\r\n        whileTap={{ scale: [1.09, 1] }}\r\n        style={{ perspective: 1000 }}\r\n        className={`cursor-pointer rounded-md`}\r\n        src={`${img}`}\r\n        width={`${width}`}\r\n      />\r\n    </>\r\n  );\r\n}\r\n",
       "type": "registry:ui"
     }
   ]
