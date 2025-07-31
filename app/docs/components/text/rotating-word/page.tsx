@@ -300,7 +300,7 @@ export default function Page() {
                   <span className="text-purple-400">npx</span>
                   <span className="text-white mx-2">from</span>
                   <span className="text-[#9ECBFF]">
-                    https://drift-ui-swart.vercel.app/r/Animated-Button.json
+                    https://drift-ui-swart.vercel.app/r/Rotate-Words.json
                   </span>
                 </div>
                 <motion.div

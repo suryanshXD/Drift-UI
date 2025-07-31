@@ -170,7 +170,7 @@ export default function Page() {
                 whileTap={{ scale: [0.95, 1] }}
                 transition={{ duration: 0.3 }}
               >
-                <RainbowButton text="Animated-button" />
+                <RainbowButton text="Rainbow-button" />
               </motion.div>
             </div>
           ) : (
