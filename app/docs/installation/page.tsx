@@ -125,7 +125,8 @@ export default function Page() {
               Configure components.json
             </div>
             <div className="sm: text-[12px] lg:text-[16.5px] text-gray-700/80 sm: mt-1 lg:mt-2 font-sans">
-              When running the init command, you'll be asked to configure your{" "}
+              When running the init command, you&apos;ll be asked to configure
+              your{" "}
               <span className="text-white/90 bg-black sm: text-[11px] lg:text-[15px] sm: px-1.5 lg:px-2 sm: py-0.2 lg:py-0.5 rounded-sm">
                 {" "}
                 `components.json`
