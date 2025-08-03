@@ -173,42 +173,75 @@ export default function Page() {
               </motion.div>
             </div>
           ) : (
-            <div className="h-64 bg-[#212121] flex justify-between text-white sm: text-[12.5px] lg:text-[14px] rounded-md">
-              <div className="flex flex-col sm: ml-2 lg:ml-5 sm: my-22 lg:my-16">
+            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12.5px] lg:text-[14px] flex justify-between">
+              <div className="min-w-max flex flex-col p-4 sm: mt-6 lg:mt-8 sm: mb-0 lg:mb-4">
                 <div className="flex">
-                  <span className="text-purple-400 mr-2">import</span>{" "}
-                  DarkGridBg <span className="text-purple-400 mx-2">from</span>{" "}
-                  <span className="text-emerald-400">
-                    &quot;@/components/ui/Dark-Grid-BG&quot;
-                  </span>
-                  ;
-                </div>
-                <div className="flex sm: mt-4 lg:mt-6">
                   <span className="text-purple-400">
                     export default function
                   </span>{" "}
-                  <span className="text-amber-400 mx-2">
-                    DarkGridBackgroundDemo () &#123;
+                  <span className="text-amber-400 ml-1.5">DarkGridBg(</span>
+                  <span className="text-purple-400 ml-0.5">&#123;</span>
+                </div>
+                <div className="flex ml-4">
+                  children<span className="text-purple-400">,</span>
+                </div>
+                <div className="flex ml-1">
+                  <span className="text-pink-400">&#125;</span>
+                  <span className="text-purple-400">:</span>{" "}
+                  <span className="text-[#9ECBFF] ml-3">Readonly</span>
+                  <span className="text-pink-400 mt-[2]">&lt;</span>
+                  <span className="text-blue-400">&#123;</span>
+                </div>
+                <div className="flex ml-4">
+                  <span className="text-pink-300">children</span>
+                  <span className="text-purple-400">:</span>{" "}
+                  <span className="text-[#9ECBFF]">React.ReactNode</span>
+                  <span className="text-pink-400">;</span>
+                </div>
+                <div className="flex ml-1">
+                  <span className="text-blue-400">&#125;</span>
+                  <span className="text-pink-400 mt-[2]">&gt;</span>
+                  <span className="text-amber-400">&#41; &#123;</span>
+                </div>
+                <div className="flex ml-4 mt-1.5">
+                  <span className="text-purple-400">return</span>
+                  <span className="text-pink-400 ml-1.5">&#40;</span>
+                </div>
+                <div className="flex ml-6">
+                  <span className="text-white">&lt;</span>
+                  <span className="text-purple-400">div</span>{" "}
+                  <span className="text-pink-300 ml-1.5">className</span>
+                  <span className="text-purple-400">=</span>
+                  <span className="text-emerald-400 ml-1">
+                    &quot;bg-black text-white inset-0
+                    [background-size:40px_40px] select-none
+                    [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]&quot;
                   </span>
+                  <span className="text-white">&gt;</span>
                 </div>
-                <div className="flex ml-3">
-                  <span className="text-purple-400 mr-2">return</span>{" "}
-                  <span>{"<"}</span>
-                  <span className="text-amber-400">AnimatefButton</span>
-                  <span>{"/>"}</span>;
+                <div className="flex ml-8">
+                  <span className="text-blue-400">&#123;</span>children
+                  <span className="text-blue-400">&#125;</span>
                 </div>
-                <div className="flex ">
-                  <span className="text-amber-400">&#125;</span>
+                <div className="flex ml-6">
+                  <span className="text-white">&lt;/</span>
+                  <span className="text-purple-400">div</span>
+                  <span className="text-white">&gt;</span>
+                </div>
+                <div className="flex ml-1">
+                  <span className="text-pink-400">&#41;</span>
+                  <span className="text-amber-400 ml-1">&#125;</span>;
                 </div>
               </div>
+
               <motion.div
                 whileTap={{ scale: 0.95 }}
-                className="fixed sm: ml-[92%] lg:ml-[96.5%] mt-2.5 cursor-pointer"
+                className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
                   navigator.clipboard.writeText(previewCode);
-                  setNotifyPreview("show");
+                  setNotifyManual("show");
                   setTimeout(() => {
-                    setNotifyPreview(null);
+                    setNotifyManual(null);
                   }, 3000);
                 }}
               >
@@ -294,64 +327,174 @@ export default function Page() {
               </div>
             </div>
           ) : (
-            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12.5px] lg:text-[14px] flex justify-between">
+            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12px] lg:text-[14.5px] flex justify-between">
               <div className="min-w-max flex flex-col p-4 sm: mt-6 lg:mt-8 sm: mb-0 lg:mb-4">
+                <div className="flex">
+                  <span className="text-emerald-400">"Use client";</span>
+                </div>
+                <div className="flex">
+                  <span className="text-purple-400">import</span>
+                  <span className="text-amber-400 mx-1">{"{"}</span>
+                  <span className="text-white">motion</span>
+                  <span className="text-pink-400 ml-0.5">,</span>
+                  <span className="text-white ml-1">useTime</span>
+                  <span className="text-pink-400 ml-0.5">,</span>
+                  <span className="text-white ml-1">useTransform</span>
+                  <span className="text-amber-400 mx-1">{"}"}</span>
+                  <span className="text-purple-400">from</span>
+                  <span className="text-emerald-300 ml-1">framer-motion;</span>
+                </div>
+                <div className="flex">
+                  <span className="text-purple-400">interface</span>
+                  <span className="text-[#9ECBFF] mx-1">style</span>
+                  <span className="text-amber-400">{"{"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-pink-300">text</span>
+                  <span className="text-purple-400">: string</span>
+                  <span className="text-white ml-0.5">;</span>
+                </div>
+                <div className="flex">
+                  <span className="text-amber-400">{"}"}</span>
+                </div>
                 <div className="flex">
                   <span className="text-purple-400">
                     export default function
-                  </span>{" "}
-                  <span className="text-amber-400 ml-1.5">DarkGridBg(</span>
-                  <span className="text-purple-400 ml-0.5">&#123;</span>
+                  </span>
+                  <span className="text-amber-400 ml-1">AnimatedButton (</span>
+                  <span className="text-pink-400 ml-0.5">{"{"}</span>
+                  <span className="text-white mx-1">text</span>
+                  <span className="text-pink-400">{"}"}</span>
+                  <span className="text-purple-400">:</span>
+                  <span className="text-[#9ECBFF] ml-1">styling</span>
+                  <span className="text-amber-400 ml-1">{")"}</span>
+                  <span className="text-amber-400 ml-1">{"{"}</span>
                 </div>
-                <div className="flex ml-4">
-                  children<span className="text-purple-400">,</span>
+                <div className="flex">
+                  <span className="text-purple-400">const</span>
+                  <span className="text-white mx-1">time</span>
+                  <span className="text-purple-400">=</span>
+                  <span className="text-amber-400 ml-1">useTime</span>
+                  <span className="text-pink-400">( )</span>
+                  <span className="text-white">;</span>
                 </div>
-                <div className="flex ml-1">
-                  <span className="text-pink-400">&#125;</span>
-                  <span className="text-purple-400">:</span>{" "}
-                  <span className="text-[#9ECBFF] ml-3">Readonly</span>
-                  <span className="text-pink-400 mt-[2]">&lt;</span>
-                  <span className="text-blue-400">&#123;</span>
+                <div className="flex">
+                  <span className="text-purple-400">const</span>
+                  <span className="text-white mx-1">rotate</span>
+                  <span className="text-purple-400">=</span>
+                  <span className="text-amber-400 ml-1">useTransform</span>
+                  <span className="text-pink-400">(</span>
+                  <span className="text-white mx-1">time,</span>
+                  <span className="text-blue-400">[</span>
+                  <span className="text-emerald-400">0</span>
+                  <span className="text-pink-400">,</span>
+                  <span className="text-emerald-400 ml-1">6000</span>
+                  <span className="text-blue-400">]</span>
+                  <span className="text-pink-400">,</span>
+                  <span className="text-blue-400 ml-1">[</span>
+                  <span className="text-emerald-400">0</span>
+                  <span className="text-pink-400">,</span>
+                  <span className="text-emerald-400 ml-1">360</span>
+                  <span className="text-blue-400">]</span>
+                  <span className="text-pink-400">,</span>
+                  <span className="text-blue-400 ml-1">{"{"}</span>
                 </div>
-                <div className="flex ml-4">
-                  <span className="text-pink-300">children</span>
-                  <span className="text-purple-400">:</span>{" "}
-                  <span className="text-[#9ECBFF]">React.ReactNode</span>
-                  <span className="text-pink-400">;</span>
+                <div className="flex">
+                  <span className="text-pink-300">clamp:</span>
+                  <span className="text-emerald-400 ml-1">false,</span>
                 </div>
-                <div className="flex ml-1">
-                  <span className="text-blue-400">&#125;</span>
-                  <span className="text-pink-400 mt-[2]">&gt;</span>
-                  <span className="text-amber-400">&#41; &#123;</span>
+                <div className="flex">
+                  <span className="text-blue-400">{"}"} </span>
+                  <span className="text-pink-400 ml-0.5">)</span>
+                  <span className="text-white">;</span>
                 </div>
-                <div className="flex ml-4 mt-1.5">
+                <div className="flex">
                   <span className="text-purple-400">return</span>
-                  <span className="text-pink-400 ml-1.5">&#40;</span>
+                  <span className="text-pink-400 ml-1">(</span>
                 </div>
-                <div className="flex ml-6">
-                  <span className="text-white">&lt;</span>
-                  <span className="text-purple-400">div</span>{" "}
-                  <span className="text-pink-300 ml-1.5">className</span>
+                <div className="flex">
+                  <span className="text-white">{"<>"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-white">{"<"}</span>
+                  <span className="text-purple-400">button</span>
+                  <span className="text-pink-300 ml-1">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400 ml-1">
-                    &quot;bg-black text-white inset-0
-                    [background-size:40px_40px] select-none
-                    [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]&quot;
+                    "relative w-fit"
                   </span>
-                  <span className="text-white">&gt;</span>
+                  <span className="text-white">{">"}</span>
                 </div>
-                <div className="flex ml-8">
-                  <span className="text-blue-400">&#123;</span>children
-                  <span className="text-blue-400">&#125;</span>
-                </div>
-                <div className="flex ml-6">
-                  <span className="text-white">&lt;/</span>
+                <div className="flex">
+                  <span className="text-white">{"<"}</span>
                   <span className="text-purple-400">div</span>
-                  <span className="text-white">&gt;</span>
                 </div>
-                <div className="flex ml-1">
-                  <span className="text-pink-400">&#41;</span>
-                  <span className="text-amber-400 ml-1">&#125;</span>;
+                <div className="flex">
+                  <span className="text-pink-300">className</span>
+                  <span className="text-purple-400">=</span>
+                  <span className="text-blue-400">{"{"}</span>
+                  <span className="text-emerald-400">
+                    `relative bg-black text-white text-center border-1
+                    border-black py-2 px-6 rounded-md transition-colors
+                    duration-200 z-1 cursor-pointer`
+                  </span>
+                  <span className="text-blue-400">{"}"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-white">{">"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-blue-400">{"{"}</span>
+                  <span className="text-white mx-0.5">text</span>
+                  <span className="text-blue-400">{"}"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-white">{"</"}</span>
+                  <span className="text-purple-400">div</span>
+                  <span className="text-white">{">"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-white">{"<"}</span>
+                  <span className="text-amber-400">motion.div</span>
+                </div>
+                <div className="flex">
+                  <span className="text-pink-300">className</span>
+                  <span className="text-purple-400">=</span>
+                  <span className="text-emerald-400">
+                    "absolute -inset-1 rounded-lg"
+                  </span>
+                </div>
+                <div className="flex">
+                  <span className="text-pink-300">style</span>
+                  <span className="text-purple-400">=</span>
+                  <span className="text-blue-400">{"{"}</span>
+                  <span className="text-amber-400 ml-0.5">{"{"}</span>
+                  <span className="text-pink-300 mx-1">background:</span>
+                  <span className="text-white">borderRotate,</span>
+                  <span className="text-pink-300 ml-1">filter:</span>
+                  <span className="text-emerald-400 mx-1">"blur(4px)"</span>
+                  <span className="text-amber-400">{"}"}</span>
+                  <span className="text-blue-400 ml-0.5">{"}"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-white">{"></"}</span>
+                  <span className="text-amber-400">motion.div</span>
+                  <span className="text-white">{">"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-white">{"</"}</span>
+                  <span className="text-purple-400">button</span>
+                  <span className="text-white">{">"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-white">{"</>"}</span>
+                </div>
+                <div className="flex">
+                  <span className="text-pink-400">)</span>
+                  <span className="text-white ml-0.5">;</span>
+                </div>
+                <div className="flex">
+                  <span className="text-amber-400">{"}"}</span>
                 </div>
               </div>
 

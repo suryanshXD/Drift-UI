@@ -25,6 +25,10 @@ const components = [
     herf: "/card",
   },
   {
+    label: "Marquee",
+    herf: "/marquee",
+  },
+  {
     label: "Navbar",
     herf: "/navbar",
   },
@@ -52,6 +56,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     if (path.includes("/docs/components/background")) return "Background";
     if (path.includes("/docs/components/button")) return "Button";
     if (path.includes("/docs/components/card")) return "Card";
+    if (path.includes("/docs/components/marquee")) return "Marquee";
     if (path.includes("/docs/components/navbar")) return "Navbar";
     if (path.includes("/docs/components/scroll")) return "Scroll";
     if (path.includes("/docs/components/text")) return "Text";
@@ -70,8 +75,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="bg-white h-[100%] w-full text-black scroll-smooth">
         <DocsHeader />
         <div className="flex  sm: flex-col md:flex-row">
-          <div className="fixed top-12 left-0 h-[calc(100vh-4rem)] pl-9 pr-6 mt-1.5 border-r border-gray-300 bg-white sm: invisible lg:visible">
-            <p className="text-sm font-extralight text-gray-400 uppercase pt-8 ml-2">
+          <div
+            className="fixed top-12 left-0 h-[calc(100vh-4rem)] pl-9 pr-6 mt-1.5 border-r border-gray-300 bg-white sm: hidden lg:block"
+            style={{
+              scrollbarWidth: "none",
+            }}
+          >
+            <p className="text-sm font-extralight text-gray-400 uppercase mt-7 ml-2">
               Get started
             </p>
             <div>
@@ -137,10 +147,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </motion.div>
                 </Link>
               </div>
-              <div className="text-sm relative font-extralight text-gray-400 uppercase mt-16 ml-2 pb-4 ">
+              <div className="text-sm relative font-extralight text-gray-400 uppercase mt-14 ml-2 pb-4 ">
                 ui components
               </div>
-              <div className="flex flex-col text-[14.5px] gap-5 font-mono text-xs w-52 text-stone-800">
+              <div className="flex flex-col text-[14.5px] gap-4.5 font-mono text-xs w-52 text-stone-800">
                 {components.map((items) => (
                   <Link
                     key={items.label}

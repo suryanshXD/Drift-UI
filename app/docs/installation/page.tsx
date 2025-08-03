@@ -219,19 +219,19 @@ export default function Page() {
           <span className="mr-2.5">1.</span>
           <span className="mr-1"> Browse</span> <span>the</span>
           <Link href={"/docs/components/3d-effect"}>
-            <span className="text-gray-800  lg:px-1.5 underline">
+            <span className="text-gray-800 sm: px-0.5  lg:px-1.5 underline">
               components
             </span>
-          </Link>{" "}
+          </Link>
           section to see our extended component
         </div>
         <div className="flex sm: text-[11px] lg:text-[16px] text-gray-700 sm: mt-1.5 lg:mt-2.5 font-sans sm: ml-1.5 lg:ml-3 sm: mb-10 lg:mb-20">
           <span className="mr-2">2.</span>Check out our{" "}
           <Link href={"/docs/components/background"}>
-            <span className="text-gray-800  lg:px-1.5 underline">
+            <span className="text-gray-800 sm: px-0.5  lg:px-1.5 underline">
               background
             </span>
-          </Link>{" "}
+          </Link>
           for example layouts
         </div>
       </motion.div>

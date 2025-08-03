@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Marquee",
+  "type": "registry:ui",
+  "title": "Marquee",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/Marquee/Marquee.tsx",
+      "content": "import React from \"react\";\r\nimport { motion } from \"framer-motion\";\r\n\r\ninterface item {\r\n  itemsArray: any[];\r\n}\r\n\r\nconst Marquee = ({ itemsArray }: item) => {\r\n  return (\r\n    <div className=\"flex w-full font-sans sm: text-sm lg:text-xl overflow-x-hidden select-none\">\r\n      <motion.div\r\n        initial={{ x: \"-100%\" }}\r\n        animate={{ x: 0 }}\r\n        transition={{ duration: 60, repeat: Infinity, ease: \"linear\" }}\r\n        className=\"flex flex-shrink-0 whitespace-nowrap\"\r\n      >\r\n        {itemsArray.map((e: any, index: number) => {\r\n          return (\r\n            <div className=\"sm: w-24 lg:w-40 sm: pr-6 lg:pr-16\" key={index}>\r\n              {e.name}\r\n            </div>\r\n          );\r\n        })}\r\n      </motion.div>\r\n      <motion.div\r\n        initial={{ x: \"-100%\" }}\r\n        animate={{ x: 0 }}\r\n        transition={{ duration: 60, repeat: Infinity, ease: \"linear\" }}\r\n        className=\"flex flex-shrink-0 whitespace-nowrap\"\r\n      >\r\n        {itemsArray.map((e: any, index: number) => {\r\n          return (\r\n            <div className=\"sm: w-24 lg:w-40 sm: pr-6 lg:pr-16\" key={index}>\r\n              {e.name}\r\n            </div>\r\n          );\r\n        })}\r\n      </motion.div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Marquee;\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

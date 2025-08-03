@@ -77,6 +77,18 @@
       "dependencies": ["framer-motion"]
     },
     {
+      "name": "Marquee",
+      "type": "registry:ui",
+      "title": "Marquee",
+      "files": [
+        {
+          "path": "registry/new-york/Marquee/Marquee.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": ["framer-motion"]
+    },
+    {
       "name": "Gaping-Text",
       "type": "registry:ui",
       "title": "Gaping Text",
