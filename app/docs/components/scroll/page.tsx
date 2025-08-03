@@ -199,7 +199,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="fixed sm: ml-[92%] lg:ml-[96.5%] mt-2.5 cursor-pointer"
                 onClick={() => {
-                  navigator.clipboard.writeText("Hi");
+                  navigator.clipboard.writeText(previewCode);
                   setNotifyPreview("show");
                   setTimeout(() => {
                     setNotifyPreview(null);
@@ -279,7 +279,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText("Hi");
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -359,7 +359,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText("hi");
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -432,3 +432,61 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Three-Card-ScrollUp.json`;
+
+const manualCode = `"use client";
+import { motion } from "framer-motion";
+
+interface style {
+  img1: any;
+  img2: any;
+  img3: any;
+  width: number;
+}
+
+export default function ThreeCardScrollUp({ img1, img2, img3, width }: style) {
+  return (
+    <motion.div
+      initial="initial"
+      whileInView="inView"
+      viewport={{ amount: "all" }}
+      className="flex justify-center"
+    >
+      <motion.img
+        className="absolute bg-green-200 rounded-md z-20 text-center flex items-center justify-center"
+        variants={{
+          initial: { x: 0, rotate: 0 },
+          inView: { x: "-120%", rotate: 0 },
+        }}
+        transition={{ duration: 1 }}
+        src={img1}
+        width={width}
+      />
+
+      <motion.img
+        className="absolute bg-pink-200 rounded-md z-10 text-center flex items-center justify-center"
+        variants={{
+          initial: { x: 0, rotate: 20 },
+          inView: { x: 0, rotate: 0 },
+        }}
+        transition={{ duration: 1 }}
+        src={img2}
+        width={width}
+      />
+
+      <motion.img
+        className="absolute bg-blue-200 rounded-md z-20 text-center flex items-center justify-center"
+        variants={{
+          initial: { x: 0, rotate: 10 },
+          inView: { x: "120%", rotate: 0 },
+        }}
+        transition={{ duration: 1 }}
+        src={img3}
+        width={width}
+      />
+    </motion.div>
+  );
+}`;

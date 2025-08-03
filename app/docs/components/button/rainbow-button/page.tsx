@@ -40,20 +40,6 @@ export default function Page() {
     });
   };
 
-  const previewCode = `export default function DarkGridBg({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
-        {children}
-      </div>
-    </>
-  );
-}
-`;
   return (
     <>
       <motion.div
@@ -286,7 +272,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText(previewCode);
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -366,7 +352,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -436,3 +422,37 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Rainbow-Button.json`;
+
+const manualCode = `"use client";
+import { motion, useTime, useTransform } from "framer-motion";
+
+export default function RainbowButton({ text }: { text: string }) {
+  const time = useTime();
+  const rotate = useTransform(time, [0, 6000], [0, 360], {
+    clamp: false,
+  });
+  const borderRotate = useTransform(rotate, (r) => {
+    return \`conic-gradient(from \${r}deg,#FF0000,#FFA500,#FFFF00,#008000,#0000FF,#4B0082,#EE82EE)\`;
+  });
+
+  return (
+    <>
+      <div className="relative w-fit">
+        <div className="relative bg-black text-white text-center py-2 px-6 rounded-md transition-colors duration-200 z-10 cursor-pointer ">
+          {text}
+        </div>
+        <motion.div
+          className="absolute -inset-1 rounded-lg "
+          style={{
+            background: borderRotate,
+            filter: "blur(6px)",
+          }}
+        ></motion.div>
+      </div>
+    </>
+  );
+}`;

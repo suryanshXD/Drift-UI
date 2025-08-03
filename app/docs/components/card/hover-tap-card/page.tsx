@@ -41,20 +41,6 @@ export default function Page() {
     });
   };
 
-  const previewCode = `export default function DarkGridBg({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
-        {children}
-      </div>
-    </>
-  );
-}
-`;
   return (
     <>
       <motion.div
@@ -289,7 +275,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText(previewCode);
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -369,7 +355,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -439,3 +425,41 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Hover-Tap-Image.json`;
+
+const manualCode = `"use client";
+import { motion } from "framer-motion";
+
+interface style {
+  img: any;
+  width: number;
+}
+
+export default function HoverTapImage({ img, width }: style) {
+  return (
+    <>
+      <motion.img
+        whileHover={{
+          rotateX: 6.66,
+          rotateY: 20,
+          scale: 1.05,
+          transition: {
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+            duration: 1,
+            delay: 0.1,
+          },
+        }}
+        whileTap={{ scale: [1.09, 1] }}
+        style={{ perspective: 1000 }}
+        className="cursor-pointer rounded-md"
+        src={img}
+        width={width}
+      />
+    </>
+  );
+}`;

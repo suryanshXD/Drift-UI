@@ -46,20 +46,6 @@ export default function Page() {
     });
   };
 
-  const previewCode = `export default function DarkGridBg({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
-        {children}
-      </div>
-    </>
-  );
-}
-`;
   return (
     <>
       <motion.div
@@ -310,7 +296,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText(previewCode);
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -390,7 +376,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -460,3 +446,47 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Rotate-Words.json`;
+
+const manualCode = `"use client";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useState } from "react";
+
+interface content {
+  text?: string;
+  words: string[];
+}
+
+export default function RotateWord({ text, words }: content) {
+  const [index, setIndex] = useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((current) => (current + 1) % words.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      <div className="flex flex-row items-center">
+        {text + " "}
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={words[index]}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            className="ml-[6px]"
+          >
+            {words[index]}
+          </motion.p>
+        </AnimatePresence>
+      </div>
+    </>
+  );
+}`;

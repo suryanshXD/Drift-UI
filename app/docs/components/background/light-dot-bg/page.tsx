@@ -6,11 +6,6 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Clipboard } from "@/app/components/Logo/Clipboard";
-import {
-  LightGridMaskedCli,
-  LightGridMaskedManual,
-  LightGridMaskedPreview,
-} from "@/libs/component-code/Light-Grid-Masked-BG";
 
 export default function Page() {
   const [preview, setPreview] = useState<"preview" | "code">("preview");
@@ -197,7 +192,7 @@ export default function Page() {
                 whileTap={{ scale: 0.99 }}
                 className="mr-1.5 mt-2 cursor-pointer"
                 onClick={() => {
-                  navigator.clipboard.writeText(LightGridMaskedPreview);
+                  navigator.clipboard.writeText(previewCode);
                   setNotifyPreview("show");
                   setTimeout(() => {
                     setNotifyPreview(null);
@@ -276,7 +271,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText(LightGridMaskedCli);
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -356,7 +351,7 @@ export default function Page() {
                 whileTap={{ scale: 0.9 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText(LightGridMaskedManual);
+                  navigator.clipboard.writeText(manaualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -418,3 +413,19 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Dot-Light-BG.json`;
+
+const manaualCode = `export default function DotLighBg({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <>
+      <div className="inset-0 h-full w-full bg-white bg-[radial-gradient(#c8cbcc_1px,transparent_1px)] [background-size:16px_16px]">
+        {children}
+      </div>
+    </>
+  );
+}`;

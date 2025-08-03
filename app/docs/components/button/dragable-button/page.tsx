@@ -39,20 +39,6 @@ export default function Page() {
     });
   };
 
-  const previewCode = `export default function DarkGridBg({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
-        {children}
-      </div>
-    </>
-  );
-}
-`;
   return (
     <>
       <motion.div
@@ -285,7 +271,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText(previewCode);
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -365,7 +351,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -438,3 +424,39 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Dragable-Button.json`;
+
+const manualCode = `"use client";
+import { motion } from "framer-motion";
+
+interface style {
+  varient: "default" | "outline";
+  text: string;
+}
+
+export default function DragableButton({ varient, text }: style) {
+  const varientClass =
+    varient === "default"
+      ? "bg-black text-white"
+      : "text-black bg-neutral-100 border-1 border-gray-500";
+  return (
+    <>
+      <motion.button
+        drag
+        dragConstraints={{
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+        }}
+        whileTap={{ scale: [0.95, 1.02] }}
+        className={\` \${varientClass} border-1 border-black text-center px-4 py-1.5 rounded-md w-fit cursor-pointer\`}
+      >
+        {text}
+      </motion.button>
+    </>
+  );
+}`;

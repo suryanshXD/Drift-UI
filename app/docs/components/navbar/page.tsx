@@ -200,7 +200,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="fixed sm: ml-[92%] lg:ml-[96.5%] mt-2.5 cursor-pointer"
                 onClick={() => {
-                  navigator.clipboard.writeText("hi");
+                  navigator.clipboard.writeText(previewCode);
                   setNotifyPreview("show");
                   setTimeout(() => {
                     setNotifyPreview(null);
@@ -280,7 +280,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText("hi");
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -360,7 +360,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText("hi");
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -455,3 +455,55 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Navbar.json`;
+
+const manualCode = `"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+interface NavbarItem {
+  name: string;
+  href: string;
+}
+
+interface items {
+  navbarItem: NavbarItem[];
+}
+
+export function Navbar({ navbarItem }: items) {
+  const [hover, setHover] = useState<number | null>(null);
+  return (
+    <div>
+      <div className="sm: max-w-60 md:max-w-xl bg-gray-50 rounded-lg px-2 py-1 mx-auto flex border border-gray-200">
+        {navbarItem.map((item, idx) => (
+          <Link
+            onMouseEnter={() => setHover(idx)}
+            onMouseLeave={() => setHover(null)}
+            href={item.href}
+            className="w-full relative text-center text-sm py-3 hover:text-white"
+          >
+            {hover === idx && (
+              <motion.div
+                layoutId="box"
+                transition={{ delay: 0.01 }}
+                className="bg-black inset-0 absolute rounded-lg w-full h-full"
+              ></motion.div>
+            )}
+            <motion.span
+              animate={{
+                color: hover === idx ? "white" : "black",
+              }}
+              className="relative"
+            >
+              {item.name}
+            </motion.span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}`;

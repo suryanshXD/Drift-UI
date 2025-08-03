@@ -195,7 +195,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="fixed sm: ml-[92%] lg:ml-[96.5%] mt-2.5 cursor-pointer"
                 onClick={() => {
-                  navigator.clipboard.writeText("Hi");
+                  navigator.clipboard.writeText(previewCode);
                   setNotifyPreview("show");
                   setTimeout(() => {
                     setNotifyPreview(null);
@@ -275,7 +275,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText("Hi");
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -355,7 +355,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText("hi");
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -417,3 +417,106 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Testimonial.json`;
+
+const manualCode = `"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+
+interface content {
+  content: any[];
+}
+
+export default function Testimonial({ content }: content) {
+  const [index, setIndex] = useState(content[0]);
+
+  const handleNext = () => {
+    setIndex(
+      (val: number) => content[(content.indexOf(val) + 1) % content.length]
+    );
+  };
+
+  const handlePrev = () => {
+    setIndex(
+      (val: number) =>
+        content[(content.length - 1 + content.indexOf(val)) % content.length]
+    );
+  };
+  return (
+    <>
+      <div className="flex flex-row bg-linear-to-r from from-neutral-100 via-blue-200 to-neutral-100 rounded-xl  gap-3 sm:w-full sm: mx-4 lg:mx-0  md:w-3xl border border-gray-300">
+        <motion.span whileTap={{ scale: [0.9] }}>
+          <ArrowLeft
+            onClick={handleNext}
+            className="text-black size-6 font-semibold bg-white rounded-full p-1 border border-black ml-2.5 sm: my-15 lg:my-16"
+          />
+        </motion.span>
+        <div className="flex flex-row py-2 w-full items-center">
+          {
+            <motion.span
+              key={index.name}
+              initial={{ opacity: 0, x: -40, scale: 1, filter: "blur(8px)" }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: [0.7, 1, 0.95],
+                filter: "blur(0px)",
+              }}
+              transition={{ delay: 0.15, duration: 0.3 }}
+            >
+              <Image
+                src={index.img}
+                alt="img"
+                className="rounded-lg border border-black sm: w-24 lg:w-32 sm: ml-0 md:ml-12"
+              />
+            </motion.span>
+          }
+          <div className="flex flex-col sm:w-fit lg: w-fit">
+            <div className="sm: ml-6 lg:ml-10 pb-2 text-xl font-semibold">
+              {index.name.split("").map((char: string, i: number) => (
+                <motion.span
+                  key={char + i}
+                  initial={{
+                    opacity: 0,
+                    y: 40,
+                    rotate: -45,
+                    filter: "blur(8px)",
+                  }}
+                  animate={{ opacity: 1, y: 0, rotate: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.2 }}
+                  exit={{ filter: "blur(0px)" }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+            <div className=" rounded-md py-2 sm: ml-6 lg:mx-10">
+              {index.testimonial.split("").map((char: string, i: number) => (
+                <motion.span
+                  key={char + i}
+                  initial={{ opacity: 0, x: 40, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.03 * i }}
+                  exit={{ filter: "blur(0px)" }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <motion.span whileTap={{ scale: 0.9 }}>
+          <ArrowRight
+            onClick={handlePrev}
+            className="text-black size-6 font-semibold bg-white rounded-full p-1 border border-black mr-2.5 sm: my-15 lg:my-16"
+          />
+        </motion.span>
+      </div>
+    </>
+  );
+}`;

@@ -45,20 +45,6 @@ export default function Page() {
     });
   };
 
-  const previewCode = `export default function DarkGridBg({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
-        {children}
-      </div>
-    </>
-  );
-}
-`;
   return (
     <>
       <motion.div
@@ -306,7 +292,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText(previewCode);
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -386,7 +372,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -456,3 +442,41 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Gaping-Text.json`;
+
+const manualCode = `import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+
+export default function GapingText({ text }: { text: string }) {
+  return (
+    <>
+      <motion.div
+        initial="initial"
+        animate="animate"
+        transition={{ staggerChildren: 0.1 }}
+      >
+        <AnimatePresence>
+          {text.split("").map((char, i) => (
+            <motion.span
+              key={i}
+              variants={{
+                initial: { opacity: 0, x: -18 },
+                animate: {
+                  opacity: 1,
+                  x: 0,
+                  paddingRight: "1.5px",
+                },
+              }}
+              transition={{ duration: 0.1 }}
+            >
+              {char === " " ? <span>&nbsp;</span> : char}
+            </motion.span>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+    </>
+  );
+}`;

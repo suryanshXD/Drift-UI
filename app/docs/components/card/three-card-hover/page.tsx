@@ -40,20 +40,6 @@ export default function Page() {
     });
   };
 
-  const previewCode = `export default function DarkGridBg({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <>
-      <div className="bg-black text-white  inset-0 [background-size:40px_40px] select-none [background-image:linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]">
-        {children}
-      </div>
-    </>
-  );
-}
-`;
   return (
     <>
       <motion.div
@@ -302,7 +288,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText(previewCode);
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -382,7 +368,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText(previewCode);
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -452,3 +438,60 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Three-Card-Hover.json`;
+
+const manualCode = `"use client";
+import { motion } from "framer-motion";
+
+interface style {
+  img1: any;
+  img2: any;
+  img3: any;
+  width: number;
+}
+
+export default function ThreeCardHover({ img1, img2, img3, width }: style) {
+  return (
+    <motion.div
+      initial="initial"
+      whileHover="hover"
+      className="flex justify-center"
+    >
+      <motion.img
+        className="absolute bg-green-200 rounded-md z-20 text-center flex items-center justify-center"
+        variants={{
+          initial: { x: 0, rotate: 0 },
+          hover: { x: "-120%", rotate: 0 },
+        }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        src={img1}
+        width={width}
+      />
+
+      <motion.img
+        className="absolute bg-pink-200 rounded-md z-10 text-center flex items-center justify-center"
+        variants={{
+          initial: { x: 0, rotate: 20 },
+          hover: { x: 0, rotate: 0 },
+        }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        src={img2}
+        width={width}
+      />
+
+      <motion.img
+        className="absolute bg-blue-200 rounded-md z-20 text-center flex items-center justify-center"
+        variants={{
+          initial: { x: 0, rotate: 10 },
+          hover: { x: "120%", rotate: 0 },
+        }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        src={img3}
+        width={width}
+      />
+    </motion.div>
+  );
+}`;

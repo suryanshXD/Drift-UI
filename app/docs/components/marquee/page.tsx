@@ -42,24 +42,6 @@ export default function Page() {
     });
   };
 
-  const navbarItems = [
-    {
-      name: "Home",
-      href: "/docs/components/navbar",
-    },
-    {
-      name: "About",
-      href: "/docs/components/navbar",
-    },
-    {
-      name: "Contact",
-      href: "/docs/components/navbar",
-    },
-    {
-      name: "Login",
-      href: "/docs/components/navbar",
-    },
-  ];
   return (
     <>
       <motion.div
@@ -214,7 +196,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="fixed sm: ml-[92%] lg:ml-[96.5%] mt-2.5 cursor-pointer"
                 onClick={() => {
-                  navigator.clipboard.writeText("hi");
+                  navigator.clipboard.writeText(previewCode);
                   setNotifyPreview("show");
                   setTimeout(() => {
                     setNotifyPreview(null);
@@ -294,7 +276,7 @@ export default function Page() {
                   whileTap={{ scale: 0.9 }}
                   className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[88%] lg:ml-[94%]"
                   onClick={() => {
-                    navigator.clipboard.writeText("hi");
+                    navigator.clipboard.writeText(cliCode);
                     setNotifyCli("show");
                     setTimeout(() => {
                       setNotifyCli(null);
@@ -374,7 +356,7 @@ export default function Page() {
                 whileTap={{ scale: 0.95 }}
                 className="mt-3 cursor-pointer fixed sm: ml-[92.5%] lg:ml-[96.5%]"
                 onClick={() => {
-                  navigator.clipboard.writeText("hi");
+                  navigator.clipboard.writeText(manualCode);
                   setNotifyManual("show");
                   setTimeout(() => {
                     setNotifyManual(null);
@@ -469,3 +451,51 @@ export default function Page() {
     </>
   );
 }
+
+const previewCode = ``;
+
+const cliCode = `npx shadcn@latest add https://drift-ui-swart.vercel.app/r/Marquee.json`;
+
+const manualCode = `import React from "react";
+import { motion } from "framer-motion";
+
+interface item {
+  itemsArray: any[];
+}
+
+const Marquee = ({ itemsArray }: item) => {
+  return (
+    <div className="flex w-full font-sans sm: text-sm lg:text-xl overflow-x-hidden select-none">
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: 0 }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        className="flex flex-shrink-0 whitespace-nowrap"
+      >
+        {itemsArray.map((e: any, index: number) => {
+          return (
+            <div className="sm: w-24 lg:w-40 sm: pr-6 lg:pr-16" key={index}>
+              {e.name}
+            </div>
+          );
+        })}
+      </motion.div>
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: 0 }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        className="flex flex-shrink-0 whitespace-nowrap"
+      >
+        {itemsArray.map((e: any, index: number) => {
+          return (
+            <div className="sm: w-24 lg:w-40 sm: pr-6 lg:pr-16" key={index}>
+              {e.name}
+            </div>
+          );
+        })}
+      </motion.div>
+    </div>
+  );
+};
+
+export default Marquee;`;
