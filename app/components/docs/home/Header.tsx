@@ -27,6 +27,10 @@ const components = [
     herf: "/card",
   },
   {
+    label: "Marquee",
+    herf: "/marquee",
+  },
+  {
     label: "Navbar",
     herf: "/navbar",
   },
@@ -54,6 +58,7 @@ export function DocsHeader() {
     if (path.includes("/docs/components/background")) return "Background";
     if (path.includes("/docs/components/button")) return "Button";
     if (path.includes("/docs/components/card")) return "Card";
+    if (path.includes("/docs/components/marquee")) return "Marquee";
     if (path.includes("/docs/components/navbar")) return "Navbar";
     if (path.includes("/docs/components/scroll")) return "Scroll";
     if (path.includes("/docs/components/text")) return "Text";

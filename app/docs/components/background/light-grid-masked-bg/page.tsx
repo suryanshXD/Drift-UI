@@ -267,7 +267,7 @@ export default function Page() {
               <div className="flex min-w-max justify-between items-center text-white sm: text-[12px] lg:text-[14.5px] pr-7">
                 <div className="flex">
                   <span className="text-purple-400">npx</span>
-                  <span className="text-white mx-2">from</span>
+                  <span className="text-[#9ECBFF] mx-2">shadcn@latest add</span>
                   <span className="text-[#9ECBFF]">
                     https://drift-ui-swart.vercel.app/r/Light-Grid-Masked-BG.json
                   </span>
@@ -288,7 +288,10 @@ export default function Page() {
               </div>
             </div>
           ) : (
-            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12.5px] lg:text-[14px] flex justify-between">
+            <div
+              className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12.5px] lg:text-[14px] flex justify-between"
+              style={{ scrollbarWidth: "none" }}
+            >
               <div className="min-w-max flex flex-col p-4 mt-8 mb-4">
                 <div className="flex">
                   <span className="text-purple-400">

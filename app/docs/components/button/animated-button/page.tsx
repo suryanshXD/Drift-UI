@@ -173,7 +173,10 @@ export default function Page() {
               </motion.div>
             </div>
           ) : (
-            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12.5px] lg:text-[14px] flex justify-between">
+            <div
+              className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12.5px] lg:text-[14px] flex justify-between"
+              style={{ scrollbarWidth: "none" }}
+            >
               <div className="min-w-max flex flex-col p-4 sm: mt-6 lg:mt-8 sm: mb-0 lg:mb-4">
                 <div className="flex">
                   <span className="text-purple-400">
@@ -302,11 +305,14 @@ export default function Page() {
         </div>
         <div className=" rounded-lg mt-4 sm: w-[98.5%] lg:w-full">
           {cli === "cli" ? (
-            <div className="bg-[#212121] overflow-x-auto w-full rounded-md sm: py-4 lg:py-5 pl-4">
+            <div
+              className="bg-[#212121] overflow-x-auto w-full rounded-md sm: py-4 lg:py-5 pl-4"
+              style={{ scrollbarWidth: "none" }}
+            >
               <div className="flex min-w-max justify-between items-center text-white sm: text-[12px] lg:text-[14.5px] pr-7">
                 <div className="flex">
                   <span className="text-purple-400">npx</span>
-                  <span className="text-white mx-2">from</span>
+                  <span className="text-[#9ECBFF] mx-2">shadcn@latest add</span>
                   <span className="text-[#9ECBFF]">
                     https://drift-ui-swart.vercel.app/r/Animated-Button.json
                   </span>
@@ -327,10 +333,15 @@ export default function Page() {
               </div>
             </div>
           ) : (
-            <div className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12px] lg:text-[14.5px] flex justify-between">
+            <div
+              className="h-fit bg-[#212121] w-full overflow-x-auto rounded-md text-white sm: text-[12px] lg:text-[14.5px] flex justify-between"
+              style={{ scrollbarWidth: "none" }}
+            >
               <div className="min-w-max flex flex-col p-4 sm: mt-6 lg:mt-8 sm: mb-0 lg:mb-4">
                 <div className="flex">
-                  <span className="text-emerald-400">"Use client";</span>
+                  <span className="text-emerald-400">
+                    &quot;Use client&quot;;
+                  </span>
                 </div>
                 <div className="flex">
                   <span className="text-purple-400">import</span>
@@ -421,7 +432,7 @@ export default function Page() {
                   <span className="text-pink-300 ml-1">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400 ml-1">
-                    "relative w-fit"
+                    &quot;relative w-fit&quot;
                   </span>
                   <span className="text-white">{">"}</span>
                 </div>
@@ -461,7 +472,7 @@ export default function Page() {
                   <span className="text-pink-300">className</span>
                   <span className="text-purple-400">=</span>
                   <span className="text-emerald-400">
-                    "absolute -inset-1 rounded-lg"
+                    &quot;absolute -inset-1 rounded-lg&quot;
                   </span>
                 </div>
                 <div className="flex">
@@ -472,7 +483,9 @@ export default function Page() {
                   <span className="text-pink-300 mx-1">background:</span>
                   <span className="text-white">borderRotate,</span>
                   <span className="text-pink-300 ml-1">filter:</span>
-                  <span className="text-emerald-400 mx-1">"blur(4px)"</span>
+                  <span className="text-emerald-400 mx-1">
+                    &quot;blur(4px)&quot;
+                  </span>
                   <span className="text-amber-400">{"}"}</span>
                   <span className="text-blue-400 ml-0.5">{"}"}</span>
                 </div>

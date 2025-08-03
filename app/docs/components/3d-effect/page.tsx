@@ -250,7 +250,9 @@ export default function Page() {
                   <div className="flex min-w-max items-center text-white sm: text-[12px] lg:text-[14.5px] pr-7">
                     <div className="flex">
                       <span className="text-purple-400">npx</span>
-                      <span className="text-white mx-2">from</span>
+                      <span className="text-[#9ECBFF] mx-2">
+                        shadcn@latest add
+                      </span>
                       <span className="text-[#9ECBFF]">
                         https://drift-ui-swart.vercel.app/r/Hover-3D-Image.json
                       </span>
@@ -259,7 +261,7 @@ export default function Page() {
                       whileTap={{ scale: 0.9 }}
                       className="cursor-pointer backdrop-blur-2xl rounded-lg fixed sm: ml-[120%] lg:ml-[116%]"
                       onClick={() => {
-                        navigator.clipboard.writeText(previewCode);
+                        navigator.clipboard.writeText(cliCode);
                         setNotifyCli("show");
                         setTimeout(() => {
                           setNotifyCli(null);
